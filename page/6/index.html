@@ -156,77 +156,126 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>vCSA 6.x installer error: “No networks on the host. Cannot proceed with the installation.»</h2>
+    <h2>Azure – Error when adding new rule on NSG</h2>
   </header>
   <section class="entry-content">
-    <p>This is a quick post of an error I found sometimeswhile deploying a new vCenter server appliance with an embedded PSC on the vCSA 6.x installer.
-The problem In my case, I was trying to install vCSA 6.5 without DNS (this is why the system name has an IP address and the DNS is itself). Also, notice that the network section is empty:
-
-If you try to continue with the installation, it will show you an error:...</p>
+    <p>Hello everyone!
+It’s been a while since I wrote something, but I was so busy with other things (University) and I wasn’t able to allocate time to write anything.
+Today I’m going to talk about an issue I found on Azure when trying to add new rules to some NSGs.
+To create rules in Azure I used this script from TechNet Gallery: https://gallery.technet.microsoft.com/scriptcenter/Create-Azure-Network-5f5c5332
+Problem I was trying to add some rules in an NSG with the address 193....</p>
   </section>
-  <footer class="entry-footer">April 30, 2019&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to vCSA 6.x installer error: “No networks on the host. Cannot proceed with the installation.»" href="https://dangaiden.github.io/2019-04-30-vcsa-6-x-installer-error/"></a>
+  <footer class="entry-footer">December 31, 2017&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to Azure – Error when adding new rule on NSG" href="https://dangaiden.github.io/2017-12-31-azure-error-adding-new-rule-nsg/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Cloning virtual machines in vSphere series – Part 3: Linked Clones</h2>
+    <h2>Azure – Error when adding new rule on NSG</h2>
   </header>
   <section class="entry-content">
-    <p>Let’s start with part 3 in the cloning virtual machines in vSphere series, I am going to talk about another type of clones, linked clones!
-
- All articles regarding cloning virtual machines in vSphere series:
-Part 1: Types of clone
-Part 2: Full Clone
-Part 4: Instant Clones (not published yet) As said in previous articles, this series is only focused on VMware vSphere hence, VMware Horizon View is not contemplated (Linked clones are commonly used in that product)....</p>
+    <p>Hello everyone!
+It’s been a while since I wrote something, but I was so busy with other things (University) and I wasn’t able to allocate time to write anything.
+Today I’m going to talk about an issue I found on Azure when trying to add new rules to some NSGs.
+To create rules in Azure I used this script from TechNet Gallery: https://gallery.technet.microsoft.com/scriptcenter/Create-Azure-Network-5f5c5332
+Problem I was trying to add some rules in an NSG with the address 193....</p>
   </section>
-  <footer class="entry-footer">April 16, 2019&nbsp;·&nbsp;6 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Cloning virtual machines in vSphere series – Part 3: Linked Clones" href="https://dangaiden.github.io/2019-04-16-cloning-virtual-machines-in-vsphere-series-part-3-linked-clones/"></a>
+  <footer class="entry-footer">December 31, 2017&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to Azure – Error when adding new rule on NSG" href="https://dangaiden.github.io/2017-12-31-azure-error-adding-new-rule-nsg_backup/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Experience at a local VMUG – Barcelona VMUG</h2>
+    <h2>VCP6-DCV achieved!</h2>
   </header>
   <section class="entry-content">
-    <p>I am going to talk about my experience at a local VMUG, in my case the VMUG from Barcelona (BCN). It was my first time at a local VMUG event and this is why I decided to share my thoughts about it.
+    <p>I am going to start talking about the exam VCP6-DCV from VMware. The main resource you should use is the VMware site: http://bit.ly/1PLshWR
+There you can check a path to achieve VCP6-DCV (there is a newer version VCP6.5-DCV). I took path 1, as I wasn’t certified.
 
-VMUG – What is? As you probably know VMUG stands for VMware User Group. Basically, you will find an international community of people where they share their experiences and discuss things related to VMware and other technologies....</p>
+Later, I took one official training course, VMware vSphere: Install, Configure, Manage [V6].
+Next, I passed the vSphere 6 Foundations Exam (2V0-620) months ago and finally I did VMware Certified Professional 6 – Data Center Virtualization Exam (2V0-621)....</p>
   </section>
-  <footer class="entry-footer">March 29, 2019&nbsp;·&nbsp;3 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Experience at a local VMUG – Barcelona VMUG" href="https://dangaiden.github.io/2019-03-29-experience-at-a-local-vmug-barcelona-vmug/"></a>
+  <footer class="entry-footer">September 3, 2017&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to VCP6-DCV achieved!" href="https://dangaiden.github.io/2017-09-03-vcp6-dcv-achieved/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Cloning virtual machines in vSphere series – Part 2: Full clone</h2>
+    <h2></h2>
   </header>
   <section class="entry-content">
-    <p>Continuing with the cloning virtual machines in vSphere series, today I am going to write about the full clone, how it works and some useful information about it.
-
-So, let’s talk about clones… but just full clones.
-How does it work? As you probably know a full clone is an exact copy of a source VM, meaning that, everything from the parent VM is copied (VM settings, disks, files, etc....</p>
+    <p>Backup and restore etcd data. Look up the value for the key cluster.name in the etcd cluster:
+ETCDCTL_API=3 etcdctl get cluster.name
+–endpoints=https://10.0.1.101:2379
+–cacert=/home/cloud_user/etcd-certs/etcd-ca.pem
+–cert=/home/cloud_user/etcd-certs/etcd-server.crt
+–key=/home/cloud_user/etcd-certs/etcd-server.key
+The returned value should be beebox.  Back up etcd using etcdctl and the provided etcd certificates: ETCDCTL_API=3 etcdctl snapshot save /home/cloud_user/etcd_backup.db
+–endpoints=https://10.0.1.101:2379
+–cacert=/home/cloud_user/etcd-certs/etcd-ca.pem
+–cert=/home/cloud_user/etcd-certs/etcd-server.crt
+–key=/home/cloud_user/etcd-certs/etcd-server.key
+Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm -rf /var/lib/etcd  Restore the etcd Data from the Backup Restore the etcd data from the backup (this command spins up a temporary etcd cluster, saving the data from the backup file to a new data directory in the same location where the previous data directory was): sudo ETCDCTL_API=3 etcdctl snapshot restore /home/cloud_user/etcd_backup....</p>
   </section>
-  <footer class="entry-footer">March 6, 2019&nbsp;·&nbsp;4 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Cloning virtual machines in vSphere series – Part 2: Full clone" href="https://dangaiden.github.io/2019-03-06-cloning-virtual-machines-in-vsphere-part-2-full-clone/"></a>
+  <footer class="entry-footer">1 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/k8s-etcd_restore/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Cloning virtual machines in vSphere series – Part 1: Types of clone</h2>
+    <h2></h2>
   </header>
   <section class="entry-content">
-    <p>Most of you already know how to clone virtual machines within vSphere, and I mean cloning from the vSphere Web client within vCenter but, beyond that, there are other types of clones you can use in vCenter like, Linked Clones or Instant Clones (aka Project Fargo/VMfork)
-
-Due to the large content that can be discussed about each clone’s type, I decided to make a short series of posts talking about cloning VMs!...</p>
+    <p>Upgrade the Control Plane  Upgrade kubeadm:  [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp;
+sudo apt-get install -y –allow-change-held-packages kubeadm=1.21.1-00
+ Make sure it upgraded correctly:  [cloud_user@k8s-control]$ kubeadm version
+ Drain the control plane node:  [cloud_user@k8s-control]$ kubectl drain k8s-control –ignore-daemonsets
+ Plan the upgrade:  [cloud_user@k8s-control]$ sudo kubeadm upgrade plan v1.21.1
+ Upgrade the control plane components:  [cloud_user@k8s-control]$ sudo kubeadm upgrade apply v1.21.1
+ Upgrade kubelet and kubectl on the control plane node:  [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp;...</p>
   </section>
-  <footer class="entry-footer">February 25, 2019&nbsp;·&nbsp;4 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Cloning virtual machines in vSphere series – Part 1: Types of clone" href="https://dangaiden.github.io/2019-02-25-cloning-vms-in-vsphere-part-1/"></a>
+  <footer class="entry-footer">2 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/k8scluster-upgrade_version/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2></h2>
+  </header>
+  <section class="entry-content">
+    <p>Install Packages in all nodes Log into the Control Plane Node (Note: The following steps must be performed on all three nodes.). Create configuration file for containerd: cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/containerd.conf overlay br_netfilter EOF Load modules: sudo modprobe overlay sudo modprobe br_netfilter Set system configurations for Kubernetes networking: cat &lt;&lt;EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward = 1 net.bridge.bridge-nf-call-ip6tables = 1 EOF Apply new settings: sudo sysctl --system Install containerd: sudo apt-get update &amp;&amp; sudo apt-get install -y containerd Create default configuration file for containerd: sudo mkdir -p /etc/containerd Generate default containerd configuration and save to the newly created default file: sudo containerd config default | sudo tee /etc/containerd/config....</p>
+  </section>
+  <footer class="entry-footer">2 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/kubernetes-cluster-installation-config/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2></h2>
+  </header>
+  <section class="entry-content">
+    <p>Quick guide to install OS within VMs  3 Virtual machines configured and ready  Here is a quick “guide” I made for myself to create a VM, configure RHEL and have ready 3 VMs with the OS configured to start playing with Kubernetes.
+Link to Insta</p>
+  </section>
+  <footer class="entry-footer">1 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/note-about-k8s-part1/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Experience at VMworld 2018 Europe – Day 1</h2>
+  </header>
+  <section class="entry-content">
+    <p>Let me talk to you about my experience on my first VMworld! This is a personal experience I want to share about Day 1 at VMworld 2018 Europe.
+Introduction I live in Barcelona so, I am fortunate that I don’t need to travel to go to the VMworld Europe. The only thing is to commute by train between home and Fira Barcelona (where VMworld is established). 
+It was Monday, November 5th, 2018....</p>
+  </section>
+  <footer class="entry-footer">3 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to Experience at VMworld 2018 Europe – Day 1" href="https://dangaiden.github.io/2018-11-19-vmworld-18-eu-day1/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://dangaiden.github.io/page/5/">« Prev Page</a>
-    <a class="next" href="https://dangaiden.github.io/page/7/">Next Page »</a>
   </nav>
 </footer>
     </main>

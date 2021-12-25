@@ -145,75 +145,73 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Cloning virtual machines in vSphere series – Part 3: Linked Clones</h2>
+    <h2>VM showing disk size is 0 MB</h2>
   </header>
   <section class="entry-content">
-    <p>Let’s start with part 3 in the cloning virtual machines in vSphere series, I am going to talk about another type of clones, linked clones!
-
- All articles regarding cloning virtual machines in vSphere series:
-Part 1: Types of clone
-Part 2: Full Clone
-Part 4: Instant Clones (not published yet) As said in previous articles, this series is only focused on VMware vSphere hence, VMware Horizon View is not contemplated (Linked clones are commonly used in that product)....</p>
+    <p>Some time ago, I was doing some clean up on VMs that have attached an image file, when I found a particular VM with strange behavior, each disk from the VM (local and RDM disks) was showing 0 MB of disk size:
+So, what I did? 
+First of all, I checked the guest OS and verified that it was up and running. So I was wondering how the guest OS seems correct but vSphere Web Client (I refreshed several times the browser) was showing no space in all disks and I verified in the Datastores that the ....</p>
   </section>
-  <footer class="entry-footer">April 16, 2019&nbsp;·&nbsp;6 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Cloning virtual machines in vSphere series – Part 3: Linked Clones" href="https://dangaiden.github.io/2019-04-16-cloning-virtual-machines-in-vsphere-series-part-3-linked-clones/"></a>
+  <footer class="entry-footer">October 3, 2018&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to VM showing disk size is 0 MB" href="https://dangaiden.github.io/2018-10-03-vm-showing-disk-size-is-0-mb/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Experience at a local VMUG – Barcelona VMUG</h2>
+    <h2>vSphere 6.0: New external PSC within existing SSO Domain</h2>
   </header>
   <section class="entry-content">
-    <p>I am going to talk about my experience at a local VMUG, in my case the VMUG from Barcelona (BCN). It was my first time at a local VMUG event and this is why I decided to share my thoughts about it.
-
-VMUG – What is? As you probably know VMUG stands for VMware User Group. Basically, you will find an international community of people where they share their experiences and discuss things related to VMware and other technologies....</p>
+    <p>Hello there!
+A quick post talking about a new external PSC in vSphere 6.0 environments.
+As you may now the vCenter product is composed by the PSC (Platform Services Controller) and the vCenter component.
+Services provided by each component: Platform Services Controller  &lt;td style=&#34;width: 50%; height: 10px; text-align: center;&#34;&gt; &lt;span style=&#34;font-family: Didact Gothic;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;background-color: #ffffff; color: #000000; font-size: 12pt;&#34;&gt;vCenter&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt; &lt;/td&gt;   vCenter Single Sign-On  &lt;td style=&#34;width: 50%; height: 27px; text-align: center;&#34;&gt; &lt;span style=&#34;font-size: 10pt; font-family: Didact Gothic;&#34;&gt;PostgreSQL or SQL Express (in 6....</p>
   </section>
-  <footer class="entry-footer">March 29, 2019&nbsp;·&nbsp;3 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Experience at a local VMUG – Barcelona VMUG" href="https://dangaiden.github.io/2019-03-29-experience-at-a-local-vmug-barcelona-vmug/"></a>
+  <footer class="entry-footer">August 20, 2018&nbsp;·&nbsp;3 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to vSphere 6.0: New external PSC within existing SSO Domain" href="https://dangaiden.github.io/2018-08-20-vsphere-6-0-new-external-psc-within-existing-sso-domain/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Cloning virtual machines in vSphere series – Part 2: Full clone</h2>
+    <h2>vSphere Network I/O Control: NIC Limit bandwidth</h2>
   </header>
   <section class="entry-content">
-    <p>Continuing with the cloning virtual machines in vSphere series, today I am going to write about the full clone, how it works and some useful information about it.
-
-So, let’s talk about clones… but just full clones.
-How does it work? As you probably know a full clone is an exact copy of a source VM, meaning that, everything from the parent VM is copied (VM settings, disks, files, etc....</p>
+    <p>Today let’s talk about vSphere Network I/O Control (NIOC) version 3 (vSphere 6.0), it’s a feature in the vSphere Distributed Switch that allows you to control granularly the output/egress bandwidth from a VM network adapter level. Besides there are other useful options within NIOC capabilities, today, I will focus only in the network adapter bandwidth limit for VMs.
+Prerequisites: Enable the feature in the dvSwitch (in our case the one with Data Network):Scenario:...</p>
   </section>
-  <footer class="entry-footer">March 6, 2019&nbsp;·&nbsp;4 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Cloning virtual machines in vSphere series – Part 2: Full clone" href="https://dangaiden.github.io/2019-03-06-cloning-virtual-machines-in-vsphere-part-2-full-clone/"></a>
+  <footer class="entry-footer">August 2, 2018&nbsp;·&nbsp;3 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to vSphere Network I/O Control: NIC Limit bandwidth" href="https://dangaiden.github.io/2018-08-03-vsphere-network-i-o-control-nic-limit-bandwidth/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Cloning virtual machines in vSphere series – Part 1: Types of clone</h2>
+    <h2>VMkernel: vMotion and Provisioning in dedicated TCP/IP stacks</h2>
   </header>
   <section class="entry-content">
-    <p>Most of you already know how to clone virtual machines within vSphere, and I mean cloning from the vSphere Web client within vCenter but, beyond that, there are other types of clones you can use in vCenter like, Linked Clones or Instant Clones (aka Project Fargo/VMfork)
-
-Due to the large content that can be discussed about each clone’s type, I decided to make a short series of posts talking about cloning VMs!...</p>
+    <p>It’s been a while since I posted something, but I was busy with university duties and to be honest I couldn’t spend time on publishing things but, here we are!
+First, I am currently studying for the VCAP6 – DCV Deployment Exam (3V0-623) and I am learning a lot with it, so maybe I will post more topics related with.
+Today I am going to talk about TCP/IP stacks in VMkernels (for vSphere 6)....</p>
   </section>
-  <footer class="entry-footer">February 25, 2019&nbsp;·&nbsp;4 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Cloning virtual machines in vSphere series – Part 1: Types of clone" href="https://dangaiden.github.io/2019-02-25-cloning-vms-in-vsphere-part-1/"></a>
+  <footer class="entry-footer">July 23, 2018&nbsp;·&nbsp;3 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to VMkernel: vMotion and Provisioning in dedicated TCP/IP stacks" href="https://dangaiden.github.io/2018-07-23-vmkernel-vmotion-and-provisioning-dedicated-tcp-ip-stacks/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Experience at VMworld 2018 Europe – Day 3 and Day 4</h2>
+    <h2>VCP6-DCV achieved!</h2>
   </header>
   <section class="entry-content">
-    <p>To finish these posts about VMworld 2018 Europe, I am going to summarize day 3 and day 4 together as day 4 is usually the less busy of all of them (people usually leave in the morning).
-On day 3 (Wednesday), I rest like 5-6 hours (pretty normal to me) after spending some part of the night at the Veeam Party. I made it to be at the enclosure at 8:30 AM because at 9:00 it will start the second general session....</p>
+    <p>I am going to start talking about the exam VCP6-DCV from VMware. The main resource you should use is the VMware site: http://bit.ly/1PLshWR
+There you can check a path to achieve VCP6-DCV (there is a newer version VCP6.5-DCV). I took path 1, as I wasn’t certified.
+
+Later, I took one official training course, VMware vSphere: Install, Configure, Manage [V6].
+Next, I passed the vSphere 6 Foundations Exam (2V0-620) months ago and finally I did VMware Certified Professional 6 – Data Center Virtualization Exam (2V0-621)....</p>
   </section>
-  <footer class="entry-footer">December 31, 2018&nbsp;·&nbsp;3 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Experience at VMworld 2018 Europe – Day 3 and Day 4" href="https://dangaiden.github.io/2018-12-31-vmworld-18-eu-day3-and-day4/"></a>
+  <footer class="entry-footer">September 3, 2017&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to VCP6-DCV achieved!" href="https://dangaiden.github.io/2017-09-03-vcp6-dcv-achieved/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://dangaiden.github.io/tags/vmware/page/2/">« Prev Page</a>
-    <a class="next" href="https://dangaiden.github.io/tags/vmware/page/4/">Next Page »</a>
   </nav>
 </footer>
     </main>
