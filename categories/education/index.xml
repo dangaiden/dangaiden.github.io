@@ -10,7 +10,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Jun 2021 13:37:03 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/categories/education/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Feb 2022 11:37:03 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/categories/education/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My CKA experience</title>
+      <link>https://dangaiden.github.io/cka-exam-experience/</link>
+      <pubDate>Mon, 14 Feb 2022 11:37:03 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/cka-exam-experience/</guid>
+      <description>My CKA experience TL;DR Last week I&amp;rsquo;ve taken the CKA exam and I have passed it!
+I have been studying for 2-3 weeks but I wanted to share what I have used to study although I already have experience with Kubernetes so your millage may vary.
+Anyway, I really like the practice exams as they really test you but practicing and understaing things instead of memorizing questions from a test.</description>
+    </item>
+    
     <item>
       <title>AZ-400 exam notes</title>
       <link>https://dangaiden.github.io/2021-06-08-az-400-exam-notes/</link>

@@ -163,6 +163,17 @@
     <h2></h2>
   </header>
   <section class="entry-content">
+    <p>Install Packages in all nodes Log into the Control Plane Node (Note: The following steps must be performed on all three nodes.). Create configuration file for containerd: cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/containerd.conf overlay br_netfilter EOF Load modules: sudo modprobe overlay sudo modprobe br_netfilter Set system configurations for Kubernetes networking: cat &lt;&lt;EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward = 1 net.bridge.bridge-nf-call-ip6tables = 1 EOF Apply new settings: sudo sysctl --system Install containerd: sudo apt-get update &amp;&amp; sudo apt-get install -y containerd Create default configuration file for containerd: sudo mkdir -p /etc/containerd Generate default containerd configuration and save to the newly created default file: sudo containerd config default | sudo tee /etc/containerd/config....</p>
+  </section>
+  <footer class="entry-footer">2 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/kubernetes-cluster-installation-config/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2></h2>
+  </header>
+  <section class="entry-content">
     <p>Quick guide to install OS within VMs  3 Virtual machines configured and ready  Here is a quick “guide” I made for myself to create a VM, configure RHEL and have ready 3 VMs with the OS configured to start playing with Kubernetes.
 Link to Insta</p>
   </section>
