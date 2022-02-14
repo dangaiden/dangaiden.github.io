@@ -13,7 +13,7 @@ The server is running low on heap memory (&gt;90% utilized.)
 So it was time to solve those random alerts about memory utilization.">
 <meta name="author" content="itgaiden">
 <link rel="canonical" href="https://dangaiden.github.io/2020-08-31-increasing-the-heap-memory-on-vcsa-6-7-services/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://dangaiden.github.io/favicon.ico">
@@ -24,7 +24,43 @@ So it was time to solve those random alerts about memory utilization.">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.92.2" />
-<meta property="og:title" content="Increasing the heap memory on vCSA 6.7 services" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Increasing the heap memory on vCSA 6.7 services" />
 <meta property="og:description" content="For some reason, our monitoring alerted that the service “vsphere-ui” from the vCSA it was having some problems randomly. From the user perspective only we noticed some slowness when navigating within the HTML5 client.
 I took a quick view of the VAMI I saw this message from the VMware vSphere Client service:
 The server is running low on heap memory (&gt;90% utilized.)
@@ -110,43 +146,6 @@ So it was time to solve those random alerts about memory utilization."/>
     }
 
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
 
 <header class="header">
     <nav class="nav">
@@ -212,13 +211,15 @@ So it was time to solve those random alerts about memory utilization."/>
     <h1 class="post-title">
       Increasing the heap memory on vCSA 6.7 services
     </h1>
-    <div class="post-meta">August 31, 2020&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden
+    <div class="post-meta"><span title='2020-08-31 09:00:11 +0000 +0000'>August 31, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden
+
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
-            <div class="details">Table of Contents</div>
+            <span class="details">Table of Contents</span>
         </summary>
+
         <div class="inner"><ul>
                 <li>
                     <a href="#span-stylefont-family-nunito--font-size-32pxlet8217s-work-a-bit8230span" aria-label="Let’s work a bit…"><span style="font-family: Nunito;  font-size: 32px;">Let’s work a bit…</span></a>
@@ -255,6 +256,7 @@ So it was time to solve those random alerts about memory utilization."/>
 
 
   </div>
+
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://dangaiden.github.io/tags/vcsa/">vcsa</a></li>
@@ -262,7 +264,8 @@ So it was time to solve those random alerts about memory utilization."/>
   </footer>
 </article>
     </main>
-    <footer class="footer">
+    
+<footer class="footer">
     <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
     <span>
         Powered by
@@ -270,19 +273,19 @@ So it was time to solve those random alerts about memory utilization."/>
         <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
-    <button class="top-link" id="top-link" type="button" accesskey="g">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-            <path d="M12 6H0l6-6z" />
-        </svg>
-    </button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
 </a>
 
 <script>
     let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
