@@ -22,7 +22,7 @@
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.92.2" />
 <meta property="og:title" content="Troubleshooting tips for beginners in Windows Server" />
 <meta property="og:description" content="I was thinking these days what I wish I have known when I started working with Windows servers, some basic (and some not) commands that can help me to troubleshoot servers without requiring additional software.
 
@@ -264,7 +264,7 @@
 <p> </p>
 <h2 id="span-stylemmc-microsoft-management-consolespan"><strong><span style="">MMC (Microsoft Management Console)</span></strong><a hidden class="anchor" aria-hidden="true" href="#span-stylemmc-microsoft-management-consolespan">#</a></h2>
 <p><span >MMC is everywhere, when you open the Event Viewer it is indeed an MMC that has the Snap-in «Event Viewer». Here is how would you do it manually instead of opening the Event Viewer «console»:<br /> </span></p>
-<p><img loading="lazy" class="alignnone wp-image-1475 size-large" src="/wp-content/uploads/2020/02/evntvwr-1024x721.png" alt="event viewer" width="656" height="462" srcset="/wp-content/uploads/2020/02/evntvwr-1024x721.png 1024w, /wp-content/uploads/2020/02/evntvwr-300x211.png 300w, /wp-content/uploads/2020/02/evntvwr-768x541.png 768w, /wp-content/uploads/2020/02/evntvwr.png 1197w" sizes="(max-width: 656px) 100vw, 656px" /></p>
+<img loading="lazy" class="alignnone wp-image-1475 size-large" src="/wp-content/uploads/2020/02/evntvwr-1024x721.png" alt="event viewer" width="656" height="462" srcset="/wp-content/uploads/2020/02/evntvwr-1024x721.png 1024w, /wp-content/uploads/2020/02/evntvwr-300x211.png 300w, /wp-content/uploads/2020/02/evntvwr-768x541.png 768w, /wp-content/uploads/2020/02/evntvwr.png 1197w" sizes="(max-width: 656px) 100vw, 656px" /> 
 <p><span >You should try to master the MMC as it provides you the best way to manage different aspects and features from a Windows server (remote or local).</span></p>
 <p> </p>
 <p><span >By typing «<span style="font-family: courier new, courier;">mmc</span>» in Run and pressing Enter», an empty console (MMC) will be open.</span><img loading="lazy" class="alignnone wp-image-1507 " src="/wp-content/uploads/2020/02/mmc_console_empty.png" alt="mmc_console_empty" width="590" height="288" srcset="/wp-content/uploads/2020/02/mmc_console_empty.png 877w, /wp-content/uploads/2020/02/mmc_console_empty-300x146.png 300w, /wp-content/uploads/2020/02/mmc_console_empty-768x375.png 768w" sizes="(max-width: 590px) 100vw, 590px" /></p>
@@ -276,7 +276,7 @@
 <p><span >And finally, here is the final screenshot after adding the<em> Certificates</em> snap-in from my computer:</span><img loading="lazy" class="alignnone wp-image-1532 size-medium_large" src="/wp-content/uploads/2020/03/Console-Root_Certificates-Local-Computer-768x223.png" alt="" width="656" height="190" srcset="/wp-content/uploads/2020/03/Console-Root_Certificates-Local-Computer-768x223.png 768w, /wp-content/uploads/2020/03/Console-Root_Certificates-Local-Computer-300x87.png 300w, /wp-content/uploads/2020/03/Console-Root_Certificates-Local-Computer-1024x297.png 1024w, /wp-content/uploads/2020/03/Console-Root_Certificates-Local-Computer.png 1300w" sizes="(max-width: 656px) 100vw, 656px" /></p>
 <p> </p>
 <p><strong><span style="font-size: 16px;"><span style="font-family: Nunito;">Now, imagine if you do the same with the <em>Services</em> snap-in and select <em>Another Computer</em>, you will be able to manage the services from a remote computer by just doing that and without connecting to the server using RDP!</span></span></strong></p>
-<p><img loading="lazy" class="alignnone wp-image-1523" src="/wp-content/uploads/2020/02/fallout-hacking-300x300.jpg" alt="" width="335" height="335" srcset="/wp-content/uploads/2020/02/fallout-hacking-300x300.jpg 300w, /wp-content/uploads/2020/02/fallout-hacking-150x150.jpg 150w, /wp-content/uploads/2020/02/fallout-hacking.jpg 620w" sizes="(max-width: 335px) 100vw, 335px" /></p>
+<img loading="lazy" class="alignnone wp-image-1523" src="/wp-content/uploads/2020/02/fallout-hacking-300x300.jpg" alt="" width="335" height="335" srcset="/wp-content/uploads/2020/02/fallout-hacking-300x300.jpg 300w, /wp-content/uploads/2020/02/fallout-hacking-150x150.jpg 150w, /wp-content/uploads/2020/02/fallout-hacking.jpg 620w" sizes="(max-width: 335px) 100vw, 335px" /> 
 <p> </p>
 <h2 id="strongspan-stylefont-family-nunitocheck-memory-resources-ramspanstrongspan">&gt;<strong><span style="font-family: Nunito;">Check memory resources (RAM)</span></strong></span><a hidden class="anchor" aria-hidden="true" href="#strongspan-stylefont-family-nunitocheck-memory-resources-ramspanstrongspan">#</a></h2>
 <h4 id="span-stylespan-stylecolor-808080cmd-command-promptspanbr--span"><strong><span style=""><span style="color: #808080;">CMD (command prompt)</span><br /> </span></strong><a hidden class="anchor" aria-hidden="true" href="#span-stylespan-stylecolor-808080cmd-command-promptspanbr--span">#</a></h4>
@@ -284,7 +284,7 @@
 <p><span style="font-size: 16px; font-family: Nunito;">There are some useful commands to manage a remote Windows server. The first command I want to show you is the «<strong><em>tasklist</em></strong>» command, which is the equivalent of the «Task Manager» that you probably know.</span></p>
 <p><span style="font-size: 16px; font-family: Nunito;">It can become very handy to check which processes are consuming more <strong>memory resources</strong>:</span></p>
 <p>[powershell]tasklist /s <server> | sort /R /+58[/powershell]</p>
-<p><img loading="lazy" class="alignnone wp-image-1476 size-full" src="/wp-content/uploads/2020/02/tasklist_sort.png" alt="tasklist command" width="850" height="521" srcset="/wp-content/uploads/2020/02/tasklist_sort.png 850w, /wp-content/uploads/2020/02/tasklist_sort-300x184.png 300w, /wp-content/uploads/2020/02/tasklist_sort-768x471.png 768w" sizes="(max-width: 850px) 100vw, 850px" /></p>
+<img loading="lazy" class="alignnone wp-image-1476 size-full" src="/wp-content/uploads/2020/02/tasklist_sort.png" alt="tasklist command" width="850" height="521" srcset="/wp-content/uploads/2020/02/tasklist_sort.png 850w, /wp-content/uploads/2020/02/tasklist_sort-300x184.png 300w, /wp-content/uploads/2020/02/tasklist_sort-768x471.png 768w" sizes="(max-width: 850px) 100vw, 850px" /> 
 <p><span >The previous command is just for Memory usage (RAM) but it won’t work for CPU so, how can I check which process is <strong>consuming more CPU resources</strong>? </span></p>
 <p><span ><span style="text-decoration: underline;">Check the next section!</span><br /> </span></p>
 <p> </p>
@@ -294,10 +294,10 @@
 <p><span >Anyway,  this is another command that can be used within CMD, the command is <strong>wmic</strong>, here you have some examples:</span></p>
 <p><span >To get the CPU usage of the server:<br /> </span></p>
 <p>[powershell] wmic cpu get loadpercentage [/powershell]</p>
-<p><img loading="lazy" class="alignnone wp-image-1521 size-full" src="/wp-content/uploads/2020/02/wmic_cpugetloadpercentage.png" alt="" width="382" height="101" srcset="/wp-content/uploads/2020/02/wmic_cpugetloadpercentage.png 382w, /wp-content/uploads/2020/02/wmic_cpugetloadpercentage-300x79.png 300w" sizes="(max-width: 382px) 100vw, 382px" /></p>
+<img loading="lazy" class="alignnone wp-image-1521 size-full" src="/wp-content/uploads/2020/02/wmic_cpugetloadpercentage.png" alt="" width="382" height="101" srcset="/wp-content/uploads/2020/02/wmic_cpugetloadpercentage.png 382w, /wp-content/uploads/2020/02/wmic_cpugetloadpercentage-300x79.png 300w" sizes="(max-width: 382px) 100vw, 382px" /> 
 <p><span >Or the processes that are consuming a particular percentage (70% in this example):</span></p>
 <p>[powershell] wmic path win32_perfformatteddata_perfproc_process where (PercentProcessorTime ^&gt; 70) get Name, Caption, PercentProcessorTime, IDProcess /format:list [/powershell]</p>
-<p><img loading="lazy" class="alignnone wp-image-1522 size-full" src="/wp-content/uploads/2020/02/wmic_get70percent.png" alt="" width="861" height="280" srcset="/wp-content/uploads/2020/02/wmic_get70percent.png 861w, /wp-content/uploads/2020/02/wmic_get70percent-300x98.png 300w, /wp-content/uploads/2020/02/wmic_get70percent-768x250.png 768w" sizes="(max-width: 861px) 100vw, 861px" /></p>
+<img loading="lazy" class="alignnone wp-image-1522 size-full" src="/wp-content/uploads/2020/02/wmic_get70percent.png" alt="" width="861" height="280" srcset="/wp-content/uploads/2020/02/wmic_get70percent.png 861w, /wp-content/uploads/2020/02/wmic_get70percent-300x98.png 300w, /wp-content/uploads/2020/02/wmic_get70percent-768x250.png 768w" sizes="(max-width: 861px) 100vw, 861px" /> 
 <p><span >As you can see in this output, it says «PercentProcessorTime=100», which means that a process (mcshield) consumed 100% of his time when we asked for the processes above 50% of the server.</span></p>
 <p><span ><strong>So in this case, the process «mcshield» (which is related to McAfee) is consuming more than 50% of the CPU.</strong></span></p>
 <p><span >Obviously de «_Total» process mustn’t take into account and it’s in the output because I didn’t want to make it larger (although is a bit large).</span></p>
@@ -309,8 +309,7 @@
 <p> </p>
 <p> </p>
 <p><span >I hope these tips helped you or at least make you remember how to do it, see you next time.</span></p>
-<p><img loading="lazy" class="alignnone wp-image-1471 size-medium" src="/wp-content/uploads/2020/02/vault_boy_approval-204x300.png" alt="" width="204" height="300" srcset="/wp-content/uploads/2020/02/vault_boy_approval-204x300.png 204w, /wp-content/uploads/2020/02/vault_boy_approval-697x1024.png 697w, /wp-content/uploads/2020/02/vault_boy_approval-768x1128.png 768w, /wp-content/uploads/2020/02/vault_boy_approval-1046x1536.png 1046w, /wp-content/uploads/2020/02/vault_boy_approval-1394x2048.png 1394w, /wp-content/uploads/2020/02/vault_boy_approval-1568x2303.png 1568w, /wp-content/uploads/2020/02/vault_boy_approval.png 1600w" sizes="(max-width: 204px) 100vw, 204px" /></p>
-
+<img loading="lazy" class="alignnone wp-image-1471 size-medium" src="/wp-content/uploads/2020/02/vault_boy_approval-204x300.png" alt="" width="204" height="300" srcset="/wp-content/uploads/2020/02/vault_boy_approval-204x300.png 204w, /wp-content/uploads/2020/02/vault_boy_approval-697x1024.png 697w, /wp-content/uploads/2020/02/vault_boy_approval-768x1128.png 768w, /wp-content/uploads/2020/02/vault_boy_approval-1046x1536.png 1046w, /wp-content/uploads/2020/02/vault_boy_approval-1394x2048.png 1394w, /wp-content/uploads/2020/02/vault_boy_approval-1568x2303.png 1568w, /wp-content/uploads/2020/02/vault_boy_approval.png 1600w" sizes="(max-width: 204px) 100vw, 204px" />
 
   </div>
   <footer class="post-footer">
@@ -323,7 +322,7 @@
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

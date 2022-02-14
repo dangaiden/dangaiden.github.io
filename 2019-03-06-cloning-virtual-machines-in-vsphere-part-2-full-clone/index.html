@@ -23,7 +23,7 @@ How does it work? As you probably know a full clone is an exact copy of a source
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.92.2" />
 <meta property="og:title" content="Cloning virtual machines in vSphere series – Part 2: Full clone" />
 <meta property="og:description" content="Continuing with the cloning virtual machines in vSphere series, today I am going to write about the full clone, how it works and some useful information about it.
 
@@ -245,11 +245,11 @@ How does it work? As you probably know a full clone is an exact copy of a source
 
   <div class="post-content"><p><span style="">Continuing with the <strong>cloning virtual machines in vSphere</strong> series, today I am going to write about the full clone, how it works and some useful information about it.<br /> </span></p>
 <p><span style="">So, let’s talk about clones… but just full clones.</span></p>
-<p><img loading="lazy" class="alignnone wp-image-649 " src="/wp-content/uploads/2019/03/2clones_matrix_v2-1024x576.jpg" alt="clones_thematrix" width="636" height="358" srcset="/wp-content/uploads/2019/03/2clones_matrix_v2-1024x576.jpg 1024w, /wp-content/uploads/2019/03/2clones_matrix_v2-300x169.jpg 300w, /wp-content/uploads/2019/03/2clones_matrix_v2-768x432.jpg 768w, /wp-content/uploads/2019/03/2clones_matrix_v2-1536x864.jpg 1536w, /wp-content/uploads/2019/03/2clones_matrix_v2-1568x882.jpg 1568w, /wp-content/uploads/2019/03/2clones_matrix_v2.jpg 1920w" sizes="(max-width: 636px) 100vw, 636px" /></p>
+<img loading="lazy" class="alignnone wp-image-649 " src="/wp-content/uploads/2019/03/2clones_matrix_v2-1024x576.jpg" alt="clones_thematrix" width="636" height="358" srcset="/wp-content/uploads/2019/03/2clones_matrix_v2-1024x576.jpg 1024w, /wp-content/uploads/2019/03/2clones_matrix_v2-300x169.jpg 300w, /wp-content/uploads/2019/03/2clones_matrix_v2-768x432.jpg 768w, /wp-content/uploads/2019/03/2clones_matrix_v2-1536x864.jpg 1536w, /wp-content/uploads/2019/03/2clones_matrix_v2-1568x882.jpg 1568w, /wp-content/uploads/2019/03/2clones_matrix_v2.jpg 1920w" sizes="(max-width: 636px) 100vw, 636px" /> 
 <h3 id="span-stylefont-size-24px-font-family-didact-gothichow-does-it-workspan"><strong><span style="font-size: 24px; font-family: Didact Gothic;">How does it work?</span></strong><a hidden class="anchor" aria-hidden="true" href="#span-stylefont-size-24px-font-family-didact-gothichow-does-it-workspan">#</a></h3>
 <p><span ><span >As you probably know a <strong>f</strong></span><strong><span >ull c</span>lone is an exact copy of a source VM</strong>, meaning that, everything from the parent VM is copied (VM settings, disks, files, etc.).</span></p>
 <p><span >This action can be performed if the <strong>parent VM is powered off or powered on</strong> and, if it has snapshots it will consolidate them once the clone is done.</span></p>
-<p><img loading="lazy" class="alignnone wp-image-647" src="/wp-content/uploads/2019/03/FullClone_process-768x739.png" alt="Fullclone_process" width="585" height="563" srcset="/wp-content/uploads/2019/03/FullClone_process-768x739.png 768w, /wp-content/uploads/2019/03/FullClone_process-300x289.png 300w, /wp-content/uploads/2019/03/FullClone_process.png 1001w" sizes="(max-width: 585px) 100vw, 585px" /></p>
+<img loading="lazy" class="alignnone wp-image-647" src="/wp-content/uploads/2019/03/FullClone_process-768x739.png" alt="Fullclone_process" width="585" height="563" srcset="/wp-content/uploads/2019/03/FullClone_process-768x739.png 768w, /wp-content/uploads/2019/03/FullClone_process-300x289.png 300w, /wp-content/uploads/2019/03/FullClone_process.png 1001w" sizes="(max-width: 585px) 100vw, 585px" /> 
 <p><span style="">When you clone a VM be aware that, all data will be identical so, if you power on the clone without performing any customization, probably you will have conflicts with IPs, MAC addresses, SIDs (Windows), etc.</span></p>
 <p><span ><span >The great thing about a full clone is that, after the cloning operations are performed the clone will be an independent copy of a virtual machine that doesn’t share anything with the parent virtual machine (we are talking about from a </span></span><span >compute<span > and storage perspective within vSphere).</span></span></p>
 <h3 id="span-strongways-to-do-itstrongspan"><span ><strong>Ways to do it</strong></span><a hidden class="anchor" aria-hidden="true" href="#span-strongways-to-do-itstrongspan">#</a></h3>
@@ -258,7 +258,7 @@ How does it work? As you probably know a full clone is an exact copy of a source
 <p><span >Let’s continue with the usual ways:</span></p>
 <h4 id="span-vsphere-web-clientspan"><span >vSphere Web Client</span><a hidden class="anchor" aria-hidden="true" href="#span-vsphere-web-clientspan">#</a></h4>
 <p><span >You can do it through vSphere Web Client, as simple as, right-click a VM -&gt; «Clone to Virtual Machine…» :</span></p>
-<p><img loading="lazy" class="alignnone wp-image-638 " src="/wp-content/uploads/2019/03/vSphereWebClient_clone.png" alt="vSphereWebClient_clone" width="637" height="309" srcset="/wp-content/uploads/2019/03/vSphereWebClient_clone.png 881w, /wp-content/uploads/2019/03/vSphereWebClient_clone-300x145.png 300w, /wp-content/uploads/2019/03/vSphereWebClient_clone-768x372.png 768w" sizes="(max-width: 637px) 100vw, 637px" /></p>
+<img loading="lazy" class="alignnone wp-image-638 " src="/wp-content/uploads/2019/03/vSphereWebClient_clone.png" alt="vSphereWebClient_clone" width="637" height="309" srcset="/wp-content/uploads/2019/03/vSphereWebClient_clone.png 881w, /wp-content/uploads/2019/03/vSphereWebClient_clone-300x145.png 300w, /wp-content/uploads/2019/03/vSphereWebClient_clone-768x372.png 768w" sizes="(max-width: 637px) 100vw, 637px" /> 
 <p><span >Once it finishes, it takes some time (depends on the storage that the source VM has allocated) but in the end, you will have your new clone.</span></p>
 <p><span >Likely you are more familiar about deploying templates…</span></p>
 <p><span >Deploying a template is the same as cloning but. aside from copying the same data from the parent virtual machine, vSphere lets you customize the deployed VM for creating many clones and with different configurations as you wish.</span></p>
@@ -307,7 +307,7 @@ How does it work? As you probably know a full clone is an exact copy of a source
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

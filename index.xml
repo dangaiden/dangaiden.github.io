@@ -23,6 +23,17 @@ Instead of a consultancy, I am working in an end company, meaning, not working f
     </item>
     
     <item>
+      <title>New adventure ahead</title>
+      <link>https://dangaiden.github.io/new-adventure/</link>
+      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/new-adventure/</guid>
+      <description>New adventure ahead! Yes, it happened, in the past week&amp;hellip; I have moved to a new company!
+After 2 months of challenges, interviews and so (that&amp;rsquo;s one of the main reasons that I haven&amp;rsquo;t published anything), I started in a new place which is completely different of where I&amp;rsquo;ve been in the past.
+Instead of a consultancy, I am working in an end company, meaning, no working for different customers but for the same one, the company it self!</description>
+    </item>
+    
+    <item>
       <title>Kubernetes the hard way but on-prem - part 1 (Discontinued)</title>
       <link>https://dangaiden.github.io/kubernetes-the-hard-way-but-on-prem-part-1/</link>
       <pubDate>Thu, 12 Aug 2021 11:47:51 +0000</pubDate>
@@ -550,16 +561,8 @@ Next, I passed the vSphere 6 Foundations Exam (2V0-620) months ago and finally I
       
       <guid>https://dangaiden.github.io/post/2021/k8s-etcd_restore/</guid>
       <description>Backup and restore etcd data. Look up the value for the key cluster.name in the etcd cluster:
-ETCDCTL_API=3 etcdctl get cluster.name
-&amp;ndash;endpoints=https://10.0.1.101:2379
-&amp;ndash;cacert=/home/cloud_user/etcd-certs/etcd-ca.pem
-&amp;ndash;cert=/home/cloud_user/etcd-certs/etcd-server.crt
-&amp;ndash;key=/home/cloud_user/etcd-certs/etcd-server.key
-The returned value should be beebox.  Back up etcd using etcdctl and the provided etcd certificates: ETCDCTL_API=3 etcdctl snapshot save /home/cloud_user/etcd_backup.db
-&amp;ndash;endpoints=https://10.0.1.101:2379
-&amp;ndash;cacert=/home/cloud_user/etcd-certs/etcd-ca.pem
-&amp;ndash;cert=/home/cloud_user/etcd-certs/etcd-server.crt
-&amp;ndash;key=/home/cloud_user/etcd-certs/etcd-server.key
+ETCDCTL_API=3 etcdctl get cluster.name &amp;ndash;endpoints=https://10.0.1.101:2379 &amp;ndash;cacert=/home/cloud_user/etcd-certs/etcd-ca.pem &amp;ndash;cert=/home/cloud_user/etcd-certs/etcd-server.crt &amp;ndash;key=/home/cloud_user/etcd-certs/etcd-server.key
+The returned value should be beebox.  Back up etcd using etcdctl and the provided etcd certificates: ETCDCTL_API=3 etcdctl snapshot save /home/cloud_user/etcd_backup.db &amp;ndash;endpoints=https://10.0.1.101:2379 &amp;ndash;cacert=/home/cloud_user/etcd-certs/etcd-ca.pem &amp;ndash;cert=/home/cloud_user/etcd-certs/etcd-server.crt &amp;ndash;key=/home/cloud_user/etcd-certs/etcd-server.key
 Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm -rf /var/lib/etcd  Restore the etcd Data from the Backup Restore the etcd data from the backup (this command spins up a temporary etcd cluster, saving the data from the backup file to a new data directory in the same location where the previous data directory was): sudo ETCDCTL_API=3 etcdctl snapshot restore /home/cloud_user/etcd_backup.</description>
     </item>
     
@@ -569,13 +572,12 @@ Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dangaiden.github.io/post/2021/k8scluster-upgrade_version/</guid>
-      <description>Upgrade the Control Plane  Upgrade kubeadm:  [cloud_user@k8s-control]$ sudo apt-get update &amp;amp;&amp;amp;
-sudo apt-get install -y &amp;ndash;allow-change-held-packages kubeadm=1.21.1-00
+      <description>Upgrade the Control Plane  Upgrade kubeadm:  [cloud_user@k8s-control]$ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y &amp;ndash;allow-change-held-packages kubeadm=1.21.1-00
  Make sure it upgraded correctly:  [cloud_user@k8s-control]$ kubeadm version
  Drain the control plane node:  [cloud_user@k8s-control]$ kubectl drain k8s-control &amp;ndash;ignore-daemonsets
  Plan the upgrade:  [cloud_user@k8s-control]$ sudo kubeadm upgrade plan v1.21.1
  Upgrade the control plane components:  [cloud_user@k8s-control]$ sudo kubeadm upgrade apply v1.21.1
- Upgrade kubelet and kubectl on the control plane node:  [cloud_user@k8s-control]$ sudo apt-get update &amp;amp;&amp;amp;</description>
+ Upgrade kubelet and kubectl on the control plane node:  [cloud_user@k8s-control]$ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y &amp;ndash;allow-change-held-packages kubelet=1.</description>
     </item>
     
     <item>

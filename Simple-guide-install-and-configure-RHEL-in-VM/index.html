@@ -20,7 +20,7 @@
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.92.2" />
 <meta property="og:title" content="Simple-guide-install-and-configure-RHEL-in-VM" />
 <meta property="og:description" content="Quick How-to with RHEL  Create an account (it&rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used &ldquo;Somred1&rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden &amp; passwd dangaiden   4." />
 <meta property="og:type" content="article" />
@@ -242,7 +242,7 @@ I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space .</li>
 <p><code>$ subscription-manager register --username=&lt;username&gt; --password=&lt;password&gt;</code></p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
 privileges, but more information is needed in order to do so.
 Authenticating as &#34;root&#34;
 Password:
@@ -255,7 +255,7 @@ The registered system name is: Somred1
 <p><code>$ subscription-manager attach --auto</code></p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
 privileges, but more information is needed in order to do so.
 Authenticating as &#34;root&#34;
 Password:
@@ -268,7 +268,7 @@ Status:       Subscribed
 <p><code>$ subscription-manager status</code></p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
 privileges, but more information is needed in order to do so.
 Authenticating as &#34;root&#34;
 Password:
@@ -284,7 +284,7 @@ System Purpose Status: Not Specified
 <p><code>$ sudo yum repolist</code></p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">[sudo] password for dangaiden:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">[sudo] password for dangaiden:
 Updating Subscription Management repositories.
 repo id                                                  repo name
 rhel-8-for-x86_64-appstream-rpms                         Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
@@ -296,7 +296,7 @@ rhel-8-for-x86_64-baseos-rpms                            Red Hat Enterprise Linu
 <p><code>$ sudo yum install tree</code></p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">[sudo] password for dangaiden:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">[sudo] password for dangaiden:
 Updating Subscription Management repositories.
 Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)                                                     6.4 MB/s |  34 MB     00:05
 Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)                                                  5.4 MB/s |  31 MB     00:05
@@ -357,7 +357,7 @@ Complete!
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

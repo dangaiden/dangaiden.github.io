@@ -25,7 +25,7 @@ Part 4: Instant Clones (not published yet) As said in previous articles, this se
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.92.2" />
 <meta property="og:title" content="Cloning virtual machines in vSphere series – Part 3: Linked Clones" />
 <meta property="og:description" content="Let’s start with part 3 in the cloning virtual machines in vSphere series, I am going to talk about another type of clones, linked clones!
 
@@ -262,7 +262,7 @@ Part 4: Instant Clones (not published yet) As said in previous articles, this se
 <p> </p>
 <p><span >Linked clones are the same! A <strong>linked clone</strong> is a type of clone (a copy of a virtual machine) where the parent VM <strong>shares virtual disks</strong> with their clones.</span></p>
 <p><span >The resulting linked clone will be <strong>created from the parent’s VM snapshot</strong> and because of being a <a href="https://pubs.vmware.com/vsphere-4-esx-vcenter/index.jsp?topic=/com.vmware.vsphere.vmadmin.doc_41/vsp_vm_guide/managing_virtual_machines/c_about_snapshots.html">snapshot</a>, it will have the same state that was the snapshot was taken.</span></p>
-<p><img loading="lazy" class="alignnone wp-image-605 size-medium_large" src="/wp-content/uploads/2019/02/LinkedClone-768x730.png" alt="LinkedClone" width="656" height="624" srcset="/wp-content/uploads/2019/02/LinkedClone-768x730.png 768w, /wp-content/uploads/2019/02/LinkedClone-300x285.png 300w, /wp-content/uploads/2019/02/LinkedClone.png 961w" sizes="(max-width: 656px) 100vw, 656px" /></p>
+<img loading="lazy" class="alignnone wp-image-605 size-medium_large" src="/wp-content/uploads/2019/02/LinkedClone-768x730.png" alt="LinkedClone" width="656" height="624" srcset="/wp-content/uploads/2019/02/LinkedClone-768x730.png 768w, /wp-content/uploads/2019/02/LinkedClone-300x285.png 300w, /wp-content/uploads/2019/02/LinkedClone.png 961w" sizes="(max-width: 656px) 100vw, 656px" /> 
 <p><span style="">When the linked clone is created, it <strong>shares his own virtual disk</strong> (.vmdk file) with the <strong>snapshot from the parent VM</strong>, this leads to some unique features:</span></p>
 <ul>
 <li><span style="font-family: Didact Gothic; font-size: 16px;">The clone will be <strong>dependent </strong>from<strong> the parent VM</strong> because they are sharing their virtual disks. If you delete the parent’s VM snapshot, it will corrupt the clone’s virtual disk.</span></li>
@@ -292,7 +292,7 @@ Part 4: Instant Clones (not published yet) As said in previous articles, this se
 <span style="font-family: Didact Gothic; font-size: 16px;">–<strong> Disk allocation:</strong> Around 35 GB summing both disks.</span><br>
 <span style="font-family: Didact Gothic; font-size: 16px;">– <strong>Domain:</strong> vmug.bcn</span></p>
 <p><span style="font-family: Didact Gothic; font-size: 16px;">Inside the Guest OS:</span></p>
-<p><img loading="lazy" class="alignnone size-medium_large wp-image-814" src="/wp-content/uploads/2019/04/SQLMasterVM-768x662.jpg" alt="" width="656" height="565" srcset="/wp-content/uploads/2019/04/SQLMasterVM-768x662.jpg 768w, /wp-content/uploads/2019/04/SQLMasterVM-300x258.jpg 300w, /wp-content/uploads/2019/04/SQLMasterVM-1024x882.jpg 1024w, /wp-content/uploads/2019/04/SQLMasterVM.jpg 1112w" sizes="(max-width: 656px) 100vw, 656px" /></p>
+<img loading="lazy" class="alignnone size-medium_large wp-image-814" src="/wp-content/uploads/2019/04/SQLMasterVM-768x662.jpg" alt="" width="656" height="565" srcset="/wp-content/uploads/2019/04/SQLMasterVM-768x662.jpg 768w, /wp-content/uploads/2019/04/SQLMasterVM-300x258.jpg 300w, /wp-content/uploads/2019/04/SQLMasterVM-1024x882.jpg 1024w, /wp-content/uploads/2019/04/SQLMasterVM.jpg 1112w" sizes="(max-width: 656px) 100vw, 656px" /> 
 <p> </p>
 <p><span style="font-family: Didact Gothic; font-size: 16px;">Space allocated in DS:</span></p>
 <p><span style="font-family: Didact Gothic;"><img loading="lazy" class="alignnone wp-image-742 size-large" src="/wp-content/uploads/2019/03/SQLMasterVM_disksinDS-1024x144.png" alt="" width="656" height="92" srcset="/wp-content/uploads/2019/03/SQLMasterVM_disksinDS-1024x144.png 1024w, /wp-content/uploads/2019/03/SQLMasterVM_disksinDS-300x42.png 300w, /wp-content/uploads/2019/03/SQLMasterVM_disksinDS-768x108.png 768w, /wp-content/uploads/2019/03/SQLMasterVM_disksinDS.png 1315w" sizes="(max-width: 656px) 100vw, 656px" /></span></p>
@@ -387,7 +387,7 @@ Part 4: Instant Clones (not published yet) As said in previous articles, this se
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
