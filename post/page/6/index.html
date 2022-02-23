@@ -159,6 +159,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Azure – Backup and restore SQL DB using SSMS
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>A quick post talking about how to backup and restore a SQL database on Azure using SQL Server Management Studio (SSMS).
+First, you will need to install SSMS. You can download it here: https://go.microsoft.com/fwlink/?linkid=875802
+Once installed, in order to access the database, you will need the server name where is installed. So, you will have to check the Server name in Azure Portal (you can also do it by Powershell of course):...</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-09-14 08:23:47 +0000 +0000'>September 14, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to Azure – Backup and restore SQL DB using SSMS" href="https://dangaiden.github.io/2018-09-14-azure-backup-and-restore-sql-db-using-ssms/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>vSphere 6.0: New external PSC within existing SSO Domain
     </h2>
   </header>
@@ -260,23 +274,6 @@ Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm 
   </section>
   <footer class="entry-footer">1 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/k8s-etcd_restore/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Upgrade the Control Plane  Upgrade kubeadm:  [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y –allow-change-held-packages kubeadm=1.21.1-00
- Make sure it upgraded correctly:  [cloud_user@k8s-control]$ kubeadm version
- Drain the control plane node:  [cloud_user@k8s-control]$ kubectl drain k8s-control –ignore-daemonsets
- Plan the upgrade:  [cloud_user@k8s-control]$ sudo kubeadm upgrade plan v1.21.1
- Upgrade the control plane components:  [cloud_user@k8s-control]$ sudo kubeadm upgrade apply v1.21.1
- Upgrade kubelet and kubectl on the control plane node:  [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y –allow-change-held-packages kubelet=1....</p>
-  </section>
-  <footer class="entry-footer">2 min</footer>
-  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/k8scluster-upgrade_version/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
