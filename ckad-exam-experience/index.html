@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My CKAD experience | Dan Belmonte</title>
+<meta name="keywords" content="kubernetes, certification, devops" />
+<meta name="description" content="CKAD exam As I already expected, it was easier than the CKA.
+How much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the killer.sh test and It was enough but your mileage may vary.
+This post will be way shorter than the other one I published as the topics for the exam are &ldquo;similar&rdquo; and most of the stuff is relevant to this exam.">
+<meta name="author" content="itgaiden">
+<link rel="canonical" href="https://dangaiden.github.io/ckad-exam-experience/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dangaiden.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dangaiden.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dangaiden.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dangaiden.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.92.2" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="My CKAD experience" />
+<meta property="og:description" content="CKAD exam As I already expected, it was easier than the CKA.
+How much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the killer.sh test and It was enough but your mileage may vary.
+This post will be way shorter than the other one I published as the topics for the exam are &ldquo;similar&rdquo; and most of the stuff is relevant to this exam." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dangaiden.github.io/ckad-exam-experience/" /><meta property="og:image" content="https://dangaiden.github.io/47"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-11T11:37:03&#43;00:00" />
+<meta property="article:modified_time" content="2022-03-11T11:37:03&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dangaiden.github.io/47"/>
+
+<meta name="twitter:title" content="My CKAD experience"/>
+<meta name="twitter:description" content="CKAD exam As I already expected, it was easier than the CKA.
+How much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the killer.sh test and It was enough but your mileage may vary.
+This post will be way shorter than the other one I published as the topics for the exam are &ldquo;similar&rdquo; and most of the stuff is relevant to this exam."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://dangaiden.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "My CKAD experience",
+      "item": "https://dangaiden.github.io/ckad-exam-experience/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "My CKAD experience",
+  "name": "My CKAD experience",
+  "description": "CKAD exam As I already expected, it was easier than the CKA.\nHow much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the killer.sh test and It was enough but your mileage may vary.\nThis post will be way shorter than the other one I published as the topics for the exam are \u0026ldquo;similar\u0026rdquo; and most of the stuff is relevant to this exam.",
+  "keywords": [
+    "kubernetes", "certification", "devops"
+  ],
+  "articleBody": "CKAD exam As I already expected, it was easier than the CKA.\nHow much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the killer.sh test and It was enough but your mileage may vary.\nThis post will be way shorter than the other one I published as the topics for the exam are “similar” and most of the stuff is relevant to this exam.\nDay of the exam Tips are the same as I have used for my CKA experience post\n It’s a 2-hour exam, so any extra time you can save, the better, maybe you should go to the toilet before taking the exam (although you can request a break if needed). Use the cheat sheet provided by the Kubernetes documentation at the beginning of the exam (search for it) as it will help you to remember some commands if you don’t remember them correctly You can have opened another tab to read through the documentation but only one tab. In my case I had the official Kubernetes documentation opened in my other screen to read/search as fast as I can. Don’t worry too much about the alias, the “alias k=kubectl” is already provided, maybe you want to remember the one for –dry-run=client -o yaml. Bash completion is provided as well. If you get stuck in one question for more than 10 min, probably you should flag it and go with the next one!   Note: The exam taken was based in Kubernetes v1.23\n Some resources  CKAD exercises from https://github.com/dgkanatsios/CKAD-exercises More exercises: https://github.com/StenlyTU/K8s-training-official The Killer.sh test provided by the Linux training foundation is extremely helpful.  Useful things to know for the exam  Useful “shortcuts” to use (use them as exported variables or aliases)  export k=kubectl # already configured export do=\"--dry-run=client -o yaml\" # k get pod x $do export now=\"--force --grace-period 0\" # k delete pod x $now   Commands to test within the pods  Review if port is opened from a particular pod (using a shell):\n k exec -it  -- bin/sh -c \"nc -vz 10.36.0.18 80\"   Learn to run a temporary pod to test something  k run temp --restart=Never --rm -i --image=nginx:alpine -- curl 10.18.38.43:443   Check how a resource manifest is structured (aka how to put fields within the YAML)   k explain --recursive    Test if an SA or user can perform an action  For a user:\n k auth can-i create configmap --as  -n  For a SA:\n k auth can-i list pod --as system:serviceaccount::   Important commands to know related to Helm  # List installed releases in selected namespace  helm ls -n  # Install and upgrade releases  helm install  -f values.yaml  --version  --debug  helm upgrade  -n default -f values.yaml traefik/traefik --version 10.9.1 - Optional values:  --version: if not used, will use latest chart version  --debug: verbose output of what is being performed  -f : values.yaml is the file which you use to override default values provided by a chart.  --force: can be used to replace (kubectl replace) objects instead of patching them (by default, kubectl apply) # Commands related to repositories  helm repo list  helm repo update  helm search repo   helm history  - Check deployed releases  helm uninstall -n   - Uninstall an installed release  helm rollback  - Rollback to previous version  helm rollback   - Rollback to specific release revision  Learn how a Dockerfile is structured and how to build, tag and push Docker images.   Summary An easier exam compared to the CKA as expected but good to know some things for this developer path which is more focused in how to use Kubernetes itself.\nNext one, will be the CKS which is the harder one, I’ll take a break so probably I’ll take it on April.\nMore things for the CKS in the next post! ;)\n",
+  "wordCount" : "664",
+  "inLanguage": "en",
+  "datePublished": "2022-03-11T11:37:03Z",
+  "dateModified": "2022-03-11T11:37:03Z",
+  "author":{
+    "@type": "Person",
+    "name": "itgaiden"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dangaiden.github.io/ckad-exam-experience/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dan Belmonte",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dangaiden.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dangaiden.github.io" accesskey="h" title="Dan Belmonte (Alt + H)">Dan Belmonte</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://dangaiden.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/about-me/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      My CKAD experience
+    </h1>
+    <div class="post-meta"><span title='2022-03-11 11:37:03 +0000 +0000'>March 11, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;itgaiden
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#ckad-exam" aria-label="CKAD exam">CKAD exam</a><ul>
+                        
+                <li>
+                    <a href="#day-of-the-exam" aria-label="Day of the exam">Day of the exam</a></li>
+                <li>
+                    <a href="#some-resources" aria-label="Some resources">Some resources</a></li>
+                <li>
+                    <a href="#useful-things-to-know-for-the-exam" aria-label="Useful things to know for the exam">Useful things to know for the exam</a></li>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="ckad-exam">CKAD exam<a hidden class="anchor" aria-hidden="true" href="#ckad-exam">#</a></h1>
+<p>As I already expected, it was easier than the CKA.</p>
+<p>How much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the <em>killer.sh test</em> and It was enough but your mileage may vary.</p>
+<p>This post will be way shorter than the <a href="https://itgaiden.com/cka-exam-experience/">other one I published</a> as the topics for the exam are &ldquo;similar&rdquo; and most of the stuff is relevant to this exam.</p>
+<p><img loading="lazy" src="https://media.giphy.com/media/l2Je4Eo5gkJtfItCE/giphy.gif" alt=""  />
+</p>
+<h2 id="day-of-the-exam">Day of the exam<a hidden class="anchor" aria-hidden="true" href="#day-of-the-exam">#</a></h2>
+<p>Tips are the same as I have used for my <a href="https://itgaiden.com/cka-exam-experience/">CKA experience post</a></p>
+<ul>
+<li>It&rsquo;s a 2-hour exam, so any extra time you can save, the better, maybe you should go to the toilet before taking the exam (although you can request a break if needed).</li>
+<li>Use the cheat sheet provided by the <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">Kubernetes documentation</a> at the beginning of the exam (search for it) as it will help you to remember some commands if you don&rsquo;t remember them correctly</li>
+<li>You can have opened another tab to read through the documentation but <em>only one tab</em>. In my case I had the official Kubernetes documentation opened in my other screen to read/search as fast as I can.</li>
+<li>Don&rsquo;t worry too much about the alias, the &ldquo;alias k=kubectl&rdquo; is already provided, maybe you want to remember the one for <strong>&ndash;dry-run=client -o yaml</strong>. <em>Bash completion</em> is provided as well.</li>
+<li>If you get stuck in one question for more than 10 min, probably you should flag it and go with the next one!</li>
+</ul>
+<blockquote>
+<p>Note: The exam taken was based in Kubernetes v1.23</p>
+</blockquote>
+<h2 id="some-resources">Some resources<a hidden class="anchor" aria-hidden="true" href="#some-resources">#</a></h2>
+<ul>
+<li>CKAD exercises from <a href="https://github.com/dgkanatsios/CKAD-exercises">https://github.com/dgkanatsios/CKAD-exercises</a></li>
+<li>More exercises: <a href="https://github.com/StenlyTU/K8s-training-official">https://github.com/StenlyTU/K8s-training-official</a></li>
+<li>The Killer.sh test provided by the Linux training foundation is extremely helpful.</li>
+</ul>
+<p><img loading="lazy" src="https://media.giphy.com/media/l2Jedlq0pQBx4UbOo/giphy.gif" alt=""  />
+</p>
+<h2 id="useful-things-to-know-for-the-exam">Useful things to know for the exam<a hidden class="anchor" aria-hidden="true" href="#useful-things-to-know-for-the-exam">#</a></h2>
+<ul>
+<li>Useful &ldquo;shortcuts&rdquo; to use (use them as exported variables or aliases)</li>
+</ul>
+<pre tabindex="0"><code>export k=kubectl                        # already configured
+export do=&quot;--dry-run=client -o yaml&quot;    # k get pod x $do
+export now=&quot;--force --grace-period 0&quot;   # k delete pod x $now
+</code></pre><hr>
+<ul>
+<li>Commands to test within the pods</li>
+</ul>
+<p>Review if port is opened from a particular pod (using a shell):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; k exec -it &lt;pod-name&gt; -- bin/sh -c <span style="color:#e6db74">&#34;nc -vz 10.36.0.18 80&#34;</span>
+</code></pre></div><hr>
+<ul>
+<li>Learn to run a temporary pod to test something</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">k run temp --restart<span style="color:#f92672">=</span>Never --rm -i --image<span style="color:#f92672">=</span>nginx:alpine -- curl 10.18.38.43:443
+</code></pre></div><hr>
+<ul>
+<li>Check how a resource manifest is structured (aka how to put fields within the YAML)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; k explain --recursive &lt;api-resource&gt; 
+</code></pre></div><hr>
+<ul>
+<li>Test if an SA or user can perform an action</li>
+</ul>
+<p>For a user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; k auth can-i create configmap --as &lt;user&gt; -n &lt;namespace&gt;
+</code></pre></div><p>For a SA:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; k auth can-i list pod  --as system:serviceaccount:&lt;namespace&gt;:&lt;role&gt;
+</code></pre></div><hr>
+<ul>
+<li>Important commands to know related to <strong>Helm</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># List installed releases in selected namespace</span>
+&gt; helm ls -n &lt;namespace&gt; 
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Install and upgrade releases</span>
+&gt; helm install &lt;name-you-want-to-use&gt; -f values.yaml &lt;repository&gt; --version &lt;chart-version&gt; --debug
+
+&gt; helm upgrade &lt;release-name&gt; -n default -f values.yaml traefik/traefik --version 10.9.1
+
+- Optional values:
+&gt; --version: <span style="color:#66d9ef">if</span> not used, will use latest chart version
+&gt; --debug: verbose output of what is being performed
+&gt; -f &lt;file&gt;: values.yaml is the file which you use to override default values provided by a chart.
+&gt; --force: can be used to replace <span style="color:#f92672">(</span>kubectl replace<span style="color:#f92672">)</span> objects instead of patching them <span style="color:#f92672">(</span>by default, kubectl apply<span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Commands related to repositories</span>
+&gt; helm repo list 
+&gt; helm repo update
+&gt; helm search repo &lt;release&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; helm history &lt;release-name&gt; -&gt; Check deployed releases
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; helm uninstall -n &lt;namespace&gt; &lt;release-name&gt; -&gt; Uninstall an installed release
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; helm rollback &lt;release-name&gt; -&gt; Rollback to previous version
+&gt; helm rollback &lt;release-name&gt; &lt;revision&gt; -&gt; Rollback to specific release revision
+</code></pre></div><ul>
+<li>Learn how a Dockerfile <a href="https://docs.docker.com/engine/reference/builder/">is structured</a> and how to build, tag and push Docker images.</li>
+</ul>
+<hr>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>An easier exam compared to the CKA as expected but good to know some things for this <em>developer path</em> which is more focused in how to use Kubernetes itself.</p>
+<p>Next one, will be the <strong>CKS</strong> which is the harder one, I&rsquo;ll take a break so probably I&rsquo;ll take it on April.</p>
+<p>More things for the CKS in the next post! ;)</p>
+<p><img loading="lazy" src="https://media.giphy.com/media/5USTijryafZEQ/giphy.gif" alt=""  />
+</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dangaiden.github.io/tags/kubernetes/">kubernetes</a></li>
+      <li><a href="https://dangaiden.github.io/tags/certification/">certification</a></li>
+      <li><a href="https://dangaiden.github.io/tags/devops/">devops</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -10,7 +10,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Feb 2022 11:37:03 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/categories/education/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Mar 2022 11:37:03 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/categories/education/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My CKAD experience</title>
+      <link>https://dangaiden.github.io/ckad-exam-experience/</link>
+      <pubDate>Fri, 11 Mar 2022 11:37:03 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/ckad-exam-experience/</guid>
+      <description>CKAD exam As I already expected, it was easier than the CKA.
+How much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the killer.sh test and It was enough but your mileage may vary.
+This post will be way shorter than the other one I published as the topics for the exam are &amp;ldquo;similar&amp;rdquo; and most of the stuff is relevant to this exam.</description>
+    </item>
+    
     <item>
       <title>Github Actions Concurrency</title>
       <link>https://dangaiden.github.io/ghactions-concurrency/</link>

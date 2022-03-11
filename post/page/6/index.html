@@ -159,6 +159,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>VM showing disk size is 0 MB
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Some time ago, I was doing some clean up on VMs that have attached an image file, when I found a particular VM with strange behavior, each disk from the VM (local and RDM disks) was showing 0 MB of disk size:
+So, what I did? 
+First of all, I checked the guest OS and verified that it was up and running. So I was wondering how the guest OS seems correct but vSphere Web Client (I refreshed several times the browser) was showing no space in all disks and I verified in the Datastores that the ....</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-10-03 11:15:37 +0000 +0000'>October 3, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to VM showing disk size is 0 MB" href="https://dangaiden.github.io/2018-10-03-vm-showing-disk-size-is-0-mb/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Azure – Backup and restore SQL DB using SSMS
     </h2>
   </header>
@@ -259,21 +273,6 @@ Next, I passed the vSphere 6 Foundations Exam (2V0-620) months ago and finally I
   </section>
   <footer class="entry-footer"><span title='2017-09-03 16:20:45 +0000 +0000'>September 3, 2017</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
   <a class="entry-link" aria-label="post link to VCP6-DCV achieved!" href="https://dangaiden.github.io/2017-09-03-vcp6-dcv-achieved/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Backup and restore etcd data. Look up the value for the key cluster.name in the etcd cluster:
-ETCDCTL_API=3 etcdctl get cluster.name –endpoints=https://10.0.1.101:2379 –cacert=/home/cloud_user/etcd-certs/etcd-ca.pem –cert=/home/cloud_user/etcd-certs/etcd-server.crt –key=/home/cloud_user/etcd-certs/etcd-server.key
-The returned value should be beebox.  Back up etcd using etcdctl and the provided etcd certificates: ETCDCTL_API=3 etcdctl snapshot save /home/cloud_user/etcd_backup.db –endpoints=https://10.0.1.101:2379 –cacert=/home/cloud_user/etcd-certs/etcd-ca.pem –cert=/home/cloud_user/etcd-certs/etcd-server.crt –key=/home/cloud_user/etcd-certs/etcd-server.key
-Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm -rf /var/lib/etcd  Restore the etcd Data from the Backup Restore the etcd data from the backup (this command spins up a temporary etcd cluster, saving the data from the backup file to a new data directory in the same location where the previous data directory was): sudo ETCDCTL_API=3 etcdctl snapshot restore /home/cloud_user/etcd_backup....</p>
-  </section>
-  <footer class="entry-footer">1 min</footer>
-  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/k8s-etcd_restore/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
