@@ -18,9 +18,8 @@
       
       <guid>https://dangaiden.github.io/2019-07-31-migrating-adfs-from-2012-r2-to-2016/</guid>
       <description>I will explain today how to migrate ADFS from 2012 R2 (3.0 v) to 2016 (4.0) without almost no downtime. The overall process consists in adding the new ADFS server to the farm, assign the primary role to the new ADFS, make some changes and then we’re done.
-
- The current environment is:
- 1 x WAP Server (W2012 R2) 1 x ADFS Server (W2012 R2)  No applications published, just an Office 365 Relying party trust.</description>
+The current environment is:
+1 x WAP Server (W2012 R2) 1 x ADFS Server (W2012 R2) No applications published, just an Office 365 Relying party trust.</description>
     </item>
     
   </channel>

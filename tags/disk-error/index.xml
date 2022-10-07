@@ -18,8 +18,7 @@
       
       <guid>https://dangaiden.github.io/2018-10-03-vm-showing-disk-size-is-0-mb/</guid>
       <description>Some time ago, I was doing some clean up on VMs that have attached an image file, when I found a particular VM with strange behavior, each disk from the VM (local and RDM disks) was showing 0 MB of disk size:
-So, what I did? 
-First of all, I checked the guest OS and verified that it was up and running. So I was wondering how the guest OS seems correct but vSphere Web Client (I refreshed several times the browser) was showing no space in all disks and I verified in the Datastores that the .</description>
+So, what I did? First of all, I checked the guest OS and verified that it was up and running. So I was wondering how the guest OS seems correct but vSphere Web Client (I refreshed several times the browser) was showing no space in all disks and I verified in the Datastores that the .</description>
     </item>
     
   </channel>

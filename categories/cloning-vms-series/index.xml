@@ -18,8 +18,7 @@
       
       <guid>https://dangaiden.github.io/2019-04-16-cloning-virtual-machines-in-vsphere-series-part-3-linked-clones/</guid>
       <description>Let’s start with part 3 in the cloning virtual machines in vSphere series, I am going to talk about another type of clones, linked clones!
-
- All articles regarding cloning virtual machines in vSphere series:
+All articles regarding cloning virtual machines in vSphere series:
 Part 1: Types of clone
 Part 2: Full Clone
 Part 4: Instant Clones (not published yet) As said in previous articles, this series is only focused on VMware vSphere hence, VMware Horizon View is not contemplated (Linked clones are commonly used in that product).</description>

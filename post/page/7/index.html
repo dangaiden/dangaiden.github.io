@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 <link rel="alternate" type="application/rss+xml" href="https://dangaiden.github.io/post/index.xml">
 <noscript>
     <style>
@@ -159,14 +159,29 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>VCP6-DCV achieved!
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>I am going to start talking about the exam VCP6-DCV from VMware. The main resource you should use is the VMware site: http://bit.ly/1PLshWR
+There you can check a path to achieve VCP6-DCV (there is a newer version VCP6.5-DCV). I took path 1, as I wasn’t certified.
+Later, I took one official training course, VMware vSphere: Install, Configure, Manage [V6].
+Next, I passed the vSphere 6 Foundations Exam (2V0-620) months ago and finally I did VMware Certified Professional 6 – Data Center Virtualization Exam (2V0-621)....</p>
+  </section>
+  <footer class="entry-footer"><span title='2017-09-03 16:20:45 +0000 +0000'>September 3, 2017</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;itgaiden</footer>
+  <a class="entry-link" aria-label="post link to VCP6-DCV achieved!" href="https://dangaiden.github.io/2017-09-03-vcp6-dcv-achieved/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>
     </h2>
   </header>
   <section class="entry-content">
     <p>Backup and restore etcd data. Look up the value for the key cluster.name in the etcd cluster:
 ETCDCTL_API=3 etcdctl get cluster.name –endpoints=https://10.0.1.101:2379 –cacert=/home/cloud_user/etcd-certs/etcd-ca.pem –cert=/home/cloud_user/etcd-certs/etcd-server.crt –key=/home/cloud_user/etcd-certs/etcd-server.key
-The returned value should be beebox.  Back up etcd using etcdctl and the provided etcd certificates: ETCDCTL_API=3 etcdctl snapshot save /home/cloud_user/etcd_backup.db –endpoints=https://10.0.1.101:2379 –cacert=/home/cloud_user/etcd-certs/etcd-ca.pem –cert=/home/cloud_user/etcd-certs/etcd-server.crt –key=/home/cloud_user/etcd-certs/etcd-server.key
-Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm -rf /var/lib/etcd  Restore the etcd Data from the Backup Restore the etcd data from the backup (this command spins up a temporary etcd cluster, saving the data from the backup file to a new data directory in the same location where the previous data directory was): sudo ETCDCTL_API=3 etcdctl snapshot restore /home/cloud_user/etcd_backup....</p>
+The returned value should be beebox. Back up etcd using etcdctl and the provided etcd certificates: ETCDCTL_API=3 etcdctl snapshot save /home/cloud_user/etcd_backup.db –endpoints=https://10.0.1.101:2379 –cacert=/home/cloud_user/etcd-certs/etcd-ca.pem –cert=/home/cloud_user/etcd-certs/etcd-server.crt –key=/home/cloud_user/etcd-certs/etcd-server.key
+Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm -rf /var/lib/etcd Restore the etcd Data from the Backup Restore the etcd data from the backup (this command spins up a temporary etcd cluster, saving the data from the backup file to a new data directory in the same location where the previous data directory was): sudo ETCDCTL_API=3 etcdctl snapshot restore /home/cloud_user/etcd_backup....</p>
   </section>
   <footer class="entry-footer">1 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/k8s-etcd_restore/"></a>
@@ -178,12 +193,12 @@ Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm 
     </h2>
   </header>
   <section class="entry-content">
-    <p>Upgrade the Control Plane  Upgrade kubeadm:  [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y –allow-change-held-packages kubeadm=1.21.1-00
- Make sure it upgraded correctly:  [cloud_user@k8s-control]$ kubeadm version
- Drain the control plane node:  [cloud_user@k8s-control]$ kubectl drain k8s-control –ignore-daemonsets
- Plan the upgrade:  [cloud_user@k8s-control]$ sudo kubeadm upgrade plan v1.21.1
- Upgrade the control plane components:  [cloud_user@k8s-control]$ sudo kubeadm upgrade apply v1.21.1
- Upgrade kubelet and kubectl on the control plane node:  [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y –allow-change-held-packages kubelet=1....</p>
+    <p>Upgrade the Control Plane Upgrade kubeadm: [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y –allow-change-held-packages kubeadm=1.21.1-00
+Make sure it upgraded correctly: [cloud_user@k8s-control]$ kubeadm version
+Drain the control plane node: [cloud_user@k8s-control]$ kubectl drain k8s-control –ignore-daemonsets
+Plan the upgrade: [cloud_user@k8s-control]$ sudo kubeadm upgrade plan v1.21.1
+Upgrade the control plane components: [cloud_user@k8s-control]$ sudo kubeadm upgrade apply v1.21.1
+Upgrade kubelet and kubectl on the control plane node: [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y –allow-change-held-packages kubelet=1....</p>
   </section>
   <footer class="entry-footer">2 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/k8scluster-upgrade_version/"></a>
@@ -207,7 +222,7 @@ Reset etcd by removing all existing etcd data: sudo systemctl stop etcd sudo rm 
     </h2>
   </header>
   <section class="entry-content">
-    <p>Quick guide to install OS within VMs  3 Virtual machines configured and ready  Here is a quick “guide” I made for myself to create a VM, configure RHEL and have ready 3 VMs with the OS configured to start playing with Kubernetes.
+    <p>Quick guide to install OS within VMs 3 Virtual machines configured and ready Here is a quick “guide” I made for myself to create a VM, configure RHEL and have ready 3 VMs with the OS configured to start playing with Kubernetes.
 Link to Insta</p>
   </section>
   <footer class="entry-footer">1 min</footer>
@@ -216,36 +231,50 @@ Link to Insta</p>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Experience at VMworld 2018 Europe – Day 1
+    <h2>
     </h2>
   </header>
   <section class="entry-content">
-    <p>Let me talk to you about my experience on my first VMworld! This is a personal experience I want to share about Day 1 at VMworld 2018 Europe.
-Introduction I live in Barcelona so, I am fortunate that I don’t need to travel to go to the VMworld Europe. The only thing is to commute by train between home and Fira Barcelona (where VMworld is established). 
-It was Monday, November 5th, 2018....</p>
+    <p>Introduction Here, I’ll explain you how to upgrade your Traefik version sitting on a Kubernetes cluster (version 1.23.1) on AWS.
+In my case, I was moving from Traefik 2.1 to 2.5, but this could be more or less translated between other versions.
+Note: This is the way I performed the migration of Traefik and there are other ways to do it so YMML.
+Steps overview Check 2.4 and 2.5 releases for breaking changes Reference: https://doc....</p>
   </section>
-  <footer class="entry-footer">3 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Experience at VMworld 2018 Europe – Day 1" href="https://dangaiden.github.io/2018-11-19-vmworld-18-eu-day1/"></a>
+  <footer class="entry-footer">1 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2022/migrating-your-traefik-deployment-managed-by-helm/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Kubernetes the hard way but on-prem - part 2
+    <h2>
     </h2>
   </header>
   <section class="entry-content">
-    <p>Context Let’s continue with the guide, in this part 2.
-This is based in: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/03-compute-resources.md
-Kubernetes Controllers We will be using the following CIDR 192.168.1.0/24 for node within the cluster:
- Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24  Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.
-One NIC will be the one used before to communicate with the other nodes: 192....</p>
+    <p>Traefik currently seats on a custom version owned by us but the patch was merged into the upstream repository and needs to be back to the main docker image along with the upgrade to &gt; 2.5
+Steps Check 2.4 and 2.5 releases for breaking changes Reference: https://doc.traefik.io/traefik/migration/v2/#v23-to-v24 Reference: https://doc.traefik.io/traefik/migration/v2/#v24-to-v25
+ServersTransport -&gt; Update RBAC and CRD (To check in Helm chart for 2.4) This is done by the chart as it updates everything needed....</p>
   </section>
-  <footer class="entry-footer">1 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Kubernetes the hard way but on-prem - part 2" href="https://dangaiden.github.io/kubernetes-the-hard-way-but-on-prem-part2/"></a>
+  <footer class="entry-footer">6 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2022/sys-1556-traefik-2.6-upgrade.md/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Apply the correct CRDs for 2.5 and 2.6 versions: Great gist –&gt; Useful
+Traefik CRDs reference: https://github.com/traefik/traefik/blob/v2.5/docs/content/reference/dynamic-configuration/kubernetes-crd.md
+~/Traefik_upgrade/backup_220222_2_5v  ./CRDs_2_5.sh  ✔ │ 17:29:32 Warning: resource customresourcedefinitions/ingressroutes.traefik.containo.us is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically. customresourcedefinition.apiextensions.k8s.io/ingressroutes.traefik.containo.us configured Warning: resource customresourcedefinitions/ingressroutetcps.traefik.containo.us is missing the kubectl....</p>
+  </section>
+  <footer class="entry-footer">4 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2022/upgrade-traefik-to-v261/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://dangaiden.github.io/post/page/6/">« Prev Page</a>
+    <a class="next" href="https://dangaiden.github.io/post/page/8/">Next Page »</a>
   </nav>
 </footer>
     </main>

@@ -7,11 +7,11 @@
 <meta name="robots" content="index, follow">
 <title>Simple-guide-install-and-configure-RHEL-in-VM | Dan Belmonte</title>
 <meta name="keywords" content="rhel, vm" />
-<meta name="description" content="Quick How-to with RHEL  Create an account (it&rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used &ldquo;Somred1&rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden &amp; passwd dangaiden   4.">
+<meta name="description" content="Quick How-to with RHEL Create an account (it&rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used &ldquo;Somred1&rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden &amp; passwd dangaiden 4.">
 <meta name="author" content="itgaiden">
 <link rel="canonical" href="https://dangaiden.github.io/Simple-guide-install-and-configure-RHEL-in-VM/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.e85ad0406048e8176e1c7661b25d5c69297ddfe41dc4124cf75ecb99a4f7b3d1.js" integrity="sha256-6FrQQGBI6BduHHZhsl1caSl93&#43;QdxBJM917LmaT3s9E="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://dangaiden.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://dangaiden.github.io/favicon-16x16.png">
@@ -20,7 +20,7 @@
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 <noscript>
     <style>
         #theme-toggle,
@@ -58,7 +58,7 @@
 
     </style>
 </noscript><meta property="og:title" content="Simple-guide-install-and-configure-RHEL-in-VM" />
-<meta property="og:description" content="Quick How-to with RHEL  Create an account (it&rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used &ldquo;Somred1&rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden &amp; passwd dangaiden   4." />
+<meta property="og:description" content="Quick How-to with RHEL Create an account (it&rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used &ldquo;Somred1&rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden &amp; passwd dangaiden 4." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dangaiden.github.io/Simple-guide-install-and-configure-RHEL-in-VM/" /><meta property="og:image" content="https://dangaiden.github.io/47"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-07-27T11:27:51&#43;00:00" />
@@ -68,7 +68,7 @@
 <meta name="twitter:image" content="https://dangaiden.github.io/47"/>
 
 <meta name="twitter:title" content="Simple-guide-install-and-configure-RHEL-in-VM"/>
-<meta name="twitter:description" content="Quick How-to with RHEL  Create an account (it&rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used &ldquo;Somred1&rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden &amp; passwd dangaiden   4."/>
+<meta name="twitter:description" content="Quick How-to with RHEL Create an account (it&rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used &ldquo;Somred1&rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden &amp; passwd dangaiden 4."/>
 
 
 <script type="application/ld+json">
@@ -97,11 +97,11 @@
   "@type": "BlogPosting",
   "headline": "Simple-guide-install-and-configure-RHEL-in-VM",
   "name": "Simple-guide-install-and-configure-RHEL-in-VM",
-  "description": "Quick How-to with RHEL  Create an account (it\u0026rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used \u0026ldquo;Somred1\u0026rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden \u0026amp; passwd dangaiden   4.",
+  "description": "Quick How-to with RHEL Create an account (it\u0026rsquo;s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used \u0026ldquo;Somred1\u0026rdquo; as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden \u0026amp; passwd dangaiden 4.",
   "keywords": [
     "rhel", "vm"
   ],
-  "articleBody": "Quick How-to with RHEL  Create an account (it’s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used “Somred1” as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden \u0026 passwd dangaiden   4.1 Add the user to the wheel group or to the sudoers file (as you prefer):  Use visudo or usermod -aG wheel dangaiden     Register the new system to RHEL portal:\n$ subscription-manager register --username= --password=\n  You are attempting to run \"subscription-manager\" which requires administrative privileges, but more information is needed in order to do so. Authenticating as \"root\" Password: Registering to: subscription.rhsm.redhat.com:443/subscription The system has been registered with ID: 5512e476-8ecd-4e44-a986-e4340424aa6d The registered system name is: Somred1   5.1 Attach a license from our newly created account in the RHEL portal.\n$ subscription-manager attach --auto\n  You are attempting to run \"subscription-manager\" which requires administrative privileges, but more information is needed in order to do so. Authenticating as \"root\" Password: Installed Product Current Status: Product Name: Red Hat Enterprise Linux for x86_64 Status: Subscribed   5.2 Verify the status:\n$ subscription-manager status\n  You are attempting to run \"subscription-manager\" which requires administrative privileges, but more information is needed in order to do so. Authenticating as \"root\" Password: +-------------------------------------------+ System Status Details +-------------------------------------------+ Overall Status: Current System Purpose Status: Not Specified   5.3 Verify the repositories list\n$ sudo yum repolist\n  [sudo] password for dangaiden: Updating Subscription Management repositories. repo id repo name rhel-8-for-x86_64-appstream-rpms Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs) rhel-8-for-x86_64-baseos-rpms Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)   You’re good to go, we can install for example tree!\n$ sudo yum install tree\n  [sudo] password for dangaiden: Updating Subscription Management repositories. Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs) 6.4 MB/s | 34 MB 00:05 Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs) 5.4 MB/s | 31 MB 00:05 Dependencies resolved. . . (Ommited some output) . Installed products updated. Installed: tree-1.7.0-15.el8.x86_64 Complete!  Copy your ssh key to the server: ssh-copyid\n  Shutdown and clone the newly created VM (Create a full clone and remember to change MAC address for the NICs).\n  Once it’s cloned, power on the new one and proceed to:\n   Change the hostname:    # vi /etc/hostname\n  Change the ip address:     # vi /etc/sysconfig/network-scripts/ifcfg-enp0s3\n  Reboot it and done!      ",
+  "articleBody": "Quick How-to with RHEL Create an account (it’s free) and download RHEL ISO from the official repository here Create a VM in VirtualBox with the resources you want. I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space . Follow the wizard and install the way you prefer: Minimal server, Keyboard, network, etc. Recommended to partition your disk with LVM and partition it as recommended by the provider Once is installed proceed to log as root to the OS (I used “Somred1” as hostname) and add another user (dangaiden as example) with a password: $ useradd dangaiden \u0026 passwd dangaiden 4.1 Add the user to the wheel group or to the sudoers file (as you prefer): Use visudo or usermod -aG wheel dangaiden Register the new system to RHEL portal:\n$ subscription-manager register --username= --password=\nYou are attempting to run \"subscription-manager\" which requires administrative privileges, but more information is needed in order to do so. Authenticating as \"root\" Password: Registering to: subscription.rhsm.redhat.com:443/subscription The system has been registered with ID: 5512e476-8ecd-4e44-a986-e4340424aa6d The registered system name is: Somred1 5.1 Attach a license from our newly created account in the RHEL portal.\n$ subscription-manager attach --auto\nYou are attempting to run \"subscription-manager\" which requires administrative privileges, but more information is needed in order to do so. Authenticating as \"root\" Password: Installed Product Current Status: Product Name: Red Hat Enterprise Linux for x86_64 Status: Subscribed 5.2 Verify the status:\n$ subscription-manager status\nYou are attempting to run \"subscription-manager\" which requires administrative privileges, but more information is needed in order to do so. Authenticating as \"root\" Password: +-------------------------------------------+ System Status Details +-------------------------------------------+ Overall Status: Current System Purpose Status: Not Specified 5.3 Verify the repositories list\n$ sudo yum repolist\n[sudo] password for dangaiden: Updating Subscription Management repositories. repo id repo name rhel-8-for-x86_64-appstream-rpms Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs) rhel-8-for-x86_64-baseos-rpms Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs) You’re good to go, we can install for example tree!\n$ sudo yum install tree\n[sudo] password for dangaiden: Updating Subscription Management repositories. Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs) 6.4 MB/s | 34 MB 00:05 Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs) 5.4 MB/s | 31 MB 00:05 Dependencies resolved. . . (Ommited some output) . Installed products updated. Installed: tree-1.7.0-15.el8.x86_64 Complete! Copy your ssh key to the server: ssh-copy-id\nShutdown and clone the newly created VM (Create a full clone and remember to change MAC address for the NICs).\nOnce it’s cloned, power on the new one and proceed to:\nChange the hostname: # vi /etc/hostname\nChange the ip address: # vi /etc/sysconfig/network-scripts/ifcfg-enp0s3\nReboot it and done! ",
   "wordCount" : "448",
   "inLanguage": "en",
   "datePublished": "2021-07-27T11:27:51Z",
@@ -243,78 +243,77 @@ I created mine with 2GB of RAM, 2 vCPU and 40 GB of disk space .</li>
 <p><code>$ subscription-manager register --username=&lt;username&gt; --password=&lt;password&gt;</code></p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
-privileges, but more information is needed in order to do so.
-Authenticating as &#34;root&#34;
-Password:
-Registering to: subscription.rhsm.redhat.com:443/subscription
-The system has been registered with ID: 5512e476-8ecd-4e44-a986-e4340424aa6d
-The registered system name is: Somred1 
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>You are attempting to run &#34;subscription-manager&#34; which requires administrative
+</span></span><span style="display:flex;"><span>privileges, but more information is needed in order to do so.
+</span></span><span style="display:flex;"><span>Authenticating as &#34;root&#34;
+</span></span><span style="display:flex;"><span>Password:
+</span></span><span style="display:flex;"><span>Registering to: subscription.rhsm.redhat.com:443/subscription
+</span></span><span style="display:flex;"><span>The system has been registered with ID: 5512e476-8ecd-4e44-a986-e4340424aa6d
+</span></span><span style="display:flex;"><span>The registered system name is: Somred1 
+</span></span></code></pre></div><ul>
 <li>
 <p>5.1 Attach a license from our newly created account in the RHEL portal.</p>
 <p><code>$ subscription-manager attach --auto</code></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
-privileges, but more information is needed in order to do so.
-Authenticating as &#34;root&#34;
-Password:
-Installed Product Current Status:
-Product Name: Red Hat Enterprise Linux for x86_64
-Status:       Subscribed
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>You are attempting to run &#34;subscription-manager&#34; which requires administrative
+</span></span><span style="display:flex;"><span>privileges, but more information is needed in order to do so.
+</span></span><span style="display:flex;"><span>Authenticating as &#34;root&#34;
+</span></span><span style="display:flex;"><span>Password:
+</span></span><span style="display:flex;"><span>Installed Product Current Status:
+</span></span><span style="display:flex;"><span>Product Name: Red Hat Enterprise Linux for x86_64
+</span></span><span style="display:flex;"><span>Status:       Subscribed
+</span></span></code></pre></div><ul>
 <li>
 <p>5.2 Verify the status:</p>
 <p><code>$ subscription-manager status</code></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">You are attempting to run &#34;subscription-manager&#34; which requires administrative
-privileges, but more information is needed in order to do so.
-Authenticating as &#34;root&#34;
-Password:
-+-------------------------------------------+
-   System Status Details
-+-------------------------------------------+
-Overall Status: Current
-
-System Purpose Status: Not Specified
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>You are attempting to run &#34;subscription-manager&#34; which requires administrative
+</span></span><span style="display:flex;"><span>privileges, but more information is needed in order to do so.
+</span></span><span style="display:flex;"><span>Authenticating as &#34;root&#34;
+</span></span><span style="display:flex;"><span>Password:
+</span></span><span style="display:flex;"><span>+-------------------------------------------+
+</span></span><span style="display:flex;"><span>   System Status Details
+</span></span><span style="display:flex;"><span>+-------------------------------------------+
+</span></span><span style="display:flex;"><span>Overall Status: Current
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System Purpose Status: Not Specified
+</span></span></code></pre></div><ul>
 <li>
 <p>5.3 Verify the repositories list</p>
 <p><code>$ sudo yum repolist</code></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">[sudo] password for dangaiden:
-Updating Subscription Management repositories.
-repo id                                                  repo name
-rhel-8-for-x86_64-appstream-rpms                         Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
-rhel-8-for-x86_64-baseos-rpms                            Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>[sudo] password for dangaiden:
+</span></span><span style="display:flex;"><span>Updating Subscription Management repositories.
+</span></span><span style="display:flex;"><span>repo id                                                  repo name
+</span></span><span style="display:flex;"><span>rhel-8-for-x86_64-appstream-rpms                         Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
+</span></span><span style="display:flex;"><span>rhel-8-for-x86_64-baseos-rpms                            Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
+</span></span></code></pre></div><hr>
 <ol start="6">
 <li>
 <p>You&rsquo;re good to go, we can install for example <strong>tree</strong>!</p>
 <p><code>$ sudo yum install tree</code></p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">[sudo] password for dangaiden:
-Updating Subscription Management repositories.
-Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)                                                     6.4 MB/s |  34 MB     00:05
-Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)                                                  5.4 MB/s |  31 MB     00:05
-Dependencies resolved.
-.
-. (Ommited some output)
-.
-Installed products updated.
-
-Installed:
-  tree-1.7.0-15.el8.x86_64
-
-Complete!
-
-</code></pre></div><ol start="7">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>[sudo] password for dangaiden:
+</span></span><span style="display:flex;"><span>Updating Subscription Management repositories.
+</span></span><span style="display:flex;"><span>Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)                                                     6.4 MB/s |  34 MB     00:05
+</span></span><span style="display:flex;"><span>Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)                                                  5.4 MB/s |  31 MB     00:05
+</span></span><span style="display:flex;"><span>Dependencies resolved.
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>. (Ommited some output)
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>Installed products updated.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Installed:
+</span></span><span style="display:flex;"><span>  tree-1.7.0-15.el8.x86_64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Complete!
+</span></span></code></pre></div><ol start="7">
 <li>
-<p>Copy your ssh key to the server: <code>ssh-copyid</code></p>
+<p>Copy your ssh key to the server: <code>ssh-copy-id</code></p>
 </li>
 <li>
 <p>Shutdown and clone the newly created VM (Create a full clone and remember to change MAC address for the NICs).</p>

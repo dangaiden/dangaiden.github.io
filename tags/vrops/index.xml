@@ -19,9 +19,8 @@
       <guid>https://dangaiden.github.io/2020-05-21-upgrade-vrops-from-6-7-0-to-8-0-1/</guid>
       <description>In this blog post, we will see how to upgrade vRealize Operations (vROps) from version 6.7.0 to 8.0.1. The whole process takes about 30 minutes.
 Bear in mind that, you will need new license keys after updating to the later version (after 8.0 version).
-
- Note: You will see a version mismatch in some screenshots.
-Download the required files  Download the Upgrade Assessment Tool available at VMware Downloads.</description>
+Note: You will see a version mismatch in some screenshots.
+Download the required files Download the Upgrade Assessment Tool available at VMware Downloads. And also, proceed to download the Virtual appliance upgrade PAK file, that will be used later for the real upgrade:</description>
     </item>
     
   </channel>

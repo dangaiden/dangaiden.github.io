@@ -10,12 +10,12 @@
 <meta name="description" content="Context Let&rsquo;s continue with the guide, in this part 2.
 This is based in: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/03-compute-resources.md
 Kubernetes Controllers We will be using the following CIDR 192.168.1.0/24 for node within the cluster:
- Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24  Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.
+Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24 Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.
 One NIC will be the one used before to communicate with the other nodes: 192.">
 <meta name="author" content="itgaiden">
 <link rel="canonical" href="https://dangaiden.github.io/kubernetes-the-hard-way-but-on-prem-part2/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.e85ad0406048e8176e1c7661b25d5c69297ddfe41dc4124cf75ecb99a4f7b3d1.js" integrity="sha256-6FrQQGBI6BduHHZhsl1caSl93&#43;QdxBJM917LmaT3s9E="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://dangaiden.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://dangaiden.github.io/favicon-16x16.png">
@@ -24,7 +24,7 @@ One NIC will be the one used before to communicate with the other nodes: 192.">
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 <noscript>
     <style>
         #theme-toggle,
@@ -65,7 +65,7 @@ One NIC will be the one used before to communicate with the other nodes: 192.">
 <meta property="og:description" content="Context Let&rsquo;s continue with the guide, in this part 2.
 This is based in: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/03-compute-resources.md
 Kubernetes Controllers We will be using the following CIDR 192.168.1.0/24 for node within the cluster:
- Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24  Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.
+Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24 Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.
 One NIC will be the one used before to communicate with the other nodes: 192." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dangaiden.github.io/kubernetes-the-hard-way-but-on-prem-part2/" /><meta property="og:image" content="https://dangaiden.github.io/47"/><meta property="article:section" content="post" />
@@ -79,7 +79,7 @@ One NIC will be the one used before to communicate with the other nodes: 192." /
 <meta name="twitter:description" content="Context Let&rsquo;s continue with the guide, in this part 2.
 This is based in: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/03-compute-resources.md
 Kubernetes Controllers We will be using the following CIDR 192.168.1.0/24 for node within the cluster:
- Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24  Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.
+Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24 Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.
 One NIC will be the one used before to communicate with the other nodes: 192."/>
 
 
@@ -109,11 +109,11 @@ One NIC will be the one used before to communicate with the other nodes: 192."/>
   "@type": "BlogPosting",
   "headline": "Kubernetes the hard way but on-prem - part 2",
   "name": "Kubernetes the hard way but on-prem - part 2",
-  "description": "Context Let\u0026rsquo;s continue with the guide, in this part 2.\nThis is based in: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/03-compute-resources.md\nKubernetes Controllers We will be using the following CIDR 192.168.1.0/24 for node within the cluster:\n Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24  Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.\nOne NIC will be the one used before to communicate with the other nodes: 192.",
+  "description": "Context Let\u0026rsquo;s continue with the guide, in this part 2.\nThis is based in: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/03-compute-resources.md\nKubernetes Controllers We will be using the following CIDR 192.168.1.0/24 for node within the cluster:\nSomred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24 Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.\nOne NIC will be the one used before to communicate with the other nodes: 192.",
   "keywords": [
     "certification", "kubernetes", "cka"
   ],
-  "articleBody": "Context Let’s continue with the guide, in this part 2.\nThis is based in: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/03-compute-resources.md\nKubernetes Controllers We will be using the following CIDR 192.168.1.0/24 for node within the cluster:\n Somred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24  Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.\nOne NIC will be the one used before to communicate with the other nodes: 192.168.1.0/24\nTherefore:\n Worknet1 NIC1: 192.168.1.101 Worknet2 NIC1: 192.168.1.102 Worknet3 NIC1: 192.168.1.103  %%We will be using the following pod CIDR 10.200.0.0/16 for each worker node.\n Worknet1 NIC2: 10.200.1.1/24 Worknet2 NIC2: 10.200.2.1/24 Worknet3 NIC2: 10.200.3.1/24%%  ",
+  "articleBody": "Context Let’s continue with the guide, in this part 2.\nThis is based in: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/03-compute-resources.md\nKubernetes Controllers We will be using the following CIDR 192.168.1.0/24 for node within the cluster:\nSomred1: 192.168.1.50/24 Somred2: 192.168.1.51/24 Somred3: 192.168.1.52/24 Kubernetes Workers This nodes will act as the Kubernetes workers nodes which will host the pods, we need to have 2 NICs for each node.\nOne NIC will be the one used before to communicate with the other nodes: 192.168.1.0/24\nTherefore:\nWorknet1 NIC1: 192.168.1.101 Worknet2 NIC1: 192.168.1.102 Worknet3 NIC1: 192.168.1.103 %%We will be using the following pod CIDR 10.200.0.0/16 for each worker node.\nWorknet1 NIC2: 10.200.1.1/24 Worknet2 NIC2: 10.200.2.1/24 Worknet3 NIC2: 10.200.3.1/24%% ",
   "wordCount" : "108",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",

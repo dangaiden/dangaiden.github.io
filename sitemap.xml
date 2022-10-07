@@ -3,18 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://dangaiden.github.io/categories/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
+    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/</loc>
+    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/a-new-journey/</loc>
+    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/personal/</loc>
+    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/categories/personal/</loc>
+    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/post/</loc>
+    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/</loc>
+    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/certification/</loc>
     <lastmod>2022-03-11T11:37:03+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/</loc>
+    <loc>https://dangaiden.github.io/tags/devops/</loc>
     <lastmod>2022-03-11T11:37:03+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/categories/devops/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/devops/</loc>
     <lastmod>2022-03-11T11:37:03+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/categories/education/</loc>
@@ -27,12 +42,6 @@
     <lastmod>2022-03-11T11:37:03+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/ckad-exam-experience/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/post/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/</loc>
     <lastmod>2022-03-11T11:37:03+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/cicd/</loc>
@@ -51,12 +60,6 @@
     <lastmod>2022-02-14T11:37:03+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/new-adventure/</loc>
-    <lastmod>2021-12-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/categories/personal/</loc>
-    <lastmod>2021-12-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/personal/</loc>
     <lastmod>2021-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/cka/</loc>
@@ -92,10 +95,10 @@
     <loc>https://dangaiden.github.io/2021-06-08-az-400-exam-notes/</loc>
     <lastmod>2021-06-08T13:37:03+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/azure/</loc>
+    <loc>https://dangaiden.github.io/tags/azure/</loc>
     <lastmod>2021-06-08T13:37:03+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/azure/</loc>
+    <loc>https://dangaiden.github.io/categories/azure/</loc>
     <lastmod>2021-06-08T13:37:03+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/moving/</loc>
@@ -227,10 +230,10 @@
     <loc>https://dangaiden.github.io/tags/review/</loc>
     <lastmod>2019-12-31T14:44:39+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/vmug/</loc>
+    <loc>https://dangaiden.github.io/tags/vmug/</loc>
     <lastmod>2019-12-09T11:00:36+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/vmug/</loc>
+    <loc>https://dangaiden.github.io/categories/vmug/</loc>
     <lastmod>2019-12-09T11:00:36+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/2019-12-09-being-a-vexpert/</loc>
@@ -254,10 +257,10 @@
     <loc>https://dangaiden.github.io/tags/it-admin/</loc>
     <lastmod>2019-10-30T21:14:01+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/runecast/</loc>
+    <loc>https://dangaiden.github.io/tags/runecast/</loc>
     <lastmod>2019-10-30T21:14:01+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/runecast/</loc>
+    <loc>https://dangaiden.github.io/categories/runecast/</loc>
     <lastmod>2019-10-30T21:14:01+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/2019-10-30-runecast-analyzer-deploy-configure-and-quick-review/</loc>
@@ -281,25 +284,25 @@
     <loc>https://dangaiden.github.io/2019-10-04-vfit-at-vmworld-2019-europe/</loc>
     <lastmod>2019-10-04T11:35:14+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/backup/</loc>
+    <loc>https://dangaiden.github.io/tags/backup/</loc>
     <lastmod>2019-08-31T19:00:54+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/backup/</loc>
+    <loc>https://dangaiden.github.io/categories/backup/</loc>
     <lastmod>2019-08-31T19:00:54+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/refs/</loc>
     <lastmod>2019-08-31T19:00:54+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/veeam/</loc>
-    <lastmod>2019-08-31T19:00:54+00:00</lastmod>
-  </url><url>
     <loc>https://dangaiden.github.io/tags/veeam/</loc>
     <lastmod>2019-08-31T19:00:54+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/veeam-proxy/</loc>
+    <loc>https://dangaiden.github.io/categories/veeam/</loc>
     <lastmod>2019-08-31T19:00:54+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/?p=1018/</loc>
+    <lastmod>2019-08-31T19:00:54+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/veeam-proxy/</loc>
     <lastmod>2019-08-31T19:00:54+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/adfs/</loc>
@@ -317,10 +320,10 @@
     <loc>https://dangaiden.github.io/tags/build-day-live/</loc>
     <lastmod>2019-05-09T12:00:08+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/cohesity/</loc>
+    <loc>https://dangaiden.github.io/tags/cohesity/</loc>
     <lastmod>2019-05-09T12:00:08+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/cohesity/</loc>
+    <loc>https://dangaiden.github.io/categories/cohesity/</loc>
     <lastmod>2019-05-09T12:00:08+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/?p=861/</loc>
@@ -413,10 +416,10 @@
     <loc>https://dangaiden.github.io/2018-09-14-azure-backup-and-restore-sql-db-using-ssms/</loc>
     <lastmod>2018-09-14T08:23:47+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/sql/</loc>
+    <loc>https://dangaiden.github.io/tags/sql/</loc>
     <lastmod>2018-09-14T08:23:47+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/sql/</loc>
+    <loc>https://dangaiden.github.io/categories/sql/</loc>
     <lastmod>2018-09-14T08:23:47+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/ssms/</loc>
@@ -455,10 +458,10 @@
     <loc>https://dangaiden.github.io/tags/cidr/</loc>
     <lastmod>2017-12-31T15:50:35+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/nsg/</loc>
+    <loc>https://dangaiden.github.io/tags/nsg/</loc>
     <lastmod>2017-12-31T15:50:35+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/nsg/</loc>
+    <loc>https://dangaiden.github.io/categories/nsg/</loc>
     <lastmod>2017-12-31T15:50:35+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/vcp/</loc>
@@ -477,6 +480,14 @@
     <loc>https://dangaiden.github.io/post/2021/kubernetes-cluster-installation-config/</loc>
   </url><url>
     <loc>https://dangaiden.github.io/post/2021/note-about-k8s-part1/</loc>
+  </url><url>
+    <loc>https://dangaiden.github.io/post/2022/migrating-your-traefik-deployment-managed-by-helm/</loc>
+  </url><url>
+    <loc>https://dangaiden.github.io/post/2022/sys-1556-traefik-2.6-upgrade.md/</loc>
+  </url><url>
+    <loc>https://dangaiden.github.io/post/2022/upgrade-traefik-to-v261/</loc>
+  </url><url>
+    <loc>https://dangaiden.github.io/post/2022/upgrading-traefik-with-helm/</loc>
   </url><url>
     <loc>https://dangaiden.github.io/archives/</loc>
   </url><url>

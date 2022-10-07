@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Dan Belmonte</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Traefik upgrade The overall process Context Upgrading traefik from 1.7.26 (chart traefik-1.87.7) to 2.5.6 (chart 10.9.1) isn&rsquo;t possible because of labels immutability: ❯ helm upgrade -i traefik -n default -f values.yaml traefik/traefik --version 10.9.1 --force --debug history.go:56: [debug] getting history for release traefik upgrade.go:139: [debug] preparing upgrade for traefik upgrade.go:147: [debug] performing update for traefik upgrade.go:319: [debug] creating upgraded release for traefik client.go:218: [debug] checking 5 resources for changes client.go:493: [debug] Replaced &#34;traefik&#34; with kind ServiceAccount for kind ServiceAccount client.">
+<meta name="author" content="">
+<link rel="canonical" href="https://dangaiden.github.io/post/2022/upgrading-traefik-with-helm/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.e85ad0406048e8176e1c7661b25d5c69297ddfe41dc4124cf75ecb99a4f7b3d1.js" integrity="sha256-6FrQQGBI6BduHHZhsl1caSl93&#43;QdxBJM917LmaT3s9E="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dangaiden.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dangaiden.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dangaiden.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dangaiden.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.101.0" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="" />
+<meta property="og:description" content="Traefik upgrade The overall process Context Upgrading traefik from 1.7.26 (chart traefik-1.87.7) to 2.5.6 (chart 10.9.1) isn&rsquo;t possible because of labels immutability: ❯ helm upgrade -i traefik -n default -f values.yaml traefik/traefik --version 10.9.1 --force --debug history.go:56: [debug] getting history for release traefik upgrade.go:139: [debug] preparing upgrade for traefik upgrade.go:147: [debug] performing update for traefik upgrade.go:319: [debug] creating upgraded release for traefik client.go:218: [debug] checking 5 resources for changes client.go:493: [debug] Replaced &#34;traefik&#34; with kind ServiceAccount for kind ServiceAccount client." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dangaiden.github.io/post/2022/upgrading-traefik-with-helm/" /><meta property="og:image" content="https://dangaiden.github.io/47"/><meta property="article:section" content="post" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dangaiden.github.io/47"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Traefik upgrade The overall process Context Upgrading traefik from 1.7.26 (chart traefik-1.87.7) to 2.5.6 (chart 10.9.1) isn&rsquo;t possible because of labels immutability: ❯ helm upgrade -i traefik -n default -f values.yaml traefik/traefik --version 10.9.1 --force --debug history.go:56: [debug] getting history for release traefik upgrade.go:139: [debug] preparing upgrade for traefik upgrade.go:147: [debug] performing update for traefik upgrade.go:319: [debug] creating upgraded release for traefik client.go:218: [debug] checking 5 resources for changes client.go:493: [debug] Replaced &#34;traefik&#34; with kind ServiceAccount for kind ServiceAccount client."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://dangaiden.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "",
+      "item": "https://dangaiden.github.io/post/2022/upgrading-traefik-with-helm/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Traefik upgrade The overall process Context Upgrading traefik from 1.7.26 (chart traefik-1.87.7) to 2.5.6 (chart 10.9.1) isn\u0026rsquo;t possible because of labels immutability: ❯ helm upgrade -i traefik -n default -f values.yaml traefik/traefik --version 10.9.1 --force --debug history.go:56: [debug] getting history for release traefik upgrade.go:139: [debug] preparing upgrade for traefik upgrade.go:147: [debug] performing update for traefik upgrade.go:319: [debug] creating upgraded release for traefik client.go:218: [debug] checking 5 resources for changes client.go:493: [debug] Replaced \u0026#34;traefik\u0026#34; with kind ServiceAccount for kind ServiceAccount client.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Traefik upgrade The overall process Context Upgrading traefik from 1.7.26 (chart traefik-1.87.7) to 2.5.6 (chart 10.9.1) isn’t possible because of labels immutability: ❯ helm upgrade -i traefik -n default -f values.yaml traefik/traefik --version 10.9.1 --force --debug history.go:56: [debug] getting history for release traefik upgrade.go:139: [debug] preparing upgrade for traefik upgrade.go:147: [debug] performing update for traefik upgrade.go:319: [debug] creating upgraded release for traefik client.go:218: [debug] checking 5 resources for changes client.go:493: [debug] Replaced \"traefik\" with kind ServiceAccount for kind ServiceAccount client.go:493: [debug] Replaced \"traefik\" with kind ClusterRole for kind ClusterRole client.go:493: [debug] Replaced \"traefik\" with kind ClusterRoleBinding for kind ClusterRoleBinding client.go:250: [debug] error updating the resource \"traefik\": failed to replace object: Deployment.apps \"traefik\" is invalid: spec.selector: Invalid value: v1.LabelSelector{MatchLabels:map[string]string{\"app.kubernetes.io/instance\":\"traefik\", \"app.kubernetes.io/name\":\"traefik\"}, MatchExpressions:[]v1.LabelSelectorRequirement(nil)}: field is immutable client.go:250: [debug] error updating the resource \"traefik\": failed to replace object: Service \"traefik\" is invalid: spec.clusterIPs[0]: Invalid value: []string(nil): primary clusterIP can not be unset upgrade.go:430: [debug] warning: Upgrade \"traefik\" failed: failed to replace object: Deployment.apps \"traefik\" is invalid: spec.selector: Invalid value: v1.LabelSelector{MatchLabels:map[string]string{\"app.kubernetes.io/instance\":\"traefik\", \"app.kubernetes.io/name\":\"traefik\"}, MatchExpressions:[]v1.LabelSelectorRequirement(nil)}: field is immutable \u0026\u0026 failed to replace object: Service \"traefik\" is invalid: spec.clusterIPs[0]: Invalid value: []string(nil): primary clusterIP can not be unset Error: UPGRADE FAILED: failed to replace object: Deployment.apps \"traefik\" is invalid: spec.selector: Invalid value: v1.LabelSelector{MatchLabels:map[string]string{\"app.kubernetes.io/instance\":\"traefik\", \"app.kubernetes.io/name\":\"traefik\"}, MatchExpressions:[]v1.LabelSelectorRequirement(nil)}: field is immutable \u0026\u0026 failed to replace object: Service \"traefik\" is invalid: spec.clusterIPs[0]: Invalid value: []string(nil): primary clusterIP can not be unset helm.go:88: [debug] failed to replace object: Deployment.apps \"traefik\" is invalid: spec.selector: Invalid value: v1.LabelSelector{MatchLabels:map[string]string{\"app.kubernetes.io/instance\":\"traefik\", \"app.kubernetes.io/name\":\"traefik\"}, MatchExpressions:[]v1.LabelSelectorRequirement(nil)}: field is immutable \u0026\u0026 failed to replace object: Service \"traefik\" is invalid: spec.clusterIPs[0]: Invalid value: []string(nil): primary clusterIP can not be unset helm.sh/helm/v3/pkg/kube.(*Client).Update helm.sh/helm/v3/pkg/kube/client.go:263 helm.sh/helm/v3/pkg/action.(*Upgrade).releasingUpgrade helm.sh/helm/v3/pkg/action/upgrade.go:375 runtime.goexit runtime/asm_arm64.s:1133 UPGRADE FAILED main.newUpgradeCmd.func2 helm.sh/helm/v3/cmd/helm/upgrade.go:202 github.com/spf13/cobra.(*Command).execute github.com/spf13/cobra@v1.2.1/command.go:856 github.com/spf13/cobra.(*Command).ExecuteC github.com/spf13/cobra@v1.2.1/command.go:974 github.com/spf13/cobra.(*Command).Execute github.com/spf13/cobra@v1.2.1/command.go:902 main.main helm.sh/helm/v3/cmd/helm/helm.go:87 runtime.main runtime/proc.go:255 runtime.goexit runtime/asm_arm64.s:1133 You can see the problem about the labels because they’re immutable, therefore, what I have done is to deploy a parallel traefik deployment (in version 2.5.6) which sits with the older version (1.8.7). There are no issues, because the ELB which Traefik creates by default (if you’re using AWS) is not used in our DNS. When I want to test it externally, I do need to create a new CNAME and point it to the:\nNAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE cerebro ClusterIP 100.65.108.89 80/TCP 539d kubernetes ClusterIP 100.64.0.1 443/TCP 540d tokenservice ClusterIP 100.66.106.178 3000/TCP 390d traefik LoadBalancer 100.67.75.183 a2c139e9a42564cbb897203cd2f9f16d-740162447.us-east-1.elb.amazonaws.com 443:30809/TCP,80:32518/TCP 11d traefik-dashboard ClusterIP 100.67.228.71 80/TCP 11d traefik2 LoadBalancer 100.69.196.88 a60c47c8fa23e4f09b562afc93e80274-894996197.us-east-1.elb.amazonaws.com 80:31852/TCP,443:30701/TCP 5h57m Installing Traefik2 in parallel with current deployment. Then as this doesn’t work, we will install Traefik v2 as a parallel deployment: ~/Kodify/infrastructure/kubernetes/staging/namespaces/default/traefik │ SYS-1556/Traefik_upgrade  date;helm install traefik2 -f values.yaml traefik/traefik --version 10.9.1 --debug  ✔ │ tubes-stg ⎈ │ 12:50:30 Mon Mar 7 12:51:41 CET 2022 install.go:178: [debug] Original chart version: \"10.9.1\" install.go:199: [debug] CHART PATH: /Users/dba7x/Library/Caches/helm/repository/traefik-10.9.1.tgz client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD ingressroutes.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD ingressroutetcps.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD ingressrouteudps.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD middlewares.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD middlewaretcps.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD serverstransports.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD tlsoptions.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD tlsstores.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 1 resource(s) install.go:151: [debug] CRD traefikservices.traefik.containo.us is already present. Skipping. client.go:128: [debug] creating 5 resource(s) client.go:299: [debug] Starting delete for \"traefik2-dashboard\" IngressRoute client.go:128: [debug] creating 1 resource(s) NAME: traefik2 LAST DEPLOYED: Mon Mar 7 12:51:49 2022 NAMESPACE: default STATUS: deployed REVISION: 1 TEST SUITE: None USER-SUPPLIED VALUES: accessLogs: enabled: true fields: defaultMode: keep headers: defaultMode: drop names: Referer: keep User-Agent: keep format: json additionalArguments: - --providers.kubernetesCRD.allowCrossNamespace=true - --providers.kubernetesingress.ingressclass=traefik-staging autoscaling: maxReplicas: 5 metrics: - resource: name: cpu targetAverageUtilization: 70 type: Resource minReplicas: 1 dashboard: domain: traefik.kodify.com enabled: true debug: enabled: false deployment: hostPort: dashboardEnabled: true httpEnabled: true httpsEnabled: true deploymentStrategy: rollingUpdate: maxSurge: 1 maxUnavailable: 1 type: RollingUpdate externalTrafficPolicy: Local forwardedHeaders: enabled: false gzip: enabled: true image: name: traefik tag: 2.5.6 metrics: prometheus: enabled: false serviceMonitor: enabled: false proxyProtocol: enabled: true trustedIPs: - 10.0.0.0/8 rbac: enabled: true replicas: 1 resources: limits: memory: 500Mi requests: cpu: 200m memory: 200Mi sendAnonymousUsage: false service: annotations: service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: '*' serviceType: LoadBalancer ssl: enabled: true enforced: false insecureSkipVerify: false upstream: false tolerations: [] tracing: enabled: false serviceName: traefik traefikLogFormat: json websecure: tls: enabled: true Then re-formatting the values.yaml file used in the helm release to use the appropiate values and removes the ones not needed as stated in the official chart repository\nIssue with HTTPS endpoints I created a new CNAME record pointing to the new ELB created and when I try to access with curl I found that HTTPS didn’t work correctly.\ncurl -vvv https://int.fux.com  ✔ │ 18:06:49 * Trying 54.156.8.198:443... * Connected to int.fux.com (54.156.8.198) port 443 (#0) * ALPN, offering h2 * ALPN, offering http/1.1 * successfully set certificate verify locations: * CAfile: /etc/ssl/cert.pem * CApath: none * TLSv1.2 (OUT), TLS handshake, Client hello (1): * TLSv1.2 (IN), TLS handshake, Server hello (2): * TLSv1.2 (IN), TLS handshake, Certificate (11): * TLSv1.2 (IN), TLS handshake, Server key exchange (12): * TLSv1.2 (IN), TLS handshake, Server finished (14): * TLSv1.2 (OUT), TLS handshake, Client key exchange (16): * TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1): * TLSv1.2 (OUT), TLS handshake, Finished (20): * TLSv1.2 (IN), TLS change cipher, Change cipher spec (1): * TLSv1.2 (IN), TLS handshake, Finished (20): * SSL connection using TLSv1.2 / ECDHE-RSA-CHACHA20-POLY1305 * ALPN, server accepted to use h2 * Server certificate: * subject: OU=Domain Control Validated; CN=*.fux.com * start date: Jun 7 13:06:34 2021 GMT * expire date: Jul 9 13:06:34 2022 GMT * subjectAltName: host \"int.fux.com\" matched cert's \"*.fux.com\" * issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2 * SSL certificate verify ok. * Using HTTP2, server supports multi-use * Connection state changed (HTTP/2 confirmed) * Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0 * Using Stream ID: 1 (easy handle 0x13e811e00) \u003e GET / HTTP/2 \u003e Host: int.fux.com \u003e user-agent: curl/7.77.0 \u003e accept: */* \u003e * Connection state changed (MAX_CONCURRENT_STREAMS == 250)! \u003c HTTP/2 404 \u003c content-type: text/plain; charset=utf-8 \u003c x-content-type-options: nosniff \u003c content-length: 19 \u003c date: Mon, 07 Mar 2022 17:06:50 GMT \u003c 404 page not found * Connection #0 to host int.fux.com left intact So, HTTP works but not HTTPs (although is presenting me the certifictate correctly). Then, what what am I missing?\nAfter reviewing the breaking changes from Traefik 1.x and 2.x, in my case, the problem is that my ingress resource doesn’t have the necessary annotation to enable TLS.\nAnd if I check the ingress (here I am using the Ingress resource from K8s not the Ingressroute from Traefik) I see that is missing traefik.ingress.kubernetes.io/router.tls: \"true\":\nk get ingress -n fux fux-front -o yaml apiVersion: networking.k8s.io/v1 kind: Ingress metadata: annotations: ingress.kubernetes.io/ssl-redirect: \"false\" ingress.kubernetes.io/whitelist-x-forwarded-for: \"true\" kubectl.kubernetes.io/last-applied-configuration: | {\"apiVersion\":\"extensions/v1beta1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/ssl-redirect\":\"false\",\"ingress.kubernetes.io/whitelist-x-forwarded-for\":\"true\",\"kubernetes.io/ingress.class\":\"traefik-staging\",\"kubernetes.io/tls-acme\":\"true\",\"meta.helm.sh/release-name\":\"fux-front\",\"meta.helm.sh/release-namespace\":\"\",\"status\":{\"loadBalancer\":{}}} kubernetes.io/ingress.class: traefik-staging kubernetes.io/tls-acme: \"true\" meta.helm.sh/release-name: fux-front meta.helm.sh/release-namespace: fux creationTimestamp: \"2020-12-08T13:55:03Z\" generation: 1 labels: app.kubernetes.io/managed-by: Helm name: fux-front namespace: fux resourceVersion: \"194662430\" uid: 27406fb6-65f8-44ef-a396-e6bf656144f1 spec: rules: - host: int.fux.com http: paths: - backend: service: name: fux-front port: number: 80 path: / pathType: ImplementationSpecific tls: Solution I just added traefik.ingress.kubernetes.io/router.tls: \"true\" to my ingress resource by editing or just redeploying your ingress and, finally it works:\n curl -v https://int.fux.com  0|1 ✘ │ 16:41:40 * Trying 34.196.145.235:443... * Connected to int.fux.com (34.196.145.235) port 443 (#0) * ALPN, offering h2 * ALPN, offering http/1.1 * successfully set certificate verify locations: * CAfile: /etc/ssl/cert.pem * CApath: none * TLSv1.2 (OUT), TLS handshake, Client hello (1): * TLSv1.2 (IN), TLS handshake, Server hello (2): * TLSv1.2 (IN), TLS handshake, Certificate (11): * TLSv1.2 (IN), TLS handshake, Server key exchange (12): * TLSv1.2 (IN), TLS handshake, Server finished (14): * TLSv1.2 (OUT), TLS handshake, Client key exchange (16): * TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1): * TLSv1.2 (OUT), TLS handshake, Finished (20): * TLSv1.2 (IN), TLS change cipher, Change cipher spec (1): * TLSv1.2 (IN), TLS handshake, Finished (20): * SSL connection using TLSv1.2 / ECDHE-RSA-CHACHA20-POLY1305 * ALPN, server accepted to use h2 * Server certificate: * subject: OU=Domain Control Validated; CN=*.fux.com * start date: Jun 7 13:06:34 2021 GMT * expire date: Jul 9 13:06:34 2022 GMT * subjectAltName: host \"int.fux.com\" matched cert's \"*.fux.com\" * issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2 * SSL certificate verify ok. * Using HTTP2, server supports multi-use * Connection state changed (HTTP/2 confirmed) * Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0 * Using Stream ID: 1 (easy handle 0x120010600) \u003e GET / HTTP/2 \u003e Host: int.fux.com \u003e user-agent: curl/7.77.0 \u003e accept: */* \u003e * Connection state changed (MAX_CONCURRENT_STREAMS == 250)! \u003c HTTP/2 200 \u003c content-type: text/html; charset=utf-8 \u003c date: Tue, 08 Mar 2022 15:41:46 GMT \u003c etag: W/\"50590-miVJLAHT/A1iTR6izN3u0hAsgL4\" \u003c server: nginx/1.11.13 \u003c strict-transport-security: max-age=15552000; includeSubDomains \u003c vary: Accept-Encoding \u003c x-content-type-options: nosniff \u003c x-dns-prefetch-control: off \u003c x-download-options: noopen \u003c x-frame-options: SAMEORIGIN \u003c x-xss-protection: 1; mode=block \u003c \u003c!DOCTYPE html\u003e \u003c/span\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#e6db74\"\u003e. \u003c/span\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#e6db74\"\u003e. \u003c/span\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#e6db74\"\u003e. \u003c/span\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#e6db74\"\u003e \u003cscript\u003e \u003c/span\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#e6db74\"\u003e \u003c/script\u003e \u003c/span\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#e6db74\"\u003e \u003cscript async src='\u003c/span\u003ehttps://www.google-analytics.com/analytics.js\u003cspan style=\"color:#960050;background-color:#1e0010\"\u003e'\u003c/span\u003e\u003e\u003c/script\u003e \u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e \u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e \u003c/body\u003e \u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e \u003c/html\u003e \u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e* Connection \u003cspan style=\"color:#75715e\"\u003e#0 to host int.fux.com left intact\u003c/span\u003e \u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003cp\u003eThen I upgraded to latest chart version (after changing my values.yaml):\n\u003cp\u003e\u003ccode\u003edate;helm upgrade traefik2 -f values.yaml traefik/traefik --version 10.14.2\u003c/code\u003e\n\u003ch2 id=\"side-notes\"\u003eSide notes\u003c/h2\u003e \u003cul\u003e \u003cli\u003eFound that for Whitelisting IPs, you need to use a middleware instead of the annotation in the ingress. Then in your ingress, point to that middleware you have created.\u003c/li\u003e \u003c/ul\u003e \u003cp\u003e![[Pasted image 20220405174110.png]]\n\u003cp\u003eMiddleware created:\n\u003cp\u003e![[Pasted image 20220405174158.png]]\n\u003cul\u003e \u003cli\u003eGood thing to test if it works correctly is pointing your etc/hosts to the Public IP of the LB you have created in Kubernetes.\u003c/li\u003e \u003c/ul\u003e \u003cp\u003e![[Pasted image 20220405174348.png]]\n\u003cp\u003eThen in your /etc/hosts\n\u003cp\u003e![[Pasted image 20220405174411.png]]\n",
+  "wordCount" : "1644",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dangaiden.github.io/post/2022/upgrading-traefik-with-helm/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dan Belmonte",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dangaiden.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dangaiden.github.io" accesskey="h" title="Dan Belmonte (Alt + H)">Dan Belmonte</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://dangaiden.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/about-me/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-meta">8 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#traefik-upgrade" aria-label="Traefik upgrade">Traefik upgrade</a><ul>
+                        
+                <li>
+                    <a href="#the-overall-process" aria-label="The overall process">The overall process</a></li>
+                <li>
+                    <a href="#context" aria-label="Context">Context</a></li>
+                <li>
+                    <a href="#installing-traefik2-in-parallel-with-current-deployment" aria-label="Installing Traefik2 in parallel with current deployment.">Installing Traefik2 in parallel with current deployment.</a><ul>
+                        
+                <li>
+                    <a href="#issue-with-https-endpoints" aria-label="Issue with HTTPS endpoints">Issue with HTTPS endpoints</a></li></ul>
+                </li>
+                <li>
+                    <a href="#side-notes" aria-label="Side notes">Side notes</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="traefik-upgrade">Traefik upgrade<a hidden class="anchor" aria-hidden="true" href="#traefik-upgrade">#</a></h1>
+<h2 id="the-overall-process">The overall process<a hidden class="anchor" aria-hidden="true" href="#the-overall-process">#</a></h2>
+<h2 id="context">Context<a hidden class="anchor" aria-hidden="true" href="#context">#</a></h2>
+<ul>
+<li>Upgrading traefik from 1.7.26 (chart traefik-1.87.7) to  2.5.6 (chart 10.9.1) isn&rsquo;t possible because of labels immutability:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>❯ helm upgrade -i traefik -n default -f values.yaml traefik/traefik --version 10.9.1 --force --debug
+</span></span><span style="display:flex;"><span>history.go:56: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> getting history <span style="color:#66d9ef">for</span> release traefik
+</span></span><span style="display:flex;"><span>upgrade.go:139: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> preparing upgrade <span style="color:#66d9ef">for</span> traefik
+</span></span><span style="display:flex;"><span>upgrade.go:147: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> performing update <span style="color:#66d9ef">for</span> traefik
+</span></span><span style="display:flex;"><span>upgrade.go:319: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating upgraded release <span style="color:#66d9ef">for</span> traefik
+</span></span><span style="display:flex;"><span>client.go:218: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> checking <span style="color:#ae81ff">5</span> resources <span style="color:#66d9ef">for</span> changes
+</span></span><span style="display:flex;"><span>client.go:493: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> Replaced <span style="color:#e6db74">&#34;traefik&#34;</span> with kind ServiceAccount <span style="color:#66d9ef">for</span> kind ServiceAccount
+</span></span><span style="display:flex;"><span>client.go:493: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> Replaced <span style="color:#e6db74">&#34;traefik&#34;</span> with kind ClusterRole <span style="color:#66d9ef">for</span> kind ClusterRole
+</span></span><span style="display:flex;"><span>client.go:493: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> Replaced <span style="color:#e6db74">&#34;traefik&#34;</span> with kind ClusterRoleBinding <span style="color:#66d9ef">for</span> kind ClusterRoleBinding
+</span></span><span style="display:flex;"><span>client.go:250: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> error updating the resource <span style="color:#e6db74">&#34;traefik&#34;</span>:
+</span></span><span style="display:flex;"><span>	 failed to replace object: Deployment.apps <span style="color:#e6db74">&#34;traefik&#34;</span> is invalid: spec.selector: Invalid value: v1.LabelSelector<span style="color:#f92672">{</span>MatchLabels:map<span style="color:#f92672">[</span>string<span style="color:#f92672">]</span>string<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;app.kubernetes.io/instance&#34;</span>:<span style="color:#e6db74">&#34;traefik&#34;</span>, <span style="color:#e6db74">&#34;app.kubernetes.io/name&#34;</span>:<span style="color:#e6db74">&#34;traefik&#34;</span><span style="color:#f92672">}</span>, MatchExpressions:<span style="color:#f92672">[]</span>v1.LabelSelectorRequirement<span style="color:#f92672">(</span>nil<span style="color:#f92672">)}</span>: field is immutable
+</span></span><span style="display:flex;"><span>client.go:250: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> error updating the resource <span style="color:#e6db74">&#34;traefik&#34;</span>:
+</span></span><span style="display:flex;"><span>	 failed to replace object: Service <span style="color:#e6db74">&#34;traefik&#34;</span> is invalid: spec.clusterIPs<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Invalid value: <span style="color:#f92672">[]</span>string<span style="color:#f92672">(</span>nil<span style="color:#f92672">)</span>: primary clusterIP can not be unset
+</span></span><span style="display:flex;"><span>upgrade.go:430: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> warning: Upgrade <span style="color:#e6db74">&#34;traefik&#34;</span> failed: failed to replace object: Deployment.apps <span style="color:#e6db74">&#34;traefik&#34;</span> is invalid: spec.selector: Invalid value: v1.LabelSelector<span style="color:#f92672">{</span>MatchLabels:map<span style="color:#f92672">[</span>string<span style="color:#f92672">]</span>string<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;app.kubernetes.io/instance&#34;</span>:<span style="color:#e6db74">&#34;traefik&#34;</span>, <span style="color:#e6db74">&#34;app.kubernetes.io/name&#34;</span>:<span style="color:#e6db74">&#34;traefik&#34;</span><span style="color:#f92672">}</span>, MatchExpressions:<span style="color:#f92672">[]</span>v1.LabelSelectorRequirement<span style="color:#f92672">(</span>nil<span style="color:#f92672">)}</span>: field is immutable <span style="color:#f92672">&amp;&amp;</span> failed to replace object: Service <span style="color:#e6db74">&#34;traefik&#34;</span> is invalid: spec.clusterIPs<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Invalid value: <span style="color:#f92672">[]</span>string<span style="color:#f92672">(</span>nil<span style="color:#f92672">)</span>: primary clusterIP can not be unset
+</span></span><span style="display:flex;"><span>Error: UPGRADE FAILED: failed to replace object: Deployment.apps <span style="color:#e6db74">&#34;traefik&#34;</span> is invalid: spec.selector: Invalid value: v1.LabelSelector<span style="color:#f92672">{</span>MatchLabels:map<span style="color:#f92672">[</span>string<span style="color:#f92672">]</span>string<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;app.kubernetes.io/instance&#34;</span>:<span style="color:#e6db74">&#34;traefik&#34;</span>, <span style="color:#e6db74">&#34;app.kubernetes.io/name&#34;</span>:<span style="color:#e6db74">&#34;traefik&#34;</span><span style="color:#f92672">}</span>, MatchExpressions:<span style="color:#f92672">[]</span>v1.LabelSelectorRequirement<span style="color:#f92672">(</span>nil<span style="color:#f92672">)}</span>: field is immutable <span style="color:#f92672">&amp;&amp;</span> failed to replace object: Service <span style="color:#e6db74">&#34;traefik&#34;</span> is invalid: spec.clusterIPs<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Invalid value: <span style="color:#f92672">[]</span>string<span style="color:#f92672">(</span>nil<span style="color:#f92672">)</span>: primary clusterIP can not be unset
+</span></span><span style="display:flex;"><span>helm.go:88: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> failed to replace object: Deployment.apps <span style="color:#e6db74">&#34;traefik&#34;</span> is invalid: spec.selector: Invalid value: v1.LabelSelector<span style="color:#f92672">{</span>MatchLabels:map<span style="color:#f92672">[</span>string<span style="color:#f92672">]</span>string<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;app.kubernetes.io/instance&#34;</span>:<span style="color:#e6db74">&#34;traefik&#34;</span>, <span style="color:#e6db74">&#34;app.kubernetes.io/name&#34;</span>:<span style="color:#e6db74">&#34;traefik&#34;</span><span style="color:#f92672">}</span>, MatchExpressions:<span style="color:#f92672">[]</span>v1.LabelSelectorRequirement<span style="color:#f92672">(</span>nil<span style="color:#f92672">)}</span>: field is immutable <span style="color:#f92672">&amp;&amp;</span> failed to replace object: Service <span style="color:#e6db74">&#34;traefik&#34;</span> is invalid: spec.clusterIPs<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>: Invalid value: <span style="color:#f92672">[]</span>string<span style="color:#f92672">(</span>nil<span style="color:#f92672">)</span>: primary clusterIP can not be unset
+</span></span><span style="display:flex;"><span>helm.sh/helm/v3/pkg/kube.<span style="color:#f92672">(</span>*Client<span style="color:#f92672">)</span>.Update
+</span></span><span style="display:flex;"><span>	helm.sh/helm/v3/pkg/kube/client.go:263
+</span></span><span style="display:flex;"><span>helm.sh/helm/v3/pkg/action.<span style="color:#f92672">(</span>*Upgrade<span style="color:#f92672">)</span>.releasingUpgrade
+</span></span><span style="display:flex;"><span>	helm.sh/helm/v3/pkg/action/upgrade.go:375
+</span></span><span style="display:flex;"><span>runtime.goexit
+</span></span><span style="display:flex;"><span>	runtime/asm_arm64.s:1133
+</span></span><span style="display:flex;"><span>UPGRADE FAILED
+</span></span><span style="display:flex;"><span>main.newUpgradeCmd.func2
+</span></span><span style="display:flex;"><span>	helm.sh/helm/v3/cmd/helm/upgrade.go:202
+</span></span><span style="display:flex;"><span>github.com/spf13/cobra.<span style="color:#f92672">(</span>*Command<span style="color:#f92672">)</span>.execute
+</span></span><span style="display:flex;"><span>	github.com/spf13/cobra@v1.2.1/command.go:856
+</span></span><span style="display:flex;"><span>github.com/spf13/cobra.<span style="color:#f92672">(</span>*Command<span style="color:#f92672">)</span>.ExecuteC
+</span></span><span style="display:flex;"><span>	github.com/spf13/cobra@v1.2.1/command.go:974
+</span></span><span style="display:flex;"><span>github.com/spf13/cobra.<span style="color:#f92672">(</span>*Command<span style="color:#f92672">)</span>.Execute
+</span></span><span style="display:flex;"><span>	github.com/spf13/cobra@v1.2.1/command.go:902
+</span></span><span style="display:flex;"><span>main.main
+</span></span><span style="display:flex;"><span>	helm.sh/helm/v3/cmd/helm/helm.go:87
+</span></span><span style="display:flex;"><span>runtime.main
+</span></span><span style="display:flex;"><span>	runtime/proc.go:255
+</span></span><span style="display:flex;"><span>runtime.goexit
+</span></span><span style="display:flex;"><span>	runtime/asm_arm64.s:1133
+</span></span></code></pre></div><ul>
+<li>You can see the problem about the labels because they&rsquo;re immutable, therefore, what I have done is to deploy a parallel traefik deployment (in version 2.5.6) which sits with the older version (1.8.7).</li>
+</ul>
+<p>There are no issues, because the ELB which Traefik creates by default (if you&rsquo;re using AWS) is not used in our DNS. When I want to test it externally, I do need to create a new CNAME and point it to the:</p>
+<pre tabindex="0"><code>NAME                                      TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT(S)                      AGE
+cerebro                                   ClusterIP      100.65.108.89    &lt;none&gt;                                                                   80/TCP                       539d
+kubernetes                                ClusterIP      100.64.0.1       &lt;none&gt;                                                                   443/TCP                      540d
+tokenservice                              ClusterIP      100.66.106.178   &lt;none&gt;                                                                   3000/TCP                     390d
+traefik                                   LoadBalancer   100.67.75.183    a2c139e9a42564cbb897203cd2f9f16d-740162447.us-east-1.elb.amazonaws.com   443:30809/TCP,80:32518/TCP   11d
+traefik-dashboard                         ClusterIP      100.67.228.71    &lt;none&gt;                                                                   80/TCP                       11d
+traefik2                                  LoadBalancer   100.69.196.88    a60c47c8fa23e4f09b562afc93e80274-894996197.us-east-1.elb.amazonaws.com   80:31852/TCP,443:30701/TCP   5h57m
+</code></pre><h2 id="installing-traefik2-in-parallel-with-current-deployment">Installing Traefik2 in parallel with current deployment.<a hidden class="anchor" aria-hidden="true" href="#installing-traefik2-in-parallel-with-current-deployment">#</a></h2>
+<ul>
+<li>Then as this doesn&rsquo;t work, we will install Traefik v2 as a parallel deployment:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ~/Kodify/infrastructure/kubernetes/staging/namespaces/default/traefik │ SYS-1556/Traefik_upgrade  date;helm install traefik2 -f values.yaml traefik/traefik --version 10.9.1 --debug                                                                                                         ✔ │ tubes-stg ⎈ │ 12:50:30
+</span></span><span style="display:flex;"><span>Mon Mar  <span style="color:#ae81ff">7</span> 12:51:41 CET <span style="color:#ae81ff">2022</span>
+</span></span><span style="display:flex;"><span>install.go:178: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> Original chart version: <span style="color:#e6db74">&#34;10.9.1&#34;</span>
+</span></span><span style="display:flex;"><span>install.go:199: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CHART PATH: /Users/dba7x/Library/Caches/helm/repository/traefik-10.9.1.tgz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD ingressroutes.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD ingressroutetcps.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD ingressrouteudps.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD middlewares.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD middlewaretcps.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD serverstransports.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD tlsoptions.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD tlsstores.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>install.go:151: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> CRD traefikservices.traefik.containo.us is already present. Skipping.
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">5</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>client.go:299: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> Starting delete <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;traefik2-dashboard&#34;</span> IngressRoute
+</span></span><span style="display:flex;"><span>client.go:128: <span style="color:#f92672">[</span>debug<span style="color:#f92672">]</span> creating <span style="color:#ae81ff">1</span> resource<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>NAME: traefik2
+</span></span><span style="display:flex;"><span>LAST DEPLOYED: Mon Mar  <span style="color:#ae81ff">7</span> 12:51:49 <span style="color:#ae81ff">2022</span>
+</span></span><span style="display:flex;"><span>NAMESPACE: default
+</span></span><span style="display:flex;"><span>STATUS: deployed
+</span></span><span style="display:flex;"><span>REVISION: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>TEST SUITE: None
+</span></span><span style="display:flex;"><span>USER-SUPPLIED VALUES:
+</span></span><span style="display:flex;"><span>accessLogs:
+</span></span><span style="display:flex;"><span>  enabled: true
+</span></span><span style="display:flex;"><span>  fields:
+</span></span><span style="display:flex;"><span>    defaultMode: keep
+</span></span><span style="display:flex;"><span>    headers:
+</span></span><span style="display:flex;"><span>      defaultMode: drop
+</span></span><span style="display:flex;"><span>      names:
+</span></span><span style="display:flex;"><span>        Referer: keep
+</span></span><span style="display:flex;"><span>        User-Agent: keep
+</span></span><span style="display:flex;"><span>  format: json
+</span></span><span style="display:flex;"><span>additionalArguments:
+</span></span><span style="display:flex;"><span>- --providers.kubernetesCRD.allowCrossNamespace<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>- --providers.kubernetesingress.ingressclass<span style="color:#f92672">=</span>traefik-staging
+</span></span><span style="display:flex;"><span>autoscaling:
+</span></span><span style="display:flex;"><span>  maxReplicas: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>  metrics:
+</span></span><span style="display:flex;"><span>  - resource:
+</span></span><span style="display:flex;"><span>      name: cpu
+</span></span><span style="display:flex;"><span>      targetAverageUtilization: <span style="color:#ae81ff">70</span>
+</span></span><span style="display:flex;"><span>    type: Resource
+</span></span><span style="display:flex;"><span>  minReplicas: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>dashboard:
+</span></span><span style="display:flex;"><span>  domain: traefik.kodify.com
+</span></span><span style="display:flex;"><span>  enabled: true
+</span></span><span style="display:flex;"><span>debug:
+</span></span><span style="display:flex;"><span>  enabled: false
+</span></span><span style="display:flex;"><span>deployment:
+</span></span><span style="display:flex;"><span>  hostPort:
+</span></span><span style="display:flex;"><span>    dashboardEnabled: true
+</span></span><span style="display:flex;"><span>    httpEnabled: true
+</span></span><span style="display:flex;"><span>    httpsEnabled: true
+</span></span><span style="display:flex;"><span>deploymentStrategy:
+</span></span><span style="display:flex;"><span>  rollingUpdate:
+</span></span><span style="display:flex;"><span>    maxSurge: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    maxUnavailable: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  type: RollingUpdate
+</span></span><span style="display:flex;"><span>externalTrafficPolicy: Local
+</span></span><span style="display:flex;"><span>forwardedHeaders:
+</span></span><span style="display:flex;"><span>  enabled: false
+</span></span><span style="display:flex;"><span>gzip:
+</span></span><span style="display:flex;"><span>  enabled: true
+</span></span><span style="display:flex;"><span>image:
+</span></span><span style="display:flex;"><span>  name: traefik
+</span></span><span style="display:flex;"><span>  tag: 2.5.6
+</span></span><span style="display:flex;"><span>metrics:
+</span></span><span style="display:flex;"><span>  prometheus:
+</span></span><span style="display:flex;"><span>    enabled: false
+</span></span><span style="display:flex;"><span>  serviceMonitor:
+</span></span><span style="display:flex;"><span>    enabled: false
+</span></span><span style="display:flex;"><span>proxyProtocol:
+</span></span><span style="display:flex;"><span>  enabled: true
+</span></span><span style="display:flex;"><span>  trustedIPs:
+</span></span><span style="display:flex;"><span>  - 10.0.0.0/8
+</span></span><span style="display:flex;"><span>rbac:
+</span></span><span style="display:flex;"><span>  enabled: true
+</span></span><span style="display:flex;"><span>replicas: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>resources:
+</span></span><span style="display:flex;"><span>  limits:
+</span></span><span style="display:flex;"><span>    memory: 500Mi
+</span></span><span style="display:flex;"><span>  requests:
+</span></span><span style="display:flex;"><span>    cpu: 200m
+</span></span><span style="display:flex;"><span>    memory: 200Mi
+</span></span><span style="display:flex;"><span>sendAnonymousUsage: false
+</span></span><span style="display:flex;"><span>service:
+</span></span><span style="display:flex;"><span>  annotations:
+</span></span><span style="display:flex;"><span>    service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: <span style="color:#e6db74">&#39;*&#39;</span>
+</span></span><span style="display:flex;"><span>serviceType: LoadBalancer
+</span></span><span style="display:flex;"><span>ssl:
+</span></span><span style="display:flex;"><span>  enabled: true
+</span></span><span style="display:flex;"><span>  enforced: false
+</span></span><span style="display:flex;"><span>  insecureSkipVerify: false
+</span></span><span style="display:flex;"><span>  upstream: false
+</span></span><span style="display:flex;"><span>tolerations: <span style="color:#f92672">[]</span>
+</span></span><span style="display:flex;"><span>tracing:
+</span></span><span style="display:flex;"><span>  enabled: false
+</span></span><span style="display:flex;"><span>  serviceName: traefik
+</span></span><span style="display:flex;"><span>traefikLogFormat: json
+</span></span><span style="display:flex;"><span>websecure:
+</span></span><span style="display:flex;"><span>  tls:
+</span></span><span style="display:flex;"><span>    enabled: true
+</span></span></code></pre></div><p>Then re-formatting the <code>values.yaml</code> file used in the helm release to use the appropiate values and removes the ones not needed as stated in the <a href="https://github.com/traefik/traefik-helm-chart/blob/v10.9.1/traefik/templates/_podtemplate.tpl">official chart repository</a></p>
+<h3 id="issue-with-https-endpoints">Issue with HTTPS endpoints<a hidden class="anchor" aria-hidden="true" href="#issue-with-https-endpoints">#</a></h3>
+<p>I created a new CNAME record pointing to the new ELB created and when I try to access with <em>curl</em> I found that HTTPS didn&rsquo;t work correctly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -vvv https://int.fux.com                          ✔ │ 18:06:49
+</span></span><span style="display:flex;"><span>*   Trying 54.156.8.198:443...
+</span></span><span style="display:flex;"><span>* Connected to int.fux.com <span style="color:#f92672">(</span>54.156.8.198<span style="color:#f92672">)</span> port <span style="color:#ae81ff">443</span> <span style="color:#f92672">(</span><span style="color:#75715e">#0)</span>
+</span></span><span style="display:flex;"><span>* ALPN, offering h2
+</span></span><span style="display:flex;"><span>* ALPN, offering http/1.1
+</span></span><span style="display:flex;"><span>* successfully set certificate verify locations:
+</span></span><span style="display:flex;"><span>*  CAfile: /etc/ssl/cert.pem
+</span></span><span style="display:flex;"><span>*  CApath: none
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>OUT<span style="color:#f92672">)</span>, TLS handshake, Client hello <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Server hello <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Certificate <span style="color:#f92672">(</span>11<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Server key exchange <span style="color:#f92672">(</span>12<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Server finished <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>OUT<span style="color:#f92672">)</span>, TLS handshake, Client key exchange <span style="color:#f92672">(</span>16<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>OUT<span style="color:#f92672">)</span>, TLS change cipher, Change cipher spec <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>OUT<span style="color:#f92672">)</span>, TLS handshake, Finished <span style="color:#f92672">(</span>20<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS change cipher, Change cipher spec <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Finished <span style="color:#f92672">(</span>20<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* SSL connection using TLSv1.2 / ECDHE-RSA-CHACHA20-POLY1305
+</span></span><span style="display:flex;"><span>* ALPN, server accepted to use h2
+</span></span><span style="display:flex;"><span>* Server certificate:
+</span></span><span style="display:flex;"><span>*  subject: OU<span style="color:#f92672">=</span>Domain Control Validated; CN<span style="color:#f92672">=</span>*.fux.com
+</span></span><span style="display:flex;"><span>*  start date: Jun  <span style="color:#ae81ff">7</span> 13:06:34 <span style="color:#ae81ff">2021</span> GMT
+</span></span><span style="display:flex;"><span>*  expire date: Jul  <span style="color:#ae81ff">9</span> 13:06:34 <span style="color:#ae81ff">2022</span> GMT
+</span></span><span style="display:flex;"><span>*  subjectAltName: host <span style="color:#e6db74">&#34;int.fux.com&#34;</span> matched cert<span style="color:#960050;background-color:#1e0010">&#39;</span>s <span style="color:#e6db74">&#34;*.fux.com&#34;</span>
+</span></span><span style="display:flex;"><span>*  issuer: C<span style="color:#f92672">=</span>US; ST<span style="color:#f92672">=</span>Arizona; L<span style="color:#f92672">=</span>Scottsdale; O<span style="color:#f92672">=</span>GoDaddy.com, Inc.; OU<span style="color:#f92672">=</span>http://certs.godaddy.com/repository/; CN<span style="color:#f92672">=</span>Go Daddy Secure Certificate Authority - G2
+</span></span><span style="display:flex;"><span>*  SSL certificate verify ok.
+</span></span><span style="display:flex;"><span>* Using HTTP2, server supports multi-use
+</span></span><span style="display:flex;"><span>* Connection state changed <span style="color:#f92672">(</span>HTTP/2 confirmed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>* Using Stream ID: <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>easy handle 0x13e811e00<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>&gt; GET / HTTP/2
+</span></span><span style="display:flex;"><span>&gt; Host: int.fux.com
+</span></span><span style="display:flex;"><span>&gt; user-agent: curl/7.77.0
+</span></span><span style="display:flex;"><span>&gt; accept: */*
+</span></span><span style="display:flex;"><span>&gt;
+</span></span><span style="display:flex;"><span>* Connection state changed <span style="color:#f92672">(</span>MAX_CONCURRENT_STREAMS <span style="color:#f92672">==</span> 250<span style="color:#f92672">)</span>!
+</span></span><span style="display:flex;"><span>&lt; HTTP/2 <span style="color:#ae81ff">404</span>
+</span></span><span style="display:flex;"><span>&lt; content-type: text/plain; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>&lt; x-content-type-options: nosniff
+</span></span><span style="display:flex;"><span>&lt; content-length: <span style="color:#ae81ff">19</span>
+</span></span><span style="display:flex;"><span>&lt; date: Mon, <span style="color:#ae81ff">07</span> Mar <span style="color:#ae81ff">2022</span> 17:06:50 GMT
+</span></span><span style="display:flex;"><span>&lt;
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">404</span> page not found
+</span></span><span style="display:flex;"><span>* Connection <span style="color:#75715e">#0 to host int.fux.com left intact</span>
+</span></span></code></pre></div><p>So, HTTP works but not HTTPs (although is presenting me the certifictate correctly).
+Then, what <em>what am I missing?</em></p>
+<p>After reviewing the breaking changes from Traefik 1.x and 2.x, in my case, the problem is that my ingress resource doesn&rsquo;t have the <a href="https://doc.traefik.io/traefik/routing/providers/kubernetes-ingress/#enabling-tls-via-annotations">necessary annotation</a> to enable TLS.</p>
+<p>And if I check the ingress (here I am using the Ingress resource from K8s not the Ingressroute from Traefik) I see that is missing <code>traefik.ingress.kubernetes.io/router.tls: &quot;true&quot;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>k get ingress -n fux fux-front -o yaml
+</span></span><span style="display:flex;"><span>apiVersion: networking.k8s.io/v1
+</span></span><span style="display:flex;"><span>kind: Ingress
+</span></span><span style="display:flex;"><span>metadata:
+</span></span><span style="display:flex;"><span>  annotations:
+</span></span><span style="display:flex;"><span>    ingress.kubernetes.io/ssl-redirect: <span style="color:#e6db74">&#34;false&#34;</span>
+</span></span><span style="display:flex;"><span>    ingress.kubernetes.io/whitelist-x-forwarded-for: <span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>    kubectl.kubernetes.io/last-applied-configuration: |
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;apiVersion&#34;</span>:<span style="color:#e6db74">&#34;extensions/v1beta1&#34;</span>,<span style="color:#e6db74">&#34;kind&#34;</span>:<span style="color:#e6db74">&#34;Ingress&#34;</span>,<span style="color:#e6db74">&#34;metadata&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;annotations&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;ingress.kubernetes.io/ssl-redirect&#34;</span>:<span style="color:#e6db74">&#34;false&#34;</span>,<span style="color:#e6db74">&#34;ingress.kubernetes.io/whitelist-x-forwarded-for&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>,<span style="color:#e6db74">&#34;kubernetes.io/ingress.class&#34;</span>:<span style="color:#e6db74">&#34;traefik-staging&#34;</span>,<span style="color:#e6db74">&#34;kubernetes.io/tls-acme&#34;</span>:<span style="color:#e6db74">&#34;true&#34;</span>,<span style="color:#e6db74">&#34;meta.helm.sh/release-name&#34;</span>:<span style="color:#e6db74">&#34;fux-front&#34;</span>,<span style="color:#e6db74">&#34;meta.helm.sh/release-namespace&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,<span style="color:#e6db74">&#34;status&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;loadBalancer&#34;</span>:<span style="color:#f92672">{}}}</span>
+</span></span><span style="display:flex;"><span>    kubernetes.io/ingress.class: traefik-staging
+</span></span><span style="display:flex;"><span>    kubernetes.io/tls-acme: <span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>    meta.helm.sh/release-name: fux-front
+</span></span><span style="display:flex;"><span>    meta.helm.sh/release-namespace: fux
+</span></span><span style="display:flex;"><span>  creationTimestamp: <span style="color:#e6db74">&#34;2020-12-08T13:55:03Z&#34;</span>
+</span></span><span style="display:flex;"><span>  generation: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  labels:
+</span></span><span style="display:flex;"><span>    app.kubernetes.io/managed-by: Helm
+</span></span><span style="display:flex;"><span>  name: fux-front
+</span></span><span style="display:flex;"><span>  namespace: fux
+</span></span><span style="display:flex;"><span>  resourceVersion: <span style="color:#e6db74">&#34;194662430&#34;</span>
+</span></span><span style="display:flex;"><span>  uid: 27406fb6-65f8-44ef-a396-e6bf656144f1
+</span></span><span style="display:flex;"><span>spec:
+</span></span><span style="display:flex;"><span>  rules:
+</span></span><span style="display:flex;"><span>  - host: int.fux.com
+</span></span><span style="display:flex;"><span>    http:
+</span></span><span style="display:flex;"><span>      paths:
+</span></span><span style="display:flex;"><span>      - backend:
+</span></span><span style="display:flex;"><span>          service:
+</span></span><span style="display:flex;"><span>            name: fux-front
+</span></span><span style="display:flex;"><span>            port:
+</span></span><span style="display:flex;"><span>              number: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>        path: /
+</span></span><span style="display:flex;"><span>        pathType: ImplementationSpecific
+</span></span><span style="display:flex;"><span>  tls:
+</span></span></code></pre></div><ul>
+<li>Solution</li>
+</ul>
+<p>I just added <code>traefik.ingress.kubernetes.io/router.tls: &quot;true&quot;</code> to my ingress resource by editing or just redeploying your ingress and, finally it works:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> curl -v https://int.fux.com                 0|<span style="color:#ae81ff">1</span> ✘ │ 16:41:40
+</span></span><span style="display:flex;"><span>*   Trying 34.196.145.235:443...
+</span></span><span style="display:flex;"><span>* Connected to int.fux.com <span style="color:#f92672">(</span>34.196.145.235<span style="color:#f92672">)</span> port <span style="color:#ae81ff">443</span> <span style="color:#f92672">(</span><span style="color:#75715e">#0)</span>
+</span></span><span style="display:flex;"><span>* ALPN, offering h2
+</span></span><span style="display:flex;"><span>* ALPN, offering http/1.1
+</span></span><span style="display:flex;"><span>* successfully set certificate verify locations:
+</span></span><span style="display:flex;"><span>*  CAfile: /etc/ssl/cert.pem
+</span></span><span style="display:flex;"><span>*  CApath: none
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>OUT<span style="color:#f92672">)</span>, TLS handshake, Client hello <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Server hello <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Certificate <span style="color:#f92672">(</span>11<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Server key exchange <span style="color:#f92672">(</span>12<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Server finished <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>OUT<span style="color:#f92672">)</span>, TLS handshake, Client key exchange <span style="color:#f92672">(</span>16<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>OUT<span style="color:#f92672">)</span>, TLS change cipher, Change cipher spec <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>OUT<span style="color:#f92672">)</span>, TLS handshake, Finished <span style="color:#f92672">(</span>20<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS change cipher, Change cipher spec <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* TLSv1.2 <span style="color:#f92672">(</span>IN<span style="color:#f92672">)</span>, TLS handshake, Finished <span style="color:#f92672">(</span>20<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>* SSL connection using TLSv1.2 / ECDHE-RSA-CHACHA20-POLY1305
+</span></span><span style="display:flex;"><span>* ALPN, server accepted to use h2
+</span></span><span style="display:flex;"><span>* Server certificate:
+</span></span><span style="display:flex;"><span>*  subject: OU<span style="color:#f92672">=</span>Domain Control Validated; CN<span style="color:#f92672">=</span>*.fux.com
+</span></span><span style="display:flex;"><span>*  start date: Jun  <span style="color:#ae81ff">7</span> 13:06:34 <span style="color:#ae81ff">2021</span> GMT
+</span></span><span style="display:flex;"><span>*  expire date: Jul  <span style="color:#ae81ff">9</span> 13:06:34 <span style="color:#ae81ff">2022</span> GMT
+</span></span><span style="display:flex;"><span>*  subjectAltName: host <span style="color:#e6db74">&#34;int.fux.com&#34;</span> matched cert<span style="color:#e6db74">&#39;s &#34;*.fux.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*  issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*  SSL certificate verify ok.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">* Using HTTP2, server supports multi-use
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">* Connection state changed (HTTP/2 confirmed)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">* Using Stream ID: 1 (easy handle 0x120010600)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; GET / HTTP/2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; Host: int.fux.com
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; user-agent: curl/7.77.0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; accept: */*
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">* Connection state changed (MAX_CONCURRENT_STREAMS == 250)!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; HTTP/2 200
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; content-type: text/html; charset=utf-8
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; date: Tue, 08 Mar 2022 15:41:46 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; etag: W/&#34;50590-miVJLAHT/A1iTR6izN3u0hAsgL4&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; server: nginx/1.11.13
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; strict-transport-security: max-age=15552000; includeSubDomains
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; vary: Accept-Encoding
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; x-content-type-options: nosniff
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; x-dns-prefetch-control: off
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; x-download-options: noopen
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; x-frame-options: SAMEORIGIN
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt; x-xss-protection: 1; mode=block
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;!DOCTYPE html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;html lang=&#34;en&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;script async src=&#39;</span>https://www.google-analytics.com/analytics.js<span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;&lt;/script&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      &lt;/body&gt;
+</span></span><span style="display:flex;"><span>    &lt;/html&gt;
+</span></span><span style="display:flex;"><span>* Connection <span style="color:#75715e">#0 to host int.fux.com left intact</span>
+</span></span></code></pre></div><p>Then I upgraded to latest chart version (after changing my values.yaml):</p>
+<p><code>date;helm upgrade traefik2 -f values.yaml traefik/traefik --version 10.14.2</code></p>
+<h2 id="side-notes">Side notes<a hidden class="anchor" aria-hidden="true" href="#side-notes">#</a></h2>
+<ul>
+<li>Found that for Whitelisting IPs, you need to use a middleware instead of the annotation in the ingress. Then in your ingress, point to that middleware you have created.</li>
+</ul>
+<p>![[Pasted image 20220405174110.png]]</p>
+<p>Middleware created:</p>
+<p>![[Pasted image 20220405174158.png]]</p>
+<ul>
+<li>Good thing to test if it works correctly is pointing your etc/hosts to the Public IP of the LB you have created in Kubernetes.</li>
+</ul>
+<p>![[Pasted image 20220405174348.png]]</p>
+<p>Then in your /etc/hosts</p>
+<p>![[Pasted image 20220405174411.png]]</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

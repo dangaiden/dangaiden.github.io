@@ -20,7 +20,7 @@
       <description>This is a short post talking about Windows Server Failover Clustering (WSFC) and a problem I found when adding the nodes from your cluster using the «Validate a Configuration» wizard.
 This wizard is recommended to run after configuring your nodes and before creating the cluster in order to spot any misconfigurations.
 So now, let’s go into the problem.
- The issue In the wizard when trying to add (in my example) the second node shows an error:</description>
+The issue In the wizard when trying to add (in my example) the second node shows an error:</description>
     </item>
     
     <item>
@@ -30,8 +30,7 @@ So now, let’s go into the problem.
       
       <guid>https://dangaiden.github.io/2020-02-29-troubleshooting-tips-for-beginners-in-windows-server/</guid>
       <description>I was thinking these days what I wish I have known when I started working with Windows servers, some basic (and some not) commands that can help me to troubleshoot servers without requiring additional software.
-
- That’s why this is a post dedicated to people who just started administering servers with Windows Server 20xx-2019 (I expect at least 2008 although it is going end of support the next month) or maybe you’re curious and want to know more about Windows Server administration.</description>
+That’s why this is a post dedicated to people who just started administering servers with Windows Server 20xx-2019 (I expect at least 2008 although it is going end of support the next month) or maybe you’re curious and want to know more about Windows Server administration.</description>
     </item>
     
   </channel>

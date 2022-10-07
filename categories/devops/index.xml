@@ -17,8 +17,8 @@
       <pubDate>Fri, 11 Mar 2022 11:37:03 +0000</pubDate>
       
       <guid>https://dangaiden.github.io/ckad-exam-experience/</guid>
-      <description>Another Kubernetes exam: CKAD  TL;DR I passed the CKAD exam a couple of weeks ago. As I already expected, it was easier than the CKA. Most of the resources to be used are the same than the CKA.
- How much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the killer.sh test and It was enough but your mileage may vary.</description>
+      <description>Another Kubernetes exam: CKAD TL;DR I passed the CKAD exam a couple of weeks ago. As I already expected, it was easier than the CKA. Most of the resources to be used are the same than the CKA.
+How much do I study for this one? Well, I already have experience with Kubernetes, took the CKA 3 weeks ago so I just took twice the killer.sh test and It was enough but your mileage may vary.</description>
     </item>
     
     <item>
@@ -36,8 +36,8 @@
       <pubDate>Mon, 14 Feb 2022 11:37:03 +0000</pubDate>
       
       <guid>https://dangaiden.github.io/cka-exam-experience/</guid>
-      <description>It was about time&amp;hellip;  TL;DR Last week I&amp;rsquo;ve taken the CKA exam last week and I have passed it! You can read the rest of the post for more insights and resources.
- I have been studying for 2-3 weeks but I wanted to share what I have used to study although I already have experience with Kubernetes so your mileage may vary.
+      <description>It was about time&amp;hellip; TL;DR Last week I&amp;rsquo;ve taken the CKA exam last week and I have passed it! You can read the rest of the post for more insights and resources.
+I have been studying for 2-3 weeks but I wanted to share what I have used to study although I already have experience with Kubernetes so your mileage may vary.
 Anyway, I really like the practice exams as they really test you but practice and understand things instead of memorizing questions from a test.</description>
     </item>
     
@@ -70,8 +70,8 @@ Like many people that work as sysadmin these days, they are used to work with vi
       
       <guid>https://dangaiden.github.io/2020-10-19-finishing-a-computer-engineering-degree-with-devops-stuff/</guid>
       <description>It&amp;rsquo;s been more than one month since I published something here but I&amp;rsquo;ve been changing quite a lot my focus learning and I changed now from CCNA to DevOps things.
- TL;DR I will be building an automated CI/CD pipeline for my final assignment focusing on tools installed and configured on-premise although there will be cloud services like the front-end.
- Also, I forgot to mention that last month I started the last semester of my Computer Engineering degree that I started back in 2014 (oh my!</description>
+TL;DR I will be building an automated CI/CD pipeline for my final assignment focusing on tools installed and configured on-premise although there will be cloud services like the front-end.
+Also, I forgot to mention that last month I started the last semester of my Computer Engineering degree that I started back in 2014 (oh my!</description>
     </item>
     
   </channel>

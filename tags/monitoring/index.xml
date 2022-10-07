@@ -18,7 +18,7 @@
       
       <guid>https://dangaiden.github.io/oss-monitoring-series/</guid>
       <description>OSS monitoring series Context If you work with micro-services (maybe not) and in the cloud (or not), you have probably heard about the many products for monitoring (or monitoring stacks), the most &amp;ldquo;modern&amp;rdquo; and famous OSS are:
- ELK stack (Elasticsearch, Logstash, and Kibana) Grafana stack (Grafana, Loki and Prometheus)  All these products are open-source projects which have become the go-to for many companies and I can deny that they work well (at least in my experience) especially for services built in the cloud or micro-services.</description>
+ELK stack (Elasticsearch, Logstash, and Kibana) Grafana stack (Grafana, Loki and Prometheus) All these products are open-source projects which have become the go-to for many companies and I can deny that they work well (at least in my experience) especially for services built in the cloud or micro-services.</description>
     </item>
     
   </channel>

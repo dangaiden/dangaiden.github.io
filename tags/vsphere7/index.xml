@@ -19,9 +19,8 @@
       <guid>https://dangaiden.github.io/2020-04-28-vcenter-server-7-0-fresh-install/</guid>
       <description>Prologue With the release of vSphere 7 at the beginning of this month, I decided to make a post about how to install vCenter Server Appliance (vCSA) which is quite simple.
 Which are the new features? Check this post from my friend Graham Barker to find out!
-
- Let’s move on!
- Proceed to download the «VMware vCenter Server 7.0.0» ISO file from my.vmware.com   Mount the ISO file and execute the installer.</description>
+Let’s move on!
+Proceed to download the «VMware vCenter Server 7.0.0» ISO file from my.vmware.com Mount the ISO file and execute the installer.exe file : Prerequisite: We need DNS if we want to deploy vCenter with an FQDN but if you don’t have it or you can’t for any reason, you can trick the installer and put the IP address as the hostname and it will work.</description>
     </item>
     
   </channel>

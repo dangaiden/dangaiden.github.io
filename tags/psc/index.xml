@@ -20,7 +20,7 @@
       <description>Hello there!
 A quick post talking about a new external PSC in vSphere 6.0 environments.
 As you may now the vCenter product is composed by the PSC (Platform Services Controller) and the vCenter component.
-Services provided by each component: Platform Services Controller  &amp;lt;td style=&amp;quot;width: 50%; height: 10px; text-align: center;&amp;quot;&amp;gt; &amp;lt;span style=&amp;quot;font-family: Didact Gothic;&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;&amp;lt;span style=&amp;quot;background-color: #ffffff; color: #000000; font-size: 12pt;&amp;quot;&amp;gt;vCenter&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;/td&amp;gt;   vCenter Single Sign-On  &amp;lt;td style=&amp;quot;width: 50%; height: 27px; text-align: center;&amp;quot;&amp;gt; &amp;lt;span style=&amp;quot;font-size: 10pt; font-family: Didact Gothic;&amp;quot;&amp;gt;PostgreSQL or SQL Express (in 6.</description>
+Services provided by each component: Platform Services Controller &amp;lt;td style=&amp;quot;width: 50%; height: 10px; text-align: center;&amp;quot;&amp;gt; &amp;lt;span style=&amp;quot;font-family: Didact Gothic;&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;&amp;lt;span style=&amp;quot;background-color: #ffffff; color: #000000; font-size: 12pt;&amp;quot;&amp;gt;vCenter&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;/td&amp;gt; vCenter Single Sign-On &amp;lt;td style=&amp;quot;width: 50%; height: 27px; text-align: center;&amp;quot;&amp;gt; &amp;lt;span style=&amp;quot;font-size: 10pt; font-family: Didact Gothic;&amp;quot;&amp;gt;PostgreSQL or SQL Express (in 6.</description>
     </item>
     
   </channel>
