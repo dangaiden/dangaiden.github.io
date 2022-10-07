@@ -2,11 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dangaiden.github.io/tags/barcelona/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
     <loc>https://dangaiden.github.io/categories/</loc>
-    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/</loc>
-    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/categories/events/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/post/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/vcommunity/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/vmware/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/categories/vmware/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/vmwareexplore-europe-local-guide/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/categories/vmware-explore-europe/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/vmwareexplore/</loc>
+    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/a-new-journey/</loc>
     <lastmod>2022-09-20T00:00:00+00:00</lastmod>
@@ -15,12 +45,6 @@
     <lastmod>2022-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/categories/personal/</loc>
-    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/post/</loc>
-    <lastmod>2022-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/</loc>
     <lastmod>2022-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/certification/</loc>
@@ -116,9 +140,6 @@
     <loc>https://dangaiden.github.io/tags/virtualization/</loc>
     <lastmod>2020-10-31T20:32:17+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/vmware/</loc>
-    <lastmod>2020-10-31T20:32:17+00:00</lastmod>
-  </url><url>
     <loc>https://dangaiden.github.io/tags/docker/</loc>
     <lastmod>2020-10-19T12:55:26+00:00</lastmod>
   </url><url>
@@ -158,9 +179,6 @@
     <loc>https://dangaiden.github.io/2020-05-21-upgrade-vrops-from-6-7-0-to-8-0-1/</loc>
     <lastmod>2020-05-21T20:00:52+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/tags/vmware/</loc>
-    <lastmod>2020-05-21T20:00:52+00:00</lastmod>
-  </url><url>
     <loc>https://dangaiden.github.io/categories/vrealize/</loc>
     <lastmod>2020-05-21T20:00:52+00:00</lastmod>
   </url><url>
@@ -175,9 +193,6 @@
   </url><url>
     <loc>https://dangaiden.github.io/tags/vsphere7/</loc>
     <lastmod>2020-04-28T11:19:58+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/categories/events/</loc>
-    <lastmod>2020-04-21T12:26:33+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/online/</loc>
     <lastmod>2020-04-21T12:26:33+00:00</lastmod>
@@ -210,9 +225,6 @@
     <lastmod>2020-02-29T22:58:35+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/2020-01-31-post-vmworld-europe-2019-days-1-and-2/</loc>
-    <lastmod>2020-01-31T22:51:46+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/vcommunity/</loc>
     <lastmod>2020-01-31T22:51:46+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/vmworld/</loc>
@@ -271,9 +283,6 @@
   </url><url>
     <loc>https://dangaiden.github.io/2019-10-25-vcap6-5-dcv-design-failed-exam-experience/</loc>
     <lastmod>2019-10-25T21:44:50+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/barcelona/</loc>
-    <lastmod>2019-10-14T09:54:53+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/2019-10-14-vmworld-2019-europe-local-guide/</loc>
     <lastmod>2019-10-14T09:54:53+00:00</lastmod>

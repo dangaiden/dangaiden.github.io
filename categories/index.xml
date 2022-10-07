@@ -10,7 +10,34 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Oct 2022 12:50:50 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Events</title>
+      <link>https://dangaiden.github.io/categories/events/</link>
+      <pubDate>Fri, 07 Oct 2022 12:50:50 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/categories/events/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware</title>
+      <link>https://dangaiden.github.io/categories/vmware/</link>
+      <pubDate>Fri, 07 Oct 2022 12:50:50 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/categories/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware Explore Europe</title>
+      <link>https://dangaiden.github.io/categories/vmware-explore-europe/</link>
+      <pubDate>Fri, 07 Oct 2022 12:50:50 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/categories/vmware-explore-europe/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Personal</title>
       <link>https://dangaiden.github.io/categories/personal/</link>
@@ -84,15 +111,6 @@
     </item>
     
     <item>
-      <title>VMware</title>
-      <link>https://dangaiden.github.io/categories/vmware/</link>
-      <pubDate>Sat, 31 Oct 2020 20:32:17 +0000</pubDate>
-      
-      <guid>https://dangaiden.github.io/categories/vmware/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>vCenter</title>
       <link>https://dangaiden.github.io/categories/vcenter/</link>
       <pubDate>Mon, 31 Aug 2020 09:00:11 +0000</pubDate>
@@ -134,15 +152,6 @@
       <pubDate>Thu, 21 May 2020 20:00:52 +0000</pubDate>
       
       <guid>https://dangaiden.github.io/categories/vrealize/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Events</title>
-      <link>https://dangaiden.github.io/categories/events/</link>
-      <pubDate>Tue, 21 Apr 2020 12:26:33 +0000</pubDate>
-      
-      <guid>https://dangaiden.github.io/categories/events/</guid>
       <description></description>
     </item>
     

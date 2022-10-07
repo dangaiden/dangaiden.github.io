@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>vmwareexplore on Dan Belmonte</title>
+    <link>https://dangaiden.github.io/tags/vmwareexplore/</link>
+    <description>Recent content in vmwareexplore on Dan Belmonte</description>
+    <image>
+      <url>https://dangaiden.github.io/47</url>
+      <link>https://dangaiden.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Oct 2022 12:50:50 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/tags/vmwareexplore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware Explore 2022 local guide</title>
+      <link>https://dangaiden.github.io/vmwareexplore-europe-local-guide/</link>
+      <pubDate>Fri, 07 Oct 2022 12:50:50 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/vmwareexplore-europe-local-guide/</guid>
+      <description>This is a &amp;ldquo;remake&amp;rdquo; from my previous guide and maybe I have missed something which is not properly updated.
+VMworld 2022 Europe is one month away and I am excited because that means the first event that I am going to attend this year (after not being able to attend Kubecon in Valencia&amp;hellip;)
+This is a remake of my previous guide with tips about transport, restaurants, places to go, etc.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,7 +10,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Oct 2020 20:32:17 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/categories/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Oct 2022 12:50:50 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/categories/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VMware Explore 2022 local guide</title>
+      <link>https://dangaiden.github.io/vmwareexplore-europe-local-guide/</link>
+      <pubDate>Fri, 07 Oct 2022 12:50:50 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/vmwareexplore-europe-local-guide/</guid>
+      <description>This is a &amp;ldquo;remake&amp;rdquo; from my previous guide and maybe I have missed something which is not properly updated.
+VMworld 2022 Europe is one month away and I am excited because that means the first event that I am going to attend this year (after not being able to attend Kubecon in Valencia&amp;hellip;)
+This is a remake of my previous guide with tips about transport, restaurants, places to go, etc.</description>
+    </item>
+    
     <item>
       <title>Is the applications’ future «containe(r)d»?</title>
       <link>https://dangaiden.github.io/2020-10-31-applications-future-containerd/</link>
