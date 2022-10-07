@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>All on Dan Belmonte</title>
+    <link>https://dangaiden.github.io/categories/all/</link>
+    <description>Recent content in All on Dan Belmonte</description>
+    <image>
+      <url>https://dangaiden.github.io/47</url>
+      <link>https://dangaiden.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://dangaiden.github.io/categories/all/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certificate renewal on Windows ADFS and WAP</title>
+      <link>https://dangaiden.github.io/?p=1490/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/?p=1490/</guid>
+      <description>ADFS SERVER (EZINADADFS01-EC) Prerequisites:
+After importing the certificate go to your local certificate store and check the permissions of the current (old) certificate: The adfssrv is the service that was used before, in my case I have a new account using the ADFS Service:
+I will proceed to grant permissions to that service account:
+Change Service communications certificate Now, we will change the certificate used by the Service Communications.Go to the AD FS console:</description>
+    </item>
+    
+    <item>
+      <title>Cloning virtual machines in vSphere series – Part 4: Instant Clones</title>
+      <link>https://dangaiden.github.io/2019-03-30-cloning-virtual-machines-in-vsphere-series-part-4-instant-clones/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/2019-03-30-cloning-virtual-machines-in-vsphere-series-part-4-instant-clones/</guid>
+      <description>Instant clones Since this post from William Lam https://www.virtuallyghetto.com/2018/04/new-instant-clone-architecture-in-vsphere-6-7-part-1.htm, I discovered that technology and I found it amazing. Instant clone or VMFork (project that later on was delivered through a Fling) was created some years ago and was able since vSphere 6.0 (in Horizon View).
+With the new release of vSphere 6.7 , VMware made it available using a public vSphere API and now we can use it with PowerCLI</description>
+    </item>
+    
+    <item>
+      <title>Post VMworld Europe 2019: Days 3 and 4</title>
+      <link>https://dangaiden.github.io/?p=1427/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/?p=1427/</guid>
+      <description>https://www.vmworld.com/en/europe/agenda.html
+Solutions Exchange General session Day 2 General Session (November 6th)
+vStreet fighter and more I presented as well!
+So happy to be able to present a session in the vBrownbag booth at #VMworld https://t.co/H9bwnqsqkJ &amp;mdash; Dan Belmonte (@DanGaiden) November 6, 2019 Playing with some amigos 😉
+Playing Street fighter and now Marvel VS Capcom #vStreetfighter@vWilmo @mrtommyberry @JoshMilenthal @georgelazos_ #VMworld pic.twitter.com/mxdlvL6TTK &amp;mdash; Dan Belmonte (@DanGaiden) November 7, 2019 </description>
+    </item>
+    
+  </channel>
+</rss>
