@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Dan Belmonte</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="">
 <meta name="description" content="Upgrade the Control Plane Upgrade kubeadm: [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y &ndash;allow-change-held-packages kubeadm=1.21.1-00
 Make sure it upgraded correctly: [cloud_user@k8s-control]$ kubeadm version
 Drain the control plane node: [cloud_user@k8s-control]$ kubectl drain k8s-control &ndash;ignore-daemonsets
@@ -14,9 +14,9 @@ Plan the upgrade: [cloud_user@k8s-control]$ sudo kubeadm upgrade plan v1.21.1
 Upgrade the control plane components: [cloud_user@k8s-control]$ sudo kubeadm upgrade apply v1.21.1
 Upgrade kubelet and kubectl on the control plane node: [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y &ndash;allow-change-held-packages kubelet=1.">
 <meta name="author" content="">
-<link rel="canonical" href="https://dangaiden.github.io/post/2021/k8scluster-upgrade_version/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.e85ad0406048e8176e1c7661b25d5c69297ddfe41dc4124cf75ecb99a4f7b3d1.js" integrity="sha256-6FrQQGBI6BduHHZhsl1caSl93&#43;QdxBJM917LmaT3s9E="
+<link rel="canonical" href="https://dangaiden.github.io/post/2021/k8scluster-upgrade_version/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://dangaiden.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://dangaiden.github.io/favicon-16x16.png">
@@ -25,7 +25,6 @@ Upgrade kubelet and kubectl on the control plane node: [cloud_user@k8s-control]$
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.101.0" />
 <noscript>
     <style>
         #theme-toggle,
@@ -153,14 +152,14 @@ Upgrade kubelet and kubectl on the control plane node: [cloud_user@k8s-control]$
     <nav class="nav">
         <div class="logo">
             <a href="https://dangaiden.github.io" accesskey="h" title="Dan Belmonte (Alt + H)">Dan Belmonte</a>
-            <span class="logo-switches">
+            <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -174,7 +173,7 @@ Upgrade kubelet and kubectl on the control plane node: [cloud_user@k8s-control]$
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
@@ -323,16 +322,18 @@ From the control plane node, uncordon worker node 1:
   </div>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>&copy; 2023 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
@@ -401,12 +402,12 @@ From the control plane node, uncordon worker node 1:
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerText = 'copy';
+        copybutton.innerHTML = 'copy';
 
         function copyingDone() {
-            copybutton.innerText = 'copied!';
+            copybutton.innerHTML = 'copied!';
             setTimeout(() => {
-                copybutton.innerText = 'copy';
+                copybutton.innerHTML = 'copy';
             }, 2000);
         }
 

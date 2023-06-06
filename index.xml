@@ -5,12 +5,23 @@
     <link>https://dangaiden.github.io/</link>
     <description>Recent content on Dan Belmonte</description>
     <image>
+      <title>Dan Belmonte</title>
       <url>https://dangaiden.github.io/47</url>
       <link>https://dangaiden.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Oct 2022 12:50:50 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jun 2023 11:37:03 +0000</lastBuildDate><atom:link href="https://dangaiden.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My CKS experience</title>
+      <link>https://dangaiden.github.io/cks-exam-experience/</link>
+      <pubDate>Thu, 01 Jun 2023 11:37:03 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/cks-exam-experience/</guid>
+      <description>It was about time&amp;hellip; TL;DR A couple of months ago I&amp;rsquo;ve taken the CKS exam last week and I have passed it. It was about time to make a post about it which can be helpful to others.
+After studying for some weeks of studying (in fact, I scheduled the exam a week before the exam was expiring) and two attempts, I got the pass, the first was just to be safe as it was going to expire but the second one, let me 2 additional weeks to nail a couple of things.</description>
+    </item>
+    
     <item>
       <title>VMware Explore 2022 local guide (remake)</title>
       <link>https://dangaiden.github.io/vmwareexplore-europe-local-guide/</link>
@@ -28,7 +39,7 @@ This event is a bit special for me because it&amp;rsquo;s where I started to mee
       <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://dangaiden.github.io/a-new-journey/</guid>
-      <description>Wow, seems unbelievable but It&amp;rsquo;s been already 100 days since I joined VMware!
+      <description>Wow, seems unbelievable but It&amp;rsquo;s been already a YEAR since I joined VMware!
 Yes, in June 20th I started working in a new company, VMware, which most of people in IT will know because of the hypervisor revolution about 20 years ago or so ;)
 Why? Well, if you&amp;rsquo;re reading this, chances are that you know that I&amp;rsquo;ve been around the #vCommunity for years and well, I&amp;rsquo;ve been working a lot with VMware products (basically since I started in IT, more than 10 years ago!</description>
     </item>
@@ -644,6 +655,15 @@ Steps overview Check 2.4 and 2.5 releases for breaking changes Reference: https:
       <description>Traefik currently seats on a custom version owned by us but the patch was merged into the upstream repository and needs to be back to the main docker image along with the upgrade to &amp;gt; 2.5
 Steps Check 2.4 and 2.5 releases for breaking changes Reference: https://doc.traefik.io/traefik/migration/v2/#v23-to-v24 Reference: https://doc.traefik.io/traefik/migration/v2/#v24-to-v25
 ServersTransport -&amp;gt; Update RBAC and CRD (To check in Helm chart for 2.4) This is done by the chart as it updates everything needed.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dangaiden.github.io/post/2022/untitled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dangaiden.github.io/post/2022/untitled/</guid>
+      <description></description>
     </item>
     
     <item>

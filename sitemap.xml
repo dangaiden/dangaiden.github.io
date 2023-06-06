@@ -2,22 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dangaiden.github.io/categories/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/certification/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/devops/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/categories/devops/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/categories/education/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/kubernetes/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/categories/kubernetes/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/cks-exam-experience/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/post/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
+    <loc>https://dangaiden.github.io/tags/</loc>
+    <lastmod>2023-06-01T11:37:03+00:00</lastmod>
+  </url><url>
     <loc>https://dangaiden.github.io/tags/barcelona/</loc>
     <lastmod>2022-10-07T12:50:50+00:00</lastmod>
   </url><url>
-    <loc>https://dangaiden.github.io/categories/</loc>
-    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/</loc>
-    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
-  </url><url>
     <loc>https://dangaiden.github.io/categories/events/</loc>
-    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/post/</loc>
-    <lastmod>2022-10-07T12:50:50+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/</loc>
     <lastmod>2022-10-07T12:50:50+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/tags/vcommunity/</loc>
@@ -46,24 +67,6 @@
   </url><url>
     <loc>https://dangaiden.github.io/categories/personal/</loc>
     <lastmod>2022-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/certification/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/devops/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/categories/devops/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/categories/education/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/tags/kubernetes/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
-  </url><url>
-    <loc>https://dangaiden.github.io/categories/kubernetes/</loc>
-    <lastmod>2022-03-11T11:37:03+00:00</lastmod>
   </url><url>
     <loc>https://dangaiden.github.io/ckad-exam-experience/</loc>
     <lastmod>2022-03-11T11:37:03+00:00</lastmod>
@@ -493,6 +496,8 @@
     <loc>https://dangaiden.github.io/post/2022/migrating-your-traefik-deployment-managed-by-helm/</loc>
   </url><url>
     <loc>https://dangaiden.github.io/post/2022/sys-1556-traefik-2.6-upgrade.md/</loc>
+  </url><url>
+    <loc>https://dangaiden.github.io/post/2022/untitled/</loc>
   </url><url>
     <loc>https://dangaiden.github.io/post/2022/upgrade-traefik-to-v261/</loc>
   </url><url>

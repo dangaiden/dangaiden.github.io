@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head>
+	<meta name="generator" content="Hugo 0.101.0" /><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -9,8 +10,8 @@
 
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="https://dangaiden.github.io/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link rel="canonical" href="https://dangaiden.github.io/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://dangaiden.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://dangaiden.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://dangaiden.github.io/favicon-32x32.png">
@@ -18,7 +19,6 @@
 <link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.101.0" />
 <link rel="alternate" type="application/rss+xml" href="https://dangaiden.github.io/index.xml">
 <link rel="alternate" type="application/json" href="https://dangaiden.github.io/index.json">
 <noscript>
@@ -99,14 +99,14 @@
     <nav class="nav">
         <div class="logo">
             <a href="https://dangaiden.github.io" accesskey="h" title="Dan Belmonte (Alt + H)">Dan Belmonte</a>
-            <span class="logo-switches">
+            <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -120,7 +120,7 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-            </span>
+            </div>
         </div>
         <ul id="menu">
             <li>
@@ -158,9 +158,26 @@
     <h2>
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
+    <p>Upgrade the Control Plane Upgrade kubeadm: [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y –allow-change-held-packages kubeadm=1.21.1-00
+Make sure it upgraded correctly: [cloud_user@k8s-control]$ kubeadm version
+Drain the control plane node: [cloud_user@k8s-control]$ kubectl drain k8s-control –ignore-daemonsets
+Plan the upgrade: [cloud_user@k8s-control]$ sudo kubeadm upgrade plan v1.21.1
+Upgrade the control plane components: [cloud_user@k8s-control]$ sudo kubeadm upgrade apply v1.21.1
+Upgrade kubelet and kubectl on the control plane node: [cloud_user@k8s-control]$ sudo apt-get update &amp;&amp; sudo apt-get install -y –allow-change-held-packages kubelet=1....</p>
+  </div>
+  <footer class="entry-footer">2 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/k8scluster-upgrade_version/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>
+    </h2>
+  </header>
+  <div class="entry-content">
     <p>Install Packages in all nodes Log into the Control Plane Node (Note: The following steps must be performed on all three nodes.). Create configuration file for containerd: cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/containerd.conf overlay br_netfilter EOF Load modules: sudo modprobe overlay sudo modprobe br_netfilter Set system configurations for Kubernetes networking: cat &lt;&lt;EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward = 1 net.bridge.bridge-nf-call-ip6tables = 1 EOF Apply new settings: sudo sysctl --system Install containerd: sudo apt-get update &amp;&amp; sudo apt-get install -y containerd Create default configuration file for containerd: sudo mkdir -p /etc/containerd Generate default containerd configuration and save to the newly created default file: sudo containerd config default | sudo tee /etc/containerd/config....</p>
-  </section>
+  </div>
   <footer class="entry-footer">2 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/kubernetes-cluster-installation-config/"></a>
 </article>
@@ -170,10 +187,10 @@
     <h2>
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>Quick guide to install OS within VMs 3 Virtual machines configured and ready Here is a quick “guide” I made for myself to create a VM, configure RHEL and have ready 3 VMs with the OS configured to start playing with Kubernetes.
 Link to Insta</p>
-  </section>
+  </div>
   <footer class="entry-footer">1 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2021/note-about-k8s-part1/"></a>
 </article>
@@ -183,12 +200,12 @@ Link to Insta</p>
     <h2>
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>Introduction Here, I’ll explain you how to upgrade your Traefik version sitting on a Kubernetes cluster (version 1.23.1) on AWS.
 In my case, I was moving from Traefik 2.1 to 2.5, but this could be more or less translated between other versions.
 Note: This is the way I performed the migration of Traefik and there are other ways to do it so YMML.
 Steps overview Check 2.4 and 2.5 releases for breaking changes Reference: https://doc....</p>
-  </section>
+  </div>
   <footer class="entry-footer">1 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2022/migrating-your-traefik-deployment-managed-by-helm/"></a>
 </article>
@@ -198,11 +215,11 @@ Steps overview Check 2.4 and 2.5 releases for breaking changes Reference: https:
     <h2>
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>Traefik currently seats on a custom version owned by us but the patch was merged into the upstream repository and needs to be back to the main docker image along with the upgrade to &gt; 2.5
 Steps Check 2.4 and 2.5 releases for breaking changes Reference: https://doc.traefik.io/traefik/migration/v2/#v23-to-v24 Reference: https://doc.traefik.io/traefik/migration/v2/#v24-to-v25
 ServersTransport -&gt; Update RBAC and CRD (To check in Helm chart for 2.4) This is done by the chart as it updates everything needed....</p>
-  </section>
+  </div>
   <footer class="entry-footer">6 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2022/sys-1556-traefik-2.6-upgrade.md/"></a>
 </article>
@@ -212,11 +229,23 @@ ServersTransport -&gt; Update RBAC and CRD (To check in Helm chart for 2.4) This
     <h2>
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
+    <p></p>
+  </div>
+  <footer class="entry-footer">0 min</footer>
+  <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2022/untitled/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>
+    </h2>
+  </header>
+  <div class="entry-content">
     <p>Apply the correct CRDs for 2.5 and 2.6 versions: Great gist –&gt; Useful
 Traefik CRDs reference: https://github.com/traefik/traefik/blob/v2.5/docs/content/reference/dynamic-configuration/kubernetes-crd.md
 ~/Traefik_upgrade/backup_220222_2_5v  ./CRDs_2_5.sh  ✔ │ 17:29:32 Warning: resource customresourcedefinitions/ingressroutes.traefik.containo.us is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically. customresourcedefinition.apiextensions.k8s.io/ingressroutes.traefik.containo.us configured Warning: resource customresourcedefinitions/ingressroutetcps.traefik.containo.us is missing the kubectl....</p>
-  </section>
+  </div>
   <footer class="entry-footer">4 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2022/upgrade-traefik-to-v261/"></a>
 </article>
@@ -226,38 +255,29 @@ Traefik CRDs reference: https://github.com/traefik/traefik/blob/v2.5/docs/conten
     <h2>
     </h2>
   </header>
-  <section class="entry-content">
+  <div class="entry-content">
     <p>Traefik upgrade The overall process Context Upgrading traefik from 1.7.26 (chart traefik-1.87.7) to 2.5.6 (chart 10.9.1) isn’t possible because of labels immutability: ❯ helm upgrade -i traefik -n default -f values.yaml traefik/traefik --version 10.9.1 --force --debug history.go:56: [debug] getting history for release traefik upgrade.go:139: [debug] preparing upgrade for traefik upgrade.go:147: [debug] performing update for traefik upgrade.go:319: [debug] creating upgraded release for traefik client.go:218: [debug] checking 5 resources for changes client.go:493: [debug] Replaced &#34;traefik&#34; with kind ServiceAccount for kind ServiceAccount client....</p>
-  </section>
+  </div>
   <footer class="entry-footer">8 min</footer>
   <a class="entry-link" aria-label="post link to " href="https://dangaiden.github.io/post/2022/upgrading-traefik-with-helm/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Experience at VMworld 2018 Europe – Day 1
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Let me talk to you about my experience on my first VMworld! This is a personal experience I want to share about Day 1 at VMworld 2018 Europe.
-Introduction I live in Barcelona so, I am fortunate that I don’t need to travel to go to the VMworld Europe. The only thing is to commute by train between home and Fira Barcelona (where VMworld is established). It was Monday, November 5th, 2018....</p>
-  </section>
-  <footer class="entry-footer">3 min&nbsp;·&nbsp;itgaiden</footer>
-  <a class="entry-link" aria-label="post link to Experience at VMworld 2018 Europe – Day 1" href="https://dangaiden.github.io/2018-11-19-vmworld-18-eu-day1/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="https://dangaiden.github.io/page/6/">« Prev Page</a>
+    <a class="prev" href="https://dangaiden.github.io/page/6/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://dangaiden.github.io/page/8/">Next&nbsp;&nbsp;»
+    </a>
   </nav>
 </footer>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>&copy; 2023 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

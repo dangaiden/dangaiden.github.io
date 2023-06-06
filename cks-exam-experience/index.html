@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My CKS experience | Dan Belmonte</title>
+<meta name="keywords" content="kubernetes, certification, devops">
+<meta name="description" content="It was about time&hellip; TL;DR A couple of months ago I&rsquo;ve taken the CKS exam last week and I have passed it. It was about time to make a post about it which can be helpful to others.
+After studying for some weeks of studying (in fact, I scheduled the exam a week before the exam was expiring) and two attempts, I got the pass, the first was just to be safe as it was going to expire but the second one, let me 2 additional weeks to nail a couple of things.">
+<meta name="author" content="itgaiden">
+<link rel="canonical" href="https://dangaiden.github.io/cks-exam-experience/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dangaiden.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dangaiden.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dangaiden.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dangaiden.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dangaiden.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="My CKS experience" />
+<meta property="og:description" content="It was about time&hellip; TL;DR A couple of months ago I&rsquo;ve taken the CKS exam last week and I have passed it. It was about time to make a post about it which can be helpful to others.
+After studying for some weeks of studying (in fact, I scheduled the exam a week before the exam was expiring) and two attempts, I got the pass, the first was just to be safe as it was going to expire but the second one, let me 2 additional weeks to nail a couple of things." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dangaiden.github.io/cks-exam-experience/" /><meta property="og:image" content="https://dangaiden.github.io/47"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-06-01T11:37:03+00:00" />
+<meta property="article:modified_time" content="2023-06-01T11:37:03+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dangaiden.github.io/47"/>
+
+<meta name="twitter:title" content="My CKS experience"/>
+<meta name="twitter:description" content="It was about time&hellip; TL;DR A couple of months ago I&rsquo;ve taken the CKS exam last week and I have passed it. It was about time to make a post about it which can be helpful to others.
+After studying for some weeks of studying (in fact, I scheduled the exam a week before the exam was expiring) and two attempts, I got the pass, the first was just to be safe as it was going to expire but the second one, let me 2 additional weeks to nail a couple of things."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://dangaiden.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "My CKS experience",
+      "item": "https://dangaiden.github.io/cks-exam-experience/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "My CKS experience",
+  "name": "My CKS experience",
+  "description": "It was about time\u0026hellip; TL;DR A couple of months ago I\u0026rsquo;ve taken the CKS exam last week and I have passed it. It was about time to make a post about it which can be helpful to others.\nAfter studying for some weeks of studying (in fact, I scheduled the exam a week before the exam was expiring) and two attempts, I got the pass, the first was just to be safe as it was going to expire but the second one, let me 2 additional weeks to nail a couple of things.",
+  "keywords": [
+    "kubernetes", "certification", "devops"
+  ],
+  "articleBody": "It was about time… TL;DR A couple of months ago I’ve taken the CKS exam last week and I have passed it. It was about time to make a post about it which can be helpful to others.\nAfter studying for some weeks of studying (in fact, I scheduled the exam a week before the exam was expiring) and two attempts, I got the pass, the first was just to be safe as it was going to expire but the second one, let me 2 additional weeks to nail a couple of things.\nIn my opinion, the exam wasn’t that hard, by doing the killer.sh tests (provided when you order the exam) you have great questions which will be harder than the real exam.\nAs with other experiences with CKx certifications, killer-sh is extremely helpful but maybe you will have to dig deeper in some aspects if you want to have everything clear.\nThis one is not like the CKA or CKAD, as already mentioned in the CHECK THE DOC, you need to know your way around about many things: processes, tools, different K8s of course, and more. Check the DOC!!!!!\nDay of the exam It’s a 2-hour exam, so any extra time you can save, the better, maybe you should go to the toilet before taking the exam (although you can request a break if needed).\nUse the cheat sheet provided by the Kubernetes documentation at the beginning of the exam (search for it) as it will help you to remember some commands if you don’t remember them correctly\nYou can have opened more than one tab (that was my experience) to read through the documentation. In my case I had the official Kubernetes documentation opened to search as fast as I can through each topic.\nIf you get stuck in one question for more than 10 min, probably you should flag it and go with the next one!\nNote: The exam taken was based in Kubernetes v1.26 so obviously, PSPs were already out of the equation!\nResources The famous CKA Udemy course by Mumshad Mannambeth was great to know about some other resources I haven’t used nor known and for reviewing many others. The amazing collection of resources from Walid is a must: https://github.com/walidshaari/Kubernetes-Certified-Administrator CKA/CKAD exercises from https://github.com/dgkanatsios/CKAD-exercises More exercises: https://github.com/StenlyTU/K8s-training-official The Killer.sh test provided by the Linux training foundation is extremely helpful. Useful things I have learnt but NOT ALL are mandatory for the exam Useful “shortcuts” to use (use them as exported variables or aliases) export k=kubectl # already configured export do=\"--dry-run=client -o yaml\" # k get pod x $do export now=\"--force --grace-period 0\" # k delete pod x $now Can be helpful where and which control-plane components are installed: Kubelet, DNS, scheduler, etcd, and API server (as pods): /etc/kubernetes/manifests Check if it’s managed by SystemD under the folder: /etc/systemd/system\nStop control-plane components. Proceed to move manifests files from (default) location: /etc/kubernetes/manifests if you want to quickly “restart” a service which runs in an specific container.\nThen check there are no containers running and move it back to the previous\nAlso, you can check if the process (in this case kubelet) is running on a worker node: ps aux | grep kubelet\nCommands to test within the pods Review if port is opened from a particular pod (using a shell)\n\u003e k exec -it -- bin/sh -c \"nc -vz 10.36.0.18 80\" Check how a resource manifest is structured (aka how to put fields within the YAML) \u003e k explain --recursive ETCD backup and restore summary Gather the data from the etcd pod: k describe Review the IP and port provided by “listen clients” Use the snapshot save command Stop all control plane components (by moving the YAML files where the static pods are defined to another folder): root@master-node:~# cd /etc/kubernetes/manifests/ root@master-node:/etc/kubernetes/manifests# mv * .. Check no pods are running within the master-node: crictl ps Create directory before restoring snapshot: mkdir… Restore snapshot (in the new empty directory created): ETCDCTL_API=3 etcdctl --data-dir /var/lib/etcd/restore snapshot restore /tmp/etcd-backup.db Change manifest from etcd to point to new directory: vim /etc/kubernetes/manifests/etcd.yaml NOTE: Don’t use snapshot status because it can alter the snapshot file and render it invalid\nTest if an SA or user can perform an action For a user:\nk auth can-i create configmap --as -n For a SA:\nk auth can-i list pod --as system:serviceaccount:: Wrap up It wasn’t a hard exam even for the limited time you have (2h) and I learnt about other resources I usually don’t use but overall it was great to know about them.\nRemember you have a free retake when you order the exam so don’t worry if you don’t make it in the first one but make sure to use your time wisely when taking it.\nThat’s all, next one is the CKAD which should be “easier” as per other reviews I have read.\nMore in the next post!\n",
+  "wordCount" : "821",
+  "inLanguage": "en",
+  "datePublished": "2023-06-01T11:37:03Z",
+  "dateModified": "2023-06-01T11:37:03Z",
+  "author":{
+    "@type": "Person",
+    "name": "itgaiden"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dangaiden.github.io/cks-exam-experience/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dan Belmonte",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dangaiden.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dangaiden.github.io" accesskey="h" title="Dan Belmonte (Alt + H)">Dan Belmonte</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://dangaiden.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dangaiden.github.io/about-me/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      My CKS experience
+    </h1>
+    <div class="post-meta"><span title='2023-06-01 11:37:03 +0000 +0000'>June 1, 2023</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;itgaiden
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#it-was-about-time" aria-label="It was about time&amp;hellip;">It was about time&hellip;</a></li>
+                <li>
+                    <a href="#day-of-the-exam" aria-label="Day of the exam">Day of the exam</a></li>
+                <li>
+                    <a href="#resources" aria-label="Resources">Resources</a></li>
+                <li>
+                    <a href="#useful-things-i-have-learnt-but-not-all-are-mandatory-for-the-exam" aria-label="Useful things I have learnt but NOT ALL are mandatory for the exam">Useful things I have learnt but NOT ALL are mandatory for the exam</a></li>
+                <li>
+                    <a href="#wrap-up" aria-label="Wrap up">Wrap up</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="it-was-about-time">It was about time&hellip;<a hidden class="anchor" aria-hidden="true" href="#it-was-about-time">#</a></h2>
+<blockquote>
+<p>TL;DR A couple of months ago I&rsquo;ve taken the CKS exam last week and I have passed it. It was about time to make a post about it which can be helpful to others.</p>
+</blockquote>
+<p>After studying for some weeks of studying (in fact, I scheduled the exam a week before the exam was expiring) and two attempts, I got the pass, the first was just to be safe as it was going to expire but the second one, let me 2 additional weeks to nail a couple of things.</p>
+<p>In my opinion, the exam wasn&rsquo;t that hard, by doing the <strong>killer.sh</strong> tests (provided when you order the exam) you have great questions which will be harder than the real exam.</p>
+<p>As with other experiences with CKx certifications, <strong>killer-sh</strong> is extremely helpful but maybe you will have to dig deeper in some aspects if you want to have everything clear.</p>
+<p>This one is not like the CKA or CKAD, as already mentioned in the CHECK THE DOC, you need to know your way around about many things: processes, tools, different K8s of course, and more. Check the DOC!!!!!</p>
+<p><img loading="lazy" src="https://media.giphy.com/media/tF8vMUeGUkHNTgCC4E/giphy.gif" alt=""  />
+</p>
+<h2 id="day-of-the-exam">Day of the exam<a hidden class="anchor" aria-hidden="true" href="#day-of-the-exam">#</a></h2>
+<ul>
+<li>
+<p>It&rsquo;s a 2-hour exam, so any extra time you can save, the better, maybe you should go to the toilet before taking the exam (although you can request a break if needed).</p>
+</li>
+<li>
+<p>Use the cheat sheet provided by the <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">Kubernetes documentation</a> at the beginning of the exam (search for it) as it will help you to remember some commands if you don&rsquo;t remember them correctly</p>
+</li>
+<li>
+<p>You can have opened more than one tab (that was my experience) to read through the documentation. In my case I had the official Kubernetes documentation opened to search as fast as I can through each topic.</p>
+</li>
+<li>
+<p>If you get stuck in one question for more than 10 min, probably you should flag it and go with the next one!</p>
+</li>
+</ul>
+<blockquote>
+<p>Note: The exam taken was based in Kubernetes v1.26 so obviously, PSPs were already out of the equation!</p>
+</blockquote>
+<p><img loading="lazy" src="https://media.giphy.com/media/X86IXaftArdHRmnBli/giphy.gif" alt=""  />
+</p>
+<h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
+<ul>
+<li>The famous CKA <a href="https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/learn/lecture/15271428?start=1#notes">Udemy course</a> by Mumshad Mannambeth was great to know about some other resources I haven&rsquo;t used nor known and for reviewing many others.</li>
+<li>The amazing collection of resources from Walid is a <em>must</em>: <a href="https://github.com/walidshaari/Kubernetes-Certified-Administrator">https://github.com/walidshaari/Kubernetes-Certified-Administrator</a></li>
+<li>CKA/CKAD exercises from <a href="https://github.com/dgkanatsios/CKAD-exercises">https://github.com/dgkanatsios/CKAD-exercises</a></li>
+<li>More exercises: <a href="https://github.com/StenlyTU/K8s-training-official">https://github.com/StenlyTU/K8s-training-official</a></li>
+<li>The Killer.sh test provided by the Linux training foundation is extremely helpful.</li>
+</ul>
+<h2 id="useful-things-i-have-learnt-but-not-all-are-mandatory-for-the-exam">Useful things I have learnt but NOT ALL are mandatory for the exam<a hidden class="anchor" aria-hidden="true" href="#useful-things-i-have-learnt-but-not-all-are-mandatory-for-the-exam">#</a></h2>
+<ul>
+<li>Useful &ldquo;shortcuts&rdquo; to use (use them as exported variables or aliases)</li>
+</ul>
+<pre tabindex="0"><code>export k=kubectl                        # already configured
+export do=&#34;--dry-run=client -o yaml&#34;    # k get pod x $do
+export now=&#34;--force --grace-period 0&#34;   # k delete pod x $now
+</code></pre><hr>
+<ul>
+<li>Can be helpful where and which control-plane components are installed:</li>
+</ul>
+<p>Kubelet, DNS, scheduler, etcd, and API server (as pods): <code>/etc/kubernetes/manifests</code>
+Check if it&rsquo;s managed by SystemD under the folder: <code>/etc/systemd/system</code></p>
+<hr>
+<ul>
+<li>Stop control-plane components.</li>
+</ul>
+<p>Proceed to move manifests files from (default) location: <code>/etc/kubernetes/manifests</code> if you want to quickly &ldquo;restart&rdquo; a service which runs in an specific container.</p>
+<p>Then check there are no containers running and move it back to the previous</p>
+<hr>
+<p>Also, you can check if the process (in this case kubelet) is running on a worker node: <code>ps aux | grep kubelet</code></p>
+<hr>
+<ul>
+<li>Commands to test within the pods</li>
+</ul>
+<p>Review if port is opened from a particular pod (using a shell)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>&gt; k exec -it &lt;pod-name&gt; -- bin/sh -c <span style="color:#e6db74">&#34;nc -vz 10.36.0.18 80&#34;</span>
+</span></span></code></pre></div><hr>
+<ul>
+<li>Check how a resource manifest is structured (aka how to put fields within the YAML)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; k explain --recursive &lt;api-resource&gt; 
+</span></span></code></pre></div><hr>
+<ul>
+<li>ETCD backup and restore summary</li>
+</ul>
+<ol>
+<li>Gather the data from the etcd pod: k describe <etcd-pod></li>
+<li>Review the IP and port provided by &ldquo;listen clients&rdquo;</li>
+<li>Use the snapshot save command</li>
+<li>Stop all control plane components (by moving the YAML files where the static pods are defined to another folder):</li>
+</ol>
+<pre tabindex="0"><code>root@master-node:~# cd /etc/kubernetes/manifests/
+root@master-node:/etc/kubernetes/manifests# mv * ..
+</code></pre><ol start="5">
+<li>Check no pods are running within the master-node: <code>crictl ps</code></li>
+<li>Create directory before restoring snapshot: mkdir&hellip;</li>
+<li>Restore snapshot (in the new empty directory created):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ETCDCTL_API<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> etcdctl --data-dir /var/lib/etcd/restore snapshot restore /tmp/etcd-backup.db
+</span></span></code></pre></div><ol start="8">
+<li>Change manifest from etcd to point to new directory: vim /etc/kubernetes/manifests/etcd.yaml</li>
+</ol>
+<blockquote>
+<p>NOTE: Don&rsquo;t use <code>snapshot status</code> because it can alter the snapshot file and render it invalid</p>
+</blockquote>
+<hr>
+<ul>
+<li>Test if an SA or user can perform an action</li>
+</ul>
+<p>For a user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>k auth can-i create configmap --as &lt;user&gt; -n &lt;namespace&gt;
+</span></span></code></pre></div><p>For a SA:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>k auth can-i list pod  --as system:serviceaccount:&lt;namespace&gt;:&lt;role&gt;
+</span></span></code></pre></div><hr>
+<h2 id="wrap-up">Wrap up<a hidden class="anchor" aria-hidden="true" href="#wrap-up">#</a></h2>
+<p>It wasn&rsquo;t a hard exam even for the limited time you have (2h) and I learnt about other resources I usually don&rsquo;t use but overall it was great to know about them.</p>
+<p>Remember you have a <strong>free retake</strong> when you order the exam so don&rsquo;t worry if you don&rsquo;t make it in the first one but make sure to use your time wisely when taking it.</p>
+<p>That&rsquo;s all, next one is the CKAD which should be &ldquo;easier&rdquo; as per other reviews I have read.</p>
+<p>More in the next post!</p>
+<p><img loading="lazy" src="https://media.giphy.com/media/BoHCeLmEKytt7oFxyR/giphy.gif" alt=""  />
+</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dangaiden.github.io/tags/kubernetes/">kubernetes</a></li>
+      <li><a href="https://dangaiden.github.io/tags/certification/">certification</a></li>
+      <li><a href="https://dangaiden.github.io/tags/devops/">devops</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://dangaiden.github.io">Dan Belmonte</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
